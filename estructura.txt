@@ -1,0 +1,2658 @@
+.
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── branches
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   │   ├── applypatch-msg.sample
+│   │   ├── commit-msg.sample
+│   │   ├── fsmonitor-watchman.sample
+│   │   ├── post-checkout
+│   │   ├── post-commit
+│   │   ├── post-merge
+│   │   ├── post-update.sample
+│   │   ├── pre-applypatch.sample
+│   │   ├── pre-commit.sample
+│   │   ├── pre-merge-commit.sample
+│   │   ├── pre-push
+│   │   ├── pre-push.sample
+│   │   ├── pre-rebase.sample
+│   │   ├── pre-receive.sample
+│   │   ├── prepare-commit-msg.sample
+│   │   ├── push-to-checkout.sample
+│   │   ├── sendemail-validate.sample
+│   │   └── update.sample
+│   ├── index
+│   ├── info
+│   │   └── exclude
+│   ├── lfs
+│   │   ├── cache
+│   │   │   └── locks
+│   │   │       └── refs
+│   │   │           └── heads
+│   │   │               └── main
+│   │   │                   └── verifiable
+│   │   └── tmp
+│   ├── logs
+│   │   ├── HEAD
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── main
+│   │       └── remotes
+│   │           └── origin
+│   │               ├── HEAD
+│   │               └── main
+│   ├── objects
+│   │   ├── 2d
+│   │   │   └── c30a08f55f075c9350d91ec6f374650ade51b3
+│   │   ├── f6
+│   │   │   └── 7afb49fd1add8a5f2ec14264b3e219f4aebd99
+│   │   ├── info
+│   │   └── pack
+│   │       ├── pack-648825a10fb741908163f9f6731e4da125137bcd.idx
+│   │       ├── pack-648825a10fb741908163f9f6731e4da125137bcd.pack
+│   │       └── pack-648825a10fb741908163f9f6731e4da125137bcd.rev
+│   ├── packed-refs
+│   └── refs
+│       ├── heads
+│       │   └── main
+│       ├── remotes
+│       │   └── origin
+│       │       ├── HEAD
+│       │       └── main
+│       └── tags
+├── Mobile-SDK-Android-V5
+│   ├── .git
+│   │   ├── HEAD
+│   │   ├── config
+│   │   ├── description
+│   │   ├── hooks
+│   │   │   ├── applypatch-msg.sample
+│   │   │   ├── commit-msg.sample
+│   │   │   ├── fsmonitor-watchman.sample
+│   │   │   ├── post-update.sample
+│   │   │   ├── pre-applypatch.sample
+│   │   │   ├── pre-commit.sample
+│   │   │   ├── pre-merge-commit.sample
+│   │   │   ├── pre-push.sample
+│   │   │   ├── pre-rebase.sample
+│   │   │   ├── pre-receive.sample
+│   │   │   ├── prepare-commit-msg.sample
+│   │   │   ├── push-to-checkout.sample
+│   │   │   ├── sendemail-validate.sample
+│   │   │   └── update.sample
+│   │   ├── index
+│   │   ├── info
+│   │   │   └── exclude
+│   │   ├── logs
+│   │   │   ├── HEAD
+│   │   │   └── refs
+│   │   │       ├── heads
+│   │   │       │   └── dev-sdk-main
+│   │   │       └── remotes
+│   │   │           └── origin
+│   │   │               └── HEAD
+│   │   ├── objects
+│   │   │   ├── info
+│   │   │   └── pack
+│   │   │       ├── pack-aeaf00b3e623830500b231aed166a7d212e2ad66.idx
+│   │   │       ├── pack-aeaf00b3e623830500b231aed166a7d212e2ad66.pack
+│   │   │       └── pack-aeaf00b3e623830500b231aed166a7d212e2ad66.rev
+│   │   ├── packed-refs
+│   │   └── refs
+│   │       ├── heads
+│   │       │   └── dev-sdk-main
+│   │       ├── remotes
+│   │       │   └── origin
+│   │       │       └── HEAD
+│   │       └── tags
+│   ├── .gitignore
+│   ├── Docs
+│   │   ├── API-Diff
+│   │   │   ├── 5.0.0_5.1.0_android_diff.html
+│   │   │   ├── 5.0.0_beta2_5.0.0_beta3_android_diff.html
+│   │   │   ├── 5.0.0_beta3_5.0.0_android_diff.html
+│   │   │   ├── 5.1.0_5.2.0_android_diff.html
+│   │   │   ├── 5.11.0_5.12.0_android_diff.html
+│   │   │   ├── 5.12.0_5.13.0_android_diff.html
+│   │   │   ├── 5.2.0_5.3.0_android_diff.html
+│   │   │   ├── 5.4.0_5.5.0_android_diff.html
+│   │   │   ├── 5.5.0_5.6.0_android_diff.html
+│   │   │   ├── 5.6.0_5.7.0_android_diff.html
+│   │   │   ├── 5.7.0_5.8.0_android_diff.html
+│   │   │   ├── 5.8.0_5.9.0_android_diff.html
+│   │   │   └── 5.9.0_5.10.0_android_diff.html
+│   │   └── Android_API
+│   │       ├── cn
+│   │       │   ├── Components
+│   │       │   │   ├── DJICommonCallbacks
+│   │       │   │   │   ├── DJICommonCallbacks.html
+│   │       │   │   │   ├── DJICommonCallbacks_CompletionCallback.html
+│   │       │   │   │   ├── DJICommonCallbacks_CompletionCallbackWithParam.html
+│   │       │   │   │   ├── DJICommonCallbacks_CompletionCallbackWithTwoParamXY.html
+│   │       │   │   │   ├── DJICommonCallbacks_CompletionCallback_Interface.html
+│   │       │   │   │   ├── DJIKeyManager_KeyListener.html
+│   │       │   │   │   └── IKeyManager_KeyListener.html
+│   │       │   │   ├── DJIError
+│   │       │   │   │   └── DJIError.html
+│   │       │   │   ├── DJIError_DJILDMError
+│   │       │   │   │   └── DJIError_DJILDMError.html
+│   │       │   │   ├── DJIFlightRecordManager
+│   │       │   │   │   ├── DJIFlightRecordManager.html
+│   │       │   │   │   ├── DJIMegaphoneManager.html
+│   │       │   │   │   ├── DJIMegaphoneManager_FileInfo.html
+│   │       │   │   │   └── DJIMegaphoneManager_RealTimeTransimissionStateListener.html
+│   │       │   │   ├── DJISDKManager
+│   │       │   │   │   ├── DJISDKManager.html
+│   │       │   │   │   └── ISDKManager_SDKManagerCallback.html
+│   │       │   │   ├── FlightRecordManager
+│   │       │   │   │   ├── FlightLogManager.html
+│   │       │   │   │   ├── FlightRecordManager.html
+│   │       │   │   │   ├── IFlightLogManager.html
+│   │       │   │   │   ├── IMegaphoneManager.html
+│   │       │   │   │   ├── IMegaphoneManager_FileInfo.html
+│   │       │   │   │   ├── IMegaphoneManager_RealTimeTransimissionStateListener.html
+│   │       │   │   │   ├── MegaphoneManager.html
+│   │       │   │   │   ├── MegaphoneManager_FileInfo.html
+│   │       │   │   │   └── MegaphoneManager_RealTimeTransimissionStateListener.html
+│   │       │   │   ├── IAreaCodeManager
+│   │       │   │   │   ├── IAreaCodeManager.html
+│   │       │   │   │   ├── IAreaCodeManager_AreaCodeData.html
+│   │       │   │   │   └── IAreaCodeManager_AreaCodeData_AreaCodeChangeListener.html
+│   │       │   │   ├── IDataProtectionManager
+│   │       │   │   │   └── IDataProtectionManager.html
+│   │       │   │   ├── IDeviceHealthManager
+│   │       │   │   │   ├── IDeviceHealthManager.html
+│   │       │   │   │   ├── IDeviceHealthManager_DJIDeviceHealthInfo.html
+│   │       │   │   │   └── IDeviceHealthManager_DJIDeviceHealthInfoChangeListener.html
+│   │       │   │   ├── IDeviceStatusManager
+│   │       │   │   │   ├── IDeviceStatusManager.html
+│   │       │   │   │   └── IDeviceStatusManager_DJIDeviceStatusChangeListener.html
+│   │       │   │   ├── IFlightLogManager
+│   │       │   │   │   └── IFlightLogManager.html
+│   │       │   │   ├── IFlyZoneManager
+│   │       │   │   │   ├── IFlyZoneManager.html
+│   │       │   │   │   ├── IFlyZoneManager_DJIFlySafeReturnToHomeInformation.html
+│   │       │   │   │   ├── IFlyZoneManager_DJIFlyingSafetySeriousWarningInformation.html
+│   │       │   │   │   ├── IFlyZoneManager_DJIFlyingSafetyWarningInformation.html
+│   │       │   │   │   ├── IFlyZoneManager_FlySafeDatabaseInfo.html
+│   │       │   │   │   ├── IFlyZoneManager_FlySafeDatabaseListener.html
+│   │       │   │   │   ├── IFlyZoneManager_FlySafeNotificationListener.html
+│   │       │   │   │   ├── IFlyZoneManager_FlySafeReturnToHomeInformation.html
+│   │       │   │   │   ├── IFlyZoneManager_FlySafeTipInformation.html
+│   │       │   │   │   ├── IFlyZoneManager_FlyZoneInformation.html
+│   │       │   │   │   ├── IFlyZoneManager_FlyZoneLicenseInfo.html
+│   │       │   │   │   ├── IFlyZoneManager_FlyingSafetySeriousWarningInformation.html
+│   │       │   │   │   ├── IFlyZoneManager_FlyingSafetyWarningInformation.html
+│   │       │   │   │   └── IFlyZoneManager_MultiPolygonFlyZoneInformation.html
+│   │       │   │   ├── IIntelligentFlightManager
+│   │       │   │   │   ├── IIntelligentFlightManager.html
+│   │       │   │   │   ├── IIntelligentFlightManager_AutoSensingInfo.html
+│   │       │   │   │   ├── IIntelligentFlightManager_AutoSensingInfoListener.html
+│   │       │   │   │   ├── IIntelligentFlightManager_AutoSensingTarget.html
+│   │       │   │   │   ├── IIntelligentFlightManager_FlyToMissionManager_FlyToCapability.html
+│   │       │   │   │   ├── IIntelligentFlightManager_FlyToMissionManager_FlyToInfo.html
+│   │       │   │   │   ├── IIntelligentFlightManager_FlyToMissionManager_FlyToParam.html
+│   │       │   │   │   ├── IIntelligentFlightManager_FlyToMissionManager_FlyToTarget.html
+│   │       │   │   │   ├── IIntelligentFlightManager_IFlyToMissionManager.html
+│   │       │   │   │   ├── IIntelligentFlightManager_IMissionManager.html
+│   │       │   │   │   ├── IIntelligentFlightManager_IMissionManager_IMissionCapabilityListener.html
+│   │       │   │   │   ├── IIntelligentFlightManager_IMissionManager_IMissionInfoListener.html
+│   │       │   │   │   ├── IIntelligentFlightManager_IPOIMissionManager.html
+│   │       │   │   │   ├── IIntelligentFlightManager_ISmartTrackMissionManager.html
+│   │       │   │   │   ├── IIntelligentFlightManager_ISpotLightManager.html
+│   │       │   │   │   ├── IIntelligentFlightManager_IntelligentFlightInfo.html
+│   │       │   │   │   ├── IIntelligentFlightManager_IntelligentFlightInfoListener.html
+│   │       │   │   │   ├── IIntelligentFlightManager_IntelligentModel.html
+│   │       │   │   │   ├── IIntelligentFlightManager_POIMissionManager_POICapability.html
+│   │       │   │   │   ├── IIntelligentFlightManager_POIMissionManager_POIInfo.html
+│   │       │   │   │   ├── IIntelligentFlightManager_POIMissionManager_POIParam.html
+│   │       │   │   │   ├── IIntelligentFlightManager_POIMissionManager_POITarget.html
+│   │       │   │   │   ├── IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html
+│   │       │   │   │   ├── IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackInfo.html
+│   │       │   │   │   ├── IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackParam.html
+│   │       │   │   │   ├── IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackTarget.html
+│   │       │   │   │   ├── IIntelligentFlightManager_SpotLightManager_SpotLightCapability.html
+│   │       │   │   │   ├── IIntelligentFlightManager_SpotLightManager_SpotLightTarget.html
+│   │       │   │   │   └── IIntelligentFlightManager_SpotLightManager__SpotlightCapability.html
+│   │       │   │   ├── IKeyManager
+│   │       │   │   │   ├── DJIKey.html
+│   │       │   │   │   ├── DJIKeyInfo.html
+│   │       │   │   │   ├── DJIValue.html
+│   │       │   │   │   ├── IKeyManager.html
+│   │       │   │   │   ├── IKeyManager_KeyListener.html
+│   │       │   │   │   ├── KeyTools.html
+│   │       │   │   │   ├── Key_Airlink_AirlinkKey.html
+│   │       │   │   │   ├── Key_Airlink_DJIAirlinkKey.html
+│   │       │   │   │   ├── Key_Battery_BatteryKey.html
+│   │       │   │   │   ├── Key_Battery_DJIBatteryKey.html
+│   │       │   │   │   ├── Key_Camera_CameraKey.html
+│   │       │   │   │   ├── Key_Camera_DJICameraKey.html
+│   │       │   │   │   ├── Key_FlightController_DJIFlightControllerKey.html
+│   │       │   │   │   ├── Key_FlightController_FlightControllerKey.html
+│   │       │   │   │   ├── Key_Gimbal_DJIGimbalKey.html
+│   │       │   │   │   ├── Key_Gimbal_GimbalKey.html
+│   │       │   │   │   ├── Key_Product_DJIProductKey.html
+│   │       │   │   │   ├── Key_Product_ProductKey.html
+│   │       │   │   │   ├── Key_RemoteController_DJIRemoteControllerKey.html
+│   │       │   │   │   ├── Key_RemoteController_RemoteControllerKey.html
+│   │       │   │   │   ├── Value_Accessory_Struct_PlayingAudioFileInfo.html
+│   │       │   │   │   ├── Value_Airlink_Struct_FrequencyInterference.html
+│   │       │   │   │   ├── Value_Airlink_Struct_WlmDongleInfoMsg.html
+│   │       │   │   │   ├── Value_Airlink_Struct_WlmDongleState.html
+│   │       │   │   │   ├── Value_Airlink_Struct_WlmLinkQualityMsg.html
+│   │       │   │   │   ├── Value_Battery_Struct_BatteryLedsControlMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraHybridZoomSpec.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraStorageInfo.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraStorageInfos.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraStorageState.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraStorageStateMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraStreamSettingsMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraWatermarkSettings.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraWhiteBalance.html
+│   │       │   │   │   ├── Value_Camera_Struct_CustomExpandNameSettings.html
+│   │       │   │   │   ├── Value_Camera_Struct_DateTime.html
+│   │       │   │   │   ├── Value_Camera_Struct_GeneratedMediaFileInfo.html
+│   │       │   │   │   ├── Value_Camera_Struct_IsRecordingInfoMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_LaserMeasureInformationMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_MSDKCameraStreamSettings.html
+│   │       │   │   │   ├── Value_Camera_Struct_MSDKZoomRatiosRange.html
+│   │       │   │   │   ├── Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_PhotoIntervalShootSettings.html
+│   │       │   │   │   ├── Value_Camera_Struct_SuperResolutionStateMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_ThermalAreaTemperatureAggregationsMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_ThermalGainModeTemperatureRangeMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_VideoPreRecordDurationMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_VideoRecordPlanMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_VideoResolutionFrameRate.html
+│   │       │   │   │   ├── Value_Camera_Struct_WatermarkDisplayContentSettings.html
+│   │       │   │   │   ├── Value_Camera_Struct_ZoomPointTargetMsg.html
+│   │       │   │   │   ├── Value_Common_Struct_Attitude.html
+│   │       │   │   │   ├── Value_Common_Struct_Date.html
+│   │       │   │   │   ├── Value_Common_Struct_DoubleMinMax.html
+│   │       │   │   │   ├── Value_Common_Struct_DoublePoint2D.html
+│   │       │   │   │   ├── Value_Common_Struct_DoubleRect.html
+│   │       │   │   │   ├── Value_Common_Struct_IntValueConfig.html
+│   │       │   │   │   ├── Value_Common_Struct_LocationCoordinate2D.html
+│   │       │   │   │   ├── Value_Common_Struct_LocationCoordinate3D.html
+│   │       │   │   │   ├── Value_Common_Struct_RCAuthorityLockControlMsg.html
+│   │       │   │   │   ├── Value_Common_Struct_RCAuthorityModeMsg.html
+│   │       │   │   │   ├── Value_Common_Struct_RectF.html
+│   │       │   │   │   ├── Value_Common_Struct_Velocity3D.html
+│   │       │   │   │   ├── Value_FlightController_GoHomeInfo.html
+│   │       │   │   │   ├── Value_FlightController_LightGimbalAdjustInfo.html
+│   │       │   │   │   ├── Value_FlightController_LightGimbalTotalAdjustInfo.html
+│   │       │   │   │   ├── Value_FlightController_LookAtInfo.html
+│   │       │   │   │   ├── Value_FlightController_Struct_AccessLockerV1DeviceState.html
+│   │       │   │   │   ├── Value_FlightController_Struct_AccessLockerV1EncryptionState.html
+│   │       │   │   │   ├── Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html
+│   │       │   │   │   ├── Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html
+│   │       │   │   │   ├── Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html
+│   │       │   │   │   ├── Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html
+│   │       │   │   │   ├── Value_FlightController_Struct_AirSenseAirplaneState.html
+│   │       │   │   │   ├── Value_FlightController_Struct_AirSenseSystemInformation.html
+│   │       │   │   │   ├── Value_FlightController_Struct_GoHomeAssessment.html
+│   │       │   │   │   ├── Value_FlightController_Struct_IMUCalibrationHint.html
+│   │       │   │   │   ├── Value_FlightController_Struct_IMUState.html
+│   │       │   │   │   ├── Value_FlightController_Struct_LEDsSettings.html
+│   │       │   │   │   ├── Value_FlightController_Struct_MultiGimbalSyncControlMsg.html
+│   │       │   │   │   ├── Value_FlightController_Struct_MultiGimbalSyncStatus.html
+│   │       │   │   │   ├── Value_Gimbal_Struct_GimbalAngleRotation.html
+│   │       │   │   │   ├── Value_Gimbal_Struct_GimbalAttitudeRange.html
+│   │       │   │   │   ├── Value_Gimbal_Struct_GimbalCalibrationState.html
+│   │       │   │   │   ├── Value_Gimbal_Struct_GimbalSpeedRotation.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_MultiRCFlightControlAuthOwnerMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RCAuthorityLostPushMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RCModeChannelTypeMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RcFirmwareInfo.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RcMultiStatusMsg.html
+│   │       │   │   │   └── Value_RemoteController_Struct_RcParamChargeRemainingInfo.html
+│   │       │   │   ├── ILDMManager
+│   │       │   │   │   └── ILDMManager.html
+│   │       │   │   ├── ILTEManager
+│   │       │   │   │   ├── ILTEManager.html
+│   │       │   │   │   ├── ILTEManager_LTEAuthenticationInfo.html
+│   │       │   │   │   ├── ILTEManager_LTEAuthenticationInfoListener.html
+│   │       │   │   │   ├── ILTEManager_LTEDongleInfoListener.html
+│   │       │   │   │   ├── ILTEManager_LTELinkInfo.html
+│   │       │   │   │   ├── ILTEManager_LTELinkInfoListener.html
+│   │       │   │   │   └── ILTEManager_LTEPrivatizationServerInfo.html
+│   │       │   │   ├── IMediaDataCenter
+│   │       │   │   │   ├── ICameraStreamManager.html
+│   │       │   │   │   ├── ICameraStreamManager_AvailableCameraUpdatedListener.html
+│   │       │   │   │   ├── ICameraStreamManager_CameraFrameListener.html
+│   │       │   │   │   ├── ICameraStreamManager_OnAvailableCameraUpdatedListener.html
+│   │       │   │   │   ├── ICameraStreamManager_OnCameraFrameListener.html
+│   │       │   │   │   ├── ICameraStreamManager_OnReceiveStreamListener.html
+│   │       │   │   │   ├── ICameraStreamManager_PinPoint.html
+│   │       │   │   │   ├── ICameraStreamManager_PinPointInfo.html
+│   │       │   │   │   ├── ICameraStreamManager_ReceiveStreamListener.html
+│   │       │   │   │   ├── ICameraStreamManager_StreamInfo.html
+│   │       │   │   │   ├── ILiveStreamManager.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_AgoraSettings.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_AgoraSettings_Builder.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_Builder.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_GB28181Settings.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_GB28181Settings_Builder.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_RtmpSettings.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_RtmpSettings_Builder.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_RtspSettings.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamSettings_RtspSettings_Builder.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamStatus.html
+│   │       │   │   │   ├── ILiveStreamManager_LiveStreamStatusListener.html
+│   │       │   │   │   ├── ILiveStreamManager_VideoResolution.html
+│   │       │   │   │   ├── IMediaDataCenter.html
+│   │       │   │   │   ├── IMediaManager.html
+│   │       │   │   │   ├── IMediaManager_MediaFile.html
+│   │       │   │   │   ├── IMediaManager_MediaFileDownloadListener.html
+│   │       │   │   │   ├── IMediaManager_MediaFileListData.html
+│   │       │   │   │   ├── IMediaManager_MediaFileListDataSource.html
+│   │       │   │   │   ├── IMediaManager_MediaFileListDataSource_Builder.html
+│   │       │   │   │   ├── IMediaManager_MediaFileListStateListener.html
+│   │       │   │   │   ├── IMediaManager_MediaFrameListener.html
+│   │       │   │   │   ├── IMediaManager_PullMediaFileListParam.html
+│   │       │   │   │   ├── IMediaManager_PullMediaFileListParam_Builder.html
+│   │       │   │   │   ├── IMediaManager_VideoPlayStateListener.html
+│   │       │   │   │   ├── IMediaManager_VideoPlayStatus.html
+│   │       │   │   │   ├── IVideoStreamManager.html
+│   │       │   │   │   ├── IVideoStreamManager_IVideoChannel.html
+│   │       │   │   │   ├── IVideoStreamManager_IVideoChannel_StreamDataListener.html
+│   │       │   │   │   ├── IVideoStreamManager_IVideoChannel_VideoChannelStateChangeListener.html
+│   │       │   │   │   ├── IVideoStreamManager_IVideoDecoder.html
+│   │       │   │   │   ├── IVideoStreamManager_IVideoDecoder_DecoderStateChangeListener.html
+│   │       │   │   │   ├── IVideoStreamManager_IVideoDecoder_YuvDataListener.html
+│   │       │   │   │   ├── IVideoStreamManager_IVideoFrame.html
+│   │       │   │   │   ├── IVideoStreamManager_StreamSource.html
+│   │       │   │   │   ├── IVideoStreamManager_StreamSourceListener.html
+│   │       │   │   │   └── IVideoStreamManager_StreamSource_PhysicalDeviceType.html
+│   │       │   │   ├── IMegaphoneManager
+│   │       │   │   │   ├── IMegaphoneManager.html
+│   │       │   │   │   ├── IMegaphoneManager_FileInfo.html
+│   │       │   │   │   ├── IMegaphoneManager_MegaphoneInfo.html
+│   │       │   │   │   ├── IMegaphoneManager_MegaphoneInfoListener.html
+│   │       │   │   │   └── IMegaphoneManager_RealTimeTransimissionStateListener.html
+│   │       │   │   ├── IPayloadCenter
+│   │       │   │   │   ├── IIntelligentBoxManager.html
+│   │       │   │   │   ├── IIntelligentBoxManager_IntelligentBoxAppInfo.html
+│   │       │   │   │   ├── IIntelligentBoxManager_IntelligentBoxInfo.html
+│   │       │   │   │   ├── IIntelligentBoxManager_IntelligentBoxInfoListener.html
+│   │       │   │   │   ├── IPayloadCenter.html
+│   │       │   │   │   ├── IPayloadManager.html
+│   │       │   │   │   ├── IPayloadManager_FloatingWindowWidget.html
+│   │       │   │   │   ├── IPayloadManager_IconFilePath.html
+│   │       │   │   │   ├── IPayloadManager_PayloadBasicInfo.html
+│   │       │   │   │   ├── IPayloadManager_PayloadBasicInfoListener.html
+│   │       │   │   │   ├── IPayloadManager_PayloadDataListener.html
+│   │       │   │   │   ├── IPayloadManager_PayloadWidget.html
+│   │       │   │   │   ├── IPayloadManager_PayloadWidgetInfo.html
+│   │       │   │   │   ├── IPayloadManager_PayloadWidgetInfoListener.html
+│   │       │   │   │   ├── IPayloadManager_SpeakerWidget.html
+│   │       │   │   │   ├── IPayloadManager_SubItems.html
+│   │       │   │   │   ├── IPayloadManager_TextInputBoxWidget.html
+│   │       │   │   │   ├── Value_Payload_Struct_CustomizeRcButtonConfig.html
+│   │       │   │   │   └── Value_Payload_Struct_WidgetValue.html
+│   │       │   │   ├── IPerceptionManager
+│   │       │   │   │   ├── IPerceptionManager.html
+│   │       │   │   │   ├── IPerceptionManager_ObstacleData.html
+│   │       │   │   │   ├── IPerceptionManager_ObstacleDataListener.html
+│   │       │   │   │   ├── IPerceptionManager_PerceptionInfo.html
+│   │       │   │   │   ├── IPerceptionManager_PerceptionInformationListener.html
+│   │       │   │   │   ├── IRadarManager.html
+│   │       │   │   │   ├── IRadarManager_RadarInformation.html
+│   │       │   │   │   └── IRadarManager_RadarInformationListener.html
+│   │       │   │   ├── IPipelineManager
+│   │       │   │   │   ├── IPipelineManager.html
+│   │       │   │   │   ├── IPipelineManager_DataResult.html
+│   │       │   │   │   ├── IPipelineManager_Pipeline.html
+│   │       │   │   │   └── IPipelineManager_PipelineConnectionListener.html
+│   │       │   │   ├── IRTKCenter
+│   │       │   │   │   ├── INetworkRTKManager.html
+│   │       │   │   │   ├── INetworkRTKManager_NetworkServiceInfoListener.html
+│   │       │   │   │   ├── IRTKCenter.html
+│   │       │   │   │   ├── IRTKCenter_RTKBaseListener.html
+│   │       │   │   │   ├── IRTKCenter_RTKLocationInfo.html
+│   │       │   │   │   ├── IRTKCenter_RTKLocationInfoListener.html
+│   │       │   │   │   ├── IRTKCenter_RTKSystemStateListener.html
+│   │       │   │   │   ├── IRTKStationManager.html
+│   │       │   │   │   ├── IRTKStationManager_ConnectedRTKStationInfoListener.html
+│   │       │   │   │   ├── IRTKStationManager_ConnectedTKStationInfo.html
+│   │       │   │   │   ├── IRTKStationManager_RTKStationConnectStatusListener.html
+│   │       │   │   │   ├── IRTKStationManager_SearchStationListener.html
+│   │       │   │   │   ├── IRTKStationManager_StationConnectStatusListener.html
+│   │       │   │   │   ├── RTKCenter_RTKSystemState.html
+│   │       │   │   │   ├── Value_RtkBaseStation_Struct_RTKBaseStationConnectInfo.html
+│   │       │   │   │   ├── Value_RtkBaseStation_Struct_RTKCustomNetworkSetting.html
+│   │       │   │   │   ├── Value_RtkMobileStation_Struct_RTKLocation.html
+│   │       │   │   │   ├── Value_RtkMobileStation_Struct_RTKReceiverInfo.html
+│   │       │   │   │   └── Value_RtkMobileStation_Struct_RTKSatelliteInfo.html
+│   │       │   │   ├── ISDKManager
+│   │       │   │   │   ├── ISDKManager.html
+│   │       │   │   │   └── ISDKManager_SDKManagerCallback.html
+│   │       │   │   ├── ISimulatorManager
+│   │       │   │   │   ├── ISimulatorManager.html
+│   │       │   │   │   ├── ISimulatorManager_InitializationSettings.html
+│   │       │   │   │   ├── ISimulatorManager_SimulatorState.html
+│   │       │   │   │   └── ISimulatorManager_SimulatorStatusListener.html
+│   │       │   │   ├── IUASRemoteIDManager
+│   │       │   │   │   ├── IUASRemoteIDManager.html
+│   │       │   │   │   ├── IUASRemoteIDManager_CClassStatusListener.html
+│   │       │   │   │   ├── IUASRemoteIDManager_ElectronicIDStatus.html
+│   │       │   │   │   ├── IUASRemoteIDManager_ElectronicIDStatusListener.html
+│   │       │   │   │   ├── IUASRemoteIDManager_OperatorRegistrationNumberStatus.html
+│   │       │   │   │   ├── IUASRemoteIDManager_OperatorRegistrationNumberStatusListener.html
+│   │       │   │   │   ├── IUASRemoteIDManager_RealNameRegistrationStatus.html
+│   │       │   │   │   ├── IUASRemoteIDManager_RealNameRegistrationStatusListener.html
+│   │       │   │   │   ├── IUASRemoteIDManager_UARegistrationNumberStatus.html
+│   │       │   │   │   ├── IUASRemoteIDManager_UARegistrationNumberStatusListener.html
+│   │       │   │   │   ├── IUASRemoteIDManager_UASRemoteIDStatus.html
+│   │       │   │   │   └── IUASRemoteIDManager_UASRemoteIDStatusListener.html
+│   │       │   │   ├── IUpgradeManager
+│   │       │   │   │   ├── IUpgradeManager.html
+│   │       │   │   │   ├── IUpgradeManager_FirmwareInformation.html
+│   │       │   │   │   ├── IUpgradeManager_UpgradeInfo.html
+│   │       │   │   │   ├── IUpgradeManager_UpgradeInfoListener.html
+│   │       │   │   │   ├── IUpgradeManager_UpgradeableComponent.html
+│   │       │   │   │   └── IUpgradeManager_UpgradeableComponentListener.html
+│   │       │   │   ├── IUserAccountManager
+│   │       │   │   │   ├── IUserAccountManager.html
+│   │       │   │   │   ├── IUserAccountManager_LoginInfo.html
+│   │       │   │   │   └── IUserAccountManager_LoginInfoUpdateListener.html
+│   │       │   │   ├── IVirtualStickManager
+│   │       │   │   │   ├── IVirtualStickManager.html
+│   │       │   │   │   ├── IVirtualStickManager_DJIStick.html
+│   │       │   │   │   ├── IVirtualStickManager_VirtualStickRange.html
+│   │       │   │   │   ├── IVirtualStickManager_VirtualStickState.html
+│   │       │   │   │   ├── IVirtualStickManager_VirtualStickStateListener.html
+│   │       │   │   │   └── Value_FlightController_Struct_VirtualStickFlightControlParam.html
+│   │       │   │   ├── IWaypointMissionManager
+│   │       │   │   │   ├── IWPMZManager.html
+│   │       │   │   │   ├── IWaypointMissionManager.html
+│   │       │   │   │   ├── IWaypointMissionManager_BreakPointInfo.html
+│   │       │   │   │   ├── IWaypointMissionManager_WaylineExecutingInfo.html
+│   │       │   │   │   ├── IWaypointMissionManager_WaylineExecutingInfoListener.html
+│   │       │   │   │   ├── IWaypointMissionManager_WaypointActionListener.html
+│   │       │   │   │   └── IWaypointMissionManager_WaypointMissionExecuteStateListener.html
+│   │       │   │   ├── KeyManager
+│   │       │   │   │   ├── DJIKey.html
+│   │       │   │   │   ├── DJIKeyManager.html
+│   │       │   │   │   ├── DJIValue.html
+│   │       │   │   │   ├── Key_Airlink_DJIAirlinkKey.html
+│   │       │   │   │   ├── Key_Battery_DJIBatteryKey.html
+│   │       │   │   │   ├── Key_Camera_DJICameraKey.html
+│   │       │   │   │   ├── Key_FlightAssistant_DJIFlightAssistantKey.html
+│   │       │   │   │   ├── Key_FlightController_DJIFlightControllerKey.html
+│   │       │   │   │   ├── Key_Gimbal_DJIGimbalKey.html
+│   │       │   │   │   ├── Key_Product_DJIProductKey.html
+│   │       │   │   │   ├── Key_RemoteController_DJIRemoteControllerKey.html
+│   │       │   │   │   ├── Key_RtkBaseStation_DJIRtkBaseStationKey.html
+│   │       │   │   │   ├── Value_Accessory_Struct_PlayingAudioFileInfo.html
+│   │       │   │   │   ├── Value_Airlink_Struct_FrequencyInterference.html
+│   │       │   │   │   ├── Value_Battery_Struct_BatteryLedsControlMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraHybridZoomSpec.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraStorageState.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraStorageStateMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraStreamSettingsMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_CameraWatermarkSettings.html
+│   │       │   │   │   ├── Value_Camera_Struct_CustomExpandNameSettings.html
+│   │       │   │   │   ├── Value_Camera_Struct_DateTime.html
+│   │       │   │   │   ├── Value_Camera_Struct_GeneratedMediaFileInfo.html
+│   │       │   │   │   ├── Value_Camera_Struct_PhotoIntervalShootSettings.html
+│   │       │   │   │   ├── Value_Camera_Struct_SuperResolutionStateMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_ThermalAreaTemperatureAggregationsMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_ThermalGainModeTemperatureRangeMsg.html
+│   │       │   │   │   ├── Value_Camera_Struct_VideoResolutionFrameRate.html
+│   │       │   │   │   ├── Value_Camera_Struct_WatermarkDisplayContentSettings.html
+│   │       │   │   │   ├── Value_Common_Struct_Attitude.html
+│   │       │   │   │   ├── Value_Common_Struct_Date.html
+│   │       │   │   │   ├── Value_Common_Struct_DoubleMinMax.html
+│   │       │   │   │   ├── Value_Common_Struct_DoublePoint2D.html
+│   │       │   │   │   ├── Value_Common_Struct_DoubleRect.html
+│   │       │   │   │   ├── Value_Common_Struct_IntValueConfig.html
+│   │       │   │   │   ├── Value_Common_Struct_LocationCoordinate2D.html
+│   │       │   │   │   ├── Value_Common_Struct_RCAuthorityLockControlMsg.html
+│   │       │   │   │   ├── Value_Common_Struct_RCAuthorityModeMsg.html
+│   │       │   │   │   ├── Value_Common_Struct_RectF.html
+│   │       │   │   │   ├── Value_Common_Struct_Velocity3D.html
+│   │       │   │   │   ├── Value_FlightController_Struct_GoHomeAssessment.html
+│   │       │   │   │   ├── Value_FlightController_Struct_IMUState.html
+│   │       │   │   │   ├── Value_FlightController_Struct_LEDsSettings.html
+│   │       │   │   │   ├── Value_FlightController_Struct_RemoteControllerFlightModeMsg.html
+│   │       │   │   │   ├── Value_Gimbal_Struct_GimbalAngleRotation.html
+│   │       │   │   │   ├── Value_Gimbal_Struct_GimbalAttitudeRange.html
+│   │       │   │   │   ├── Value_Gimbal_Struct_GimbalCalibrationState.html
+│   │       │   │   │   ├── Value_Gimbal_Struct_GimbalSpeedRotation.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_MultiRCFlightControlAuthOwnerMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RCAuthorityLockControlMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RCAuthorityLostPushMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RCAuthorityModeMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RCModeChannelTypeMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RcControllerModeMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RcMultiStatusMsg.html
+│   │       │   │   │   ├── Value_RemoteController_Struct_RcParamChargeRemainingInfo.html
+│   │       │   │   │   ├── Value_RtkBaseStation_Struct_NetworkRTKParam.html
+│   │       │   │   │   └── Value_RtkBaseStation_Struct_RTKReferenceStationSourceMsg.html
+│   │       │   │   ├── LDMManager
+│   │       │   │   │   ├── DJILDMManager.html
+│   │       │   │   │   └── LDMManager.html
+│   │       │   │   ├── SDKManager
+│   │       │   │   │   ├── DJISDKManager.html
+│   │       │   │   │   ├── ISDKManager_SDKManagerCallback.html
+│   │       │   │   │   └── SDKManager.html
+│   │       │   │   └── VirtualStickManager
+│   │       │   │       ├── DJIVirtualStickManager.html
+│   │       │   │       ├── DJIVirtualStickManager_DJIStick.html
+│   │       │   │       ├── DJIVirtualStickManager_VirtualStickStateListener.html
+│   │       │   │       ├── VirtualStickManager.html
+│   │       │   │       ├── VirtualStickManager_DJIStick.html
+│   │       │   │       └── VirtualStickManager_VirtualStickStateListener.html
+│   │       │   ├── fonts
+│   │       │   │   ├── Gotham
+│   │       │   │   │   ├── Bold
+│   │       │   │   │   │   ├── Gotham-Bold.eot
+│   │       │   │   │   │   ├── Gotham-Bold.ttf
+│   │       │   │   │   │   └── Gotham-Bold.woff
+│   │       │   │   │   ├── Book
+│   │       │   │   │   │   ├── Gotham-Book.eot
+│   │       │   │   │   │   ├── Gotham-Book.ttf
+│   │       │   │   │   │   └── Gotham-Book.woff
+│   │       │   │   │   ├── Light
+│   │       │   │   │   │   ├── Gotham-Light.eot
+│   │       │   │   │   │   ├── Gotham-Light.ttf
+│   │       │   │   │   │   └── Gotham-Light.woff
+│   │       │   │   │   ├── Medium
+│   │       │   │   │   │   ├── Gotham-Medium.eot
+│   │       │   │   │   │   ├── Gotham-Medium.ttf
+│   │       │   │   │   │   └── Gotham-Medium.woff
+│   │       │   │   │   └── Ultra
+│   │       │   │   │       ├── Gotham-Ultra.eot
+│   │       │   │   │       ├── Gotham-Ultra.ttf
+│   │       │   │   │       └── Gotham-Ultra.woff
+│   │       │   │   ├── OpenSans
+│   │       │   │   │   ├── Bold
+│   │       │   │   │   │   ├── OpenSans-Bold.eot
+│   │       │   │   │   │   ├── OpenSans-Bold.svg
+│   │       │   │   │   │   ├── OpenSans-Bold.ttf
+│   │       │   │   │   │   ├── OpenSans-Bold.woff
+│   │       │   │   │   │   └── OpenSans-Bold.woff2
+│   │       │   │   │   ├── BoldItalic
+│   │       │   │   │   │   ├── OpenSans-BoldItalic.eot
+│   │       │   │   │   │   ├── OpenSans-BoldItalic.svg
+│   │       │   │   │   │   ├── OpenSans-BoldItalic.ttf
+│   │       │   │   │   │   ├── OpenSans-BoldItalic.woff
+│   │       │   │   │   │   └── OpenSans-BoldItalic.woff2
+│   │       │   │   │   ├── ExtraBold
+│   │       │   │   │   │   ├── OpenSans-ExtraBold.eot
+│   │       │   │   │   │   ├── OpenSans-ExtraBold.svg
+│   │       │   │   │   │   ├── OpenSans-ExtraBold.ttf
+│   │       │   │   │   │   ├── OpenSans-ExtraBold.woff
+│   │       │   │   │   │   └── OpenSans-ExtraBold.woff2
+│   │       │   │   │   ├── ExtraBoldItalic
+│   │       │   │   │   │   ├── OpenSans-ExtraBoldItalic.eot
+│   │       │   │   │   │   ├── OpenSans-ExtraBoldItalic.svg
+│   │       │   │   │   │   ├── OpenSans-ExtraBoldItalic.ttf
+│   │       │   │   │   │   ├── OpenSans-ExtraBoldItalic.woff
+│   │       │   │   │   │   └── OpenSans-ExtraBoldItalic.woff2
+│   │       │   │   │   ├── Italic
+│   │       │   │   │   │   ├── OpenSans-Italic.eot
+│   │       │   │   │   │   ├── OpenSans-Italic.svg
+│   │       │   │   │   │   ├── OpenSans-Italic.ttf
+│   │       │   │   │   │   ├── OpenSans-Italic.woff
+│   │       │   │   │   │   └── OpenSans-Italic.woff2
+│   │       │   │   │   ├── Light
+│   │       │   │   │   │   ├── OpenSans-Light.eot
+│   │       │   │   │   │   ├── OpenSans-Light.svg
+│   │       │   │   │   │   ├── OpenSans-Light.ttf
+│   │       │   │   │   │   ├── OpenSans-Light.woff
+│   │       │   │   │   │   └── OpenSans-Light.woff2
+│   │       │   │   │   ├── LightItalic
+│   │       │   │   │   │   ├── OpenSans-LightItalic.eot
+│   │       │   │   │   │   ├── OpenSans-LightItalic.svg
+│   │       │   │   │   │   ├── OpenSans-LightItalic.ttf
+│   │       │   │   │   │   ├── OpenSans-LightItalic.woff
+│   │       │   │   │   │   └── OpenSans-LightItalic.woff2
+│   │       │   │   │   ├── Regular
+│   │       │   │   │   │   ├── OpenSans-Regular.eot
+│   │       │   │   │   │   ├── OpenSans-Regular.svg
+│   │       │   │   │   │   ├── OpenSans-Regular.ttf
+│   │       │   │   │   │   ├── OpenSans-Regular.woff
+│   │       │   │   │   │   └── OpenSans-Regular.woff2
+│   │       │   │   │   ├── Semibold
+│   │       │   │   │   │   ├── OpenSans-Semibold.eot
+│   │       │   │   │   │   ├── OpenSans-Semibold.svg
+│   │       │   │   │   │   ├── OpenSans-Semibold.ttf
+│   │       │   │   │   │   ├── OpenSans-Semibold.woff
+│   │       │   │   │   │   └── OpenSans-Semibold.woff2
+│   │       │   │   │   └── SemiboldItalic
+│   │       │   │   │       ├── OpenSans-SemiboldItalic.eot
+│   │       │   │   │       ├── OpenSans-SemiboldItalic.svg
+│   │       │   │   │       ├── OpenSans-SemiboldItalic.ttf
+│   │       │   │   │       ├── OpenSans-SemiboldItalic.woff
+│   │       │   │   │       └── OpenSans-SemiboldItalic.woff2
+│   │       │   │   ├── bootstrap
+│   │       │   │   │   ├── glyphicons-halflings-regular.eot
+│   │       │   │   │   ├── glyphicons-halflings-regular.svg
+│   │       │   │   │   ├── glyphicons-halflings-regular.ttf
+│   │       │   │   │   ├── glyphicons-halflings-regular.woff
+│   │       │   │   │   └── glyphicons-halflings-regular.woff2
+│   │       │   │   └── fontawesome
+│   │       │   │       ├── FontAwesome.otf
+│   │       │   │       ├── fontawesome-webfont.eot
+│   │       │   │       ├── fontawesome-webfont.svg
+│   │       │   │       ├── fontawesome-webfont.ttf
+│   │       │   │       ├── fontawesome-webfont.woff
+│   │       │   │       └── fontawesome-webfont.woff2
+│   │       │   ├── images
+│   │       │   │   ├── dji-logo-foot.png
+│   │       │   │   ├── dji-logo@2x.png
+│   │       │   │   ├── favicon.png
+│   │       │   │   └── results_bg.png
+│   │       │   ├── index.html
+│   │       │   ├── javascripts
+│   │       │   │   ├── api.js
+│   │       │   │   ├── base
+│   │       │   │   │   ├── footer.js
+│   │       │   │   │   └── header.js
+│   │       │   │   ├── lib
+│   │       │   │   │   ├── bootstrap.js
+│   │       │   │   │   ├── jquery-2.1.4.min.js
+│   │       │   │   │   └── vue.min.js
+│   │       │   │   ├── search_index.js
+│   │       │   │   ├── searchdoc.js
+│   │       │   │   └── util
+│   │       │   │       ├── ajax-manager.js
+│   │       │   │       ├── cookie.js
+│   │       │   │       ├── searcher.js
+│   │       │   │       └── url-manager.js
+│   │       │   └── stylesheets
+│   │       │       ├── doc-app.css
+│   │       │       ├── doc-app.scss
+│   │       │       ├── doc-vendor.css
+│   │       │       ├── doc-vendor.scss
+│   │       │       ├── layout
+│   │       │       │   └── search_panel.scss
+│   │       │       └── lib
+│   │       │           ├── fontawesome.scss
+│   │       │           ├── highlight
+│   │       │           │   └── tomorrow.scss
+│   │       │           └── highlight.scss
+│   │       └── en
+│   │           ├── Components
+│   │           │   ├── DJICommonCallbacks
+│   │           │   │   ├── DJICommonCallbacks.html
+│   │           │   │   ├── DJICommonCallbacks_CompletionCallback.html
+│   │           │   │   ├── DJICommonCallbacks_CompletionCallbackWithParam.html
+│   │           │   │   ├── DJICommonCallbacks_CompletionCallbackWithTwoParamXY.html
+│   │           │   │   ├── DJICommonCallbacks_CompletionCallback_Interface.html
+│   │           │   │   ├── DJIKeyManager_KeyListener.html
+│   │           │   │   └── IKeyManager_KeyListener.html
+│   │           │   ├── DJIError
+│   │           │   │   └── DJIError.html
+│   │           │   ├── DJIError_DJILDMError
+│   │           │   │   └── DJIError_DJILDMError.html
+│   │           │   ├── DJIFlightRecordManager
+│   │           │   │   ├── DJIFlightRecordManager.html
+│   │           │   │   ├── DJIMegaphoneManager.html
+│   │           │   │   ├── DJIMegaphoneManager_FileInfo.html
+│   │           │   │   └── DJIMegaphoneManager_RealTimeTransimissionStateListener.html
+│   │           │   ├── DJISDKManager
+│   │           │   │   ├── DJISDKManager.html
+│   │           │   │   └── ISDKManager_SDKManagerCallback.html
+│   │           │   ├── FlightRecordManager
+│   │           │   │   ├── FlightLogManager.html
+│   │           │   │   ├── FlightRecordManager.html
+│   │           │   │   ├── IFlightLogManager.html
+│   │           │   │   ├── IMegaphoneManager.html
+│   │           │   │   ├── IMegaphoneManager_FileInfo.html
+│   │           │   │   ├── IMegaphoneManager_RealTimeTransimissionStateListener.html
+│   │           │   │   ├── MegaphoneManager.html
+│   │           │   │   ├── MegaphoneManager_FileInfo.html
+│   │           │   │   └── MegaphoneManager_RealTimeTransimissionStateListener.html
+│   │           │   ├── IAreaCodeManager
+│   │           │   │   ├── IAreaCodeManager.html
+│   │           │   │   ├── IAreaCodeManager_AreaCodeData.html
+│   │           │   │   └── IAreaCodeManager_AreaCodeData_AreaCodeChangeListener.html
+│   │           │   ├── IDataProtectionManager
+│   │           │   │   └── IDataProtectionManager.html
+│   │           │   ├── IDeviceHealthManager
+│   │           │   │   ├── IDeviceHealthManager.html
+│   │           │   │   ├── IDeviceHealthManager_DJIDeviceHealthInfo.html
+│   │           │   │   └── IDeviceHealthManager_DJIDeviceHealthInfoChangeListener.html
+│   │           │   ├── IDeviceStatusManager
+│   │           │   │   ├── IDeviceStatusManager.html
+│   │           │   │   └── IDeviceStatusManager_DJIDeviceStatusChangeListener.html
+│   │           │   ├── IFlightLogManager
+│   │           │   │   └── IFlightLogManager.html
+│   │           │   ├── IFlyZoneManager
+│   │           │   │   ├── IFlyZoneManager.html
+│   │           │   │   ├── IFlyZoneManager_FlySafeDatabaseInfo.html
+│   │           │   │   ├── IFlyZoneManager_FlySafeDatabaseListener.html
+│   │           │   │   ├── IFlyZoneManager_FlySafeNotificationListener.html
+│   │           │   │   ├── IFlyZoneManager_FlySafeReturnToHomeInformation.html
+│   │           │   │   ├── IFlyZoneManager_FlySafeTipInformation.html
+│   │           │   │   ├── IFlyZoneManager_FlyZoneInformation.html
+│   │           │   │   ├── IFlyZoneManager_FlyZoneLicenseInfo.html
+│   │           │   │   ├── IFlyZoneManager_FlyingSafetySeriousWarningInformation.html
+│   │           │   │   ├── IFlyZoneManager_FlyingSafetyWarningInformation.html
+│   │           │   │   └── IFlyZoneManager_MultiPolygonFlyZoneInformation.html
+│   │           │   ├── IIntelligentFlightManager
+│   │           │   │   ├── IIntelligentFlightManager.html
+│   │           │   │   ├── IIntelligentFlightManager_AutoSensingInfo.html
+│   │           │   │   ├── IIntelligentFlightManager_AutoSensingInfoListener.html
+│   │           │   │   ├── IIntelligentFlightManager_AutoSensingTarget.html
+│   │           │   │   ├── IIntelligentFlightManager_FlyToMissionManager_FlyToCapability.html
+│   │           │   │   ├── IIntelligentFlightManager_FlyToMissionManager_FlyToInfo.html
+│   │           │   │   ├── IIntelligentFlightManager_FlyToMissionManager_FlyToParam.html
+│   │           │   │   ├── IIntelligentFlightManager_FlyToMissionManager_FlyToTarget.html
+│   │           │   │   ├── IIntelligentFlightManager_IFlyToMissionManager.html
+│   │           │   │   ├── IIntelligentFlightManager_IPOIMissionManager.html
+│   │           │   │   ├── IIntelligentFlightManager_ISmartTrackMissionManager.html
+│   │           │   │   ├── IIntelligentFlightManager_ISpotLightManager.html
+│   │           │   │   ├── IIntelligentFlightManager_IntelligentFlightInfo.html
+│   │           │   │   ├── IIntelligentFlightManager_IntelligentFlightInfoListener.html
+│   │           │   │   ├── IIntelligentFlightManager_IntelligentModel.html
+│   │           │   │   ├── IIntelligentFlightManager_POIMissionManager_POICapability.html
+│   │           │   │   ├── IIntelligentFlightManager_POIMissionManager_POIInfo.html
+│   │           │   │   ├── IIntelligentFlightManager_POIMissionManager_POIParam.html
+│   │           │   │   ├── IIntelligentFlightManager_POIMissionManager_POITarget.html
+│   │           │   │   ├── IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackCapability.html
+│   │           │   │   ├── IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackInfo.html
+│   │           │   │   ├── IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackParam.html
+│   │           │   │   ├── IIntelligentFlightManager_SmartTrackMissionManager_SmartTrackTarget.html
+│   │           │   │   ├── IIntelligentFlightManager_SpotLightManager_SpotLightCapability.html
+│   │           │   │   └── IIntelligentFlightManager_SpotLightManager_SpotLightTarget.html
+│   │           │   ├── IKeyManager
+│   │           │   │   ├── DJIKey.html
+│   │           │   │   ├── DJIKeyInfo.html
+│   │           │   │   ├── DJIValue.html
+│   │           │   │   ├── IKeyManager.html
+│   │           │   │   ├── IKeyManager_KeyListener.html
+│   │           │   │   ├── KeyTools.html
+│   │           │   │   ├── Key_Airlink_AirlinkKey.html
+│   │           │   │   ├── Key_Airlink_DJIAirlinkKey.html
+│   │           │   │   ├── Key_Battery_BatteryKey.html
+│   │           │   │   ├── Key_Battery_DJIBatteryKey.html
+│   │           │   │   ├── Key_Camera_CameraKey.html
+│   │           │   │   ├── Key_Camera_DJICameraKey.html
+│   │           │   │   ├── Key_FlightController_DJIFlightControllerKey.html
+│   │           │   │   ├── Key_FlightController_FlightControllerKey.html
+│   │           │   │   ├── Key_Gimbal_DJIGimbalKey.html
+│   │           │   │   ├── Key_Gimbal_GimbalKey.html
+│   │           │   │   ├── Key_Product_DJIProductKey.html
+│   │           │   │   ├── Key_Product_ProductKey.html
+│   │           │   │   ├── Key_RemoteController_DJIRemoteControllerKey.html
+│   │           │   │   ├── Key_RemoteController_RemoteControllerKey.html
+│   │           │   │   ├── Key_RtkBaseStation_DJIRtkBaseStationKey.html
+│   │           │   │   ├── Value_Accessory_Struct_PlayingAudioFileInfo.html
+│   │           │   │   ├── Value_Airlink_Struct_FrequencyInterference.html
+│   │           │   │   ├── Value_Airlink_Struct_WlmDongleInfoMsg.html
+│   │           │   │   ├── Value_Airlink_Struct_WlmDongleState.html
+│   │           │   │   ├── Value_Airlink_Struct_WlmLinkQualityMsg.html
+│   │           │   │   ├── Value_Battery_Struct_BatteryLedsControlMsg.html
+│   │           │   │   ├── Value_Camera_Struct_CameraHybridZoomSpec.html
+│   │           │   │   ├── Value_Camera_Struct_CameraStorageInfo.html
+│   │           │   │   ├── Value_Camera_Struct_CameraStorageInfos.html
+│   │           │   │   ├── Value_Camera_Struct_CameraStorageState.html
+│   │           │   │   ├── Value_Camera_Struct_CameraStorageStateMsg.html
+│   │           │   │   ├── Value_Camera_Struct_CameraStreamSettingsMsg.html
+│   │           │   │   ├── Value_Camera_Struct_CameraWatermarkSettings.html
+│   │           │   │   ├── Value_Camera_Struct_CameraWhiteBalance.html
+│   │           │   │   ├── Value_Camera_Struct_CustomExpandNameSettings.html
+│   │           │   │   ├── Value_Camera_Struct_DateTime.html
+│   │           │   │   ├── Value_Camera_Struct_GeneratedMediaFileInfo.html
+│   │           │   │   ├── Value_Camera_Struct_IsRecordingInfoMsg.html
+│   │           │   │   ├── Value_Camera_Struct_LaserMeasureInformationMsg.html
+│   │           │   │   ├── Value_Camera_Struct_MSDKCameraStreamSettings.html
+│   │           │   │   ├── Value_Camera_Struct_MSDKZoomRatiosRange.html
+│   │           │   │   ├── Value_Camera_Struct_MultiSpectralFusionDisplayRangeMsg.html
+│   │           │   │   ├── Value_Camera_Struct_PhotoIntervalShootSettings.html
+│   │           │   │   ├── Value_Camera_Struct_SuperResolutionStateMsg.html
+│   │           │   │   ├── Value_Camera_Struct_ThermalAreaTemperatureAggregationsMsg.html
+│   │           │   │   ├── Value_Camera_Struct_ThermalGainModeTemperatureRangeMsg.html
+│   │           │   │   ├── Value_Camera_Struct_VideoPreRecordDurationMsg.html
+│   │           │   │   ├── Value_Camera_Struct_VideoRecordPlanMsg.html
+│   │           │   │   ├── Value_Camera_Struct_VideoResolutionFrameRate.html
+│   │           │   │   ├── Value_Camera_Struct_WatermarkDisplayContentSettings.html
+│   │           │   │   ├── Value_Camera_Struct_ZoomPointTargetMsg.html
+│   │           │   │   ├── Value_Common_Struct_Attitude.html
+│   │           │   │   ├── Value_Common_Struct_Date.html
+│   │           │   │   ├── Value_Common_Struct_DoubleMinMax.html
+│   │           │   │   ├── Value_Common_Struct_DoublePoint2D.html
+│   │           │   │   ├── Value_Common_Struct_DoubleRect.html
+│   │           │   │   ├── Value_Common_Struct_IntValueConfig.html
+│   │           │   │   ├── Value_Common_Struct_LocationCoordinate2D.html
+│   │           │   │   ├── Value_Common_Struct_LocationCoordinate3D.html
+│   │           │   │   ├── Value_Common_Struct_RCAuthorityLockControlMsg.html
+│   │           │   │   ├── Value_Common_Struct_RCAuthorityModeMsg.html
+│   │           │   │   ├── Value_Common_Struct_RectF.html
+│   │           │   │   ├── Value_Common_Struct_Velocity3D.html
+│   │           │   │   ├── Value_FlightController_GoHomeInfo.html
+│   │           │   │   ├── Value_FlightController_LightGimbalAdjustInfo.html
+│   │           │   │   ├── Value_FlightController_LightGimbalTotalAdjustInfo.html
+│   │           │   │   ├── Value_FlightController_LookAtInfo.html
+│   │           │   │   ├── Value_FlightController_Struct_AccessLockerV1DeviceState.html
+│   │           │   │   ├── Value_FlightController_Struct_AccessLockerV1EncryptionState.html
+│   │           │   │   ├── Value_FlightController_Struct_AccessLockerV1ModifyUserAccountInfo.html
+│   │           │   │   ├── Value_FlightController_Struct_AccessLockerV1ResetUserAccountInfo.html
+│   │           │   │   ├── Value_FlightController_Struct_AccessLockerV1SetupUserAccountInfo.html
+│   │           │   │   ├── Value_FlightController_Struct_AccessLockerV1VerifyUserAccountInfo.html
+│   │           │   │   ├── Value_FlightController_Struct_AirSenseAirplaneState.html
+│   │           │   │   ├── Value_FlightController_Struct_AirSenseSystemInformation.html
+│   │           │   │   ├── Value_FlightController_Struct_GoHomeAssessment.html
+│   │           │   │   ├── Value_FlightController_Struct_IMUCalibrationHint.html
+│   │           │   │   ├── Value_FlightController_Struct_IMUState.html
+│   │           │   │   ├── Value_FlightController_Struct_LEDsSettings.html
+│   │           │   │   ├── Value_FlightController_Struct_MultiGimbalSyncControlMsg.html
+│   │           │   │   ├── Value_FlightController_Struct_MultiGimbalSyncStatus.html
+│   │           │   │   ├── Value_Gimbal_Struct_GimbalAngleRotation.html
+│   │           │   │   ├── Value_Gimbal_Struct_GimbalAttitudeRange.html
+│   │           │   │   ├── Value_Gimbal_Struct_GimbalCalibrationState.html
+│   │           │   │   ├── Value_Gimbal_Struct_GimbalSpeedRotation.html
+│   │           │   │   ├── Value_RemoteController_Struct_MultiRCFlightControlAuthOwnerMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RCAuthorityLostPushMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RCModeChannelTypeMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RcFirmwareInfo.html
+│   │           │   │   ├── Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html
+│   │           │   │   ├── Value_RemoteController_Struct_RcMultiStatusMsg.html
+│   │           │   │   └── Value_RemoteController_Struct_RcParamChargeRemainingInfo.html
+│   │           │   ├── ILDMManager
+│   │           │   │   └── ILDMManager.html
+│   │           │   ├── ILTEManager
+│   │           │   │   ├── ILTEManager.html
+│   │           │   │   ├── ILTEManager_LTEAuthenticationInfo.html
+│   │           │   │   ├── ILTEManager_LTEAuthenticationInfoListener.html
+│   │           │   │   ├── ILTEManager_LTEDongleInfoListener.html
+│   │           │   │   ├── ILTEManager_LTELinkInfo.html
+│   │           │   │   ├── ILTEManager_LTELinkInfoListener.html
+│   │           │   │   └── ILTEManager_LTEPrivatizationServerInfo.html
+│   │           │   ├── IMediaDataCenter
+│   │           │   │   ├── ICameraStreamManager.html
+│   │           │   │   ├── ICameraStreamManager_AvailableCameraUpdatedListener.html
+│   │           │   │   ├── ICameraStreamManager_CameraFrameListener.html
+│   │           │   │   ├── ICameraStreamManager_OnAvailableCameraUpdatedListener.html
+│   │           │   │   ├── ICameraStreamManager_OnCameraFrameListener.html
+│   │           │   │   ├── ICameraStreamManager_OnReceiveStreamListener.html
+│   │           │   │   ├── ICameraStreamManager_PinPoint.html
+│   │           │   │   ├── ICameraStreamManager_PinPointInfo.html
+│   │           │   │   ├── ICameraStreamManager_ReceiveStreamListener.html
+│   │           │   │   ├── ICameraStreamManager_StreamInfo.html
+│   │           │   │   ├── ILiveStreamManager.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_AgoraSettings.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_AgoraSettings_Builder.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_Builder.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_GB28181Settings.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_GB28181Settings_Builder.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_RtmpSettings.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_RtmpSettings_Builder.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_RtspSettings.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamSettings_RtspSettings_Builder.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamStatus.html
+│   │           │   │   ├── ILiveStreamManager_LiveStreamStatusListener.html
+│   │           │   │   ├── ILiveStreamManager_VideoResolution.html
+│   │           │   │   ├── IMediaDataCenter.html
+│   │           │   │   ├── IMediaManager.html
+│   │           │   │   ├── IMediaManager_MediaFile.html
+│   │           │   │   ├── IMediaManager_MediaFileDownloadListener.html
+│   │           │   │   ├── IMediaManager_MediaFileListData.html
+│   │           │   │   ├── IMediaManager_MediaFileListDataSource.html
+│   │           │   │   ├── IMediaManager_MediaFileListDataSource_Builder.html
+│   │           │   │   ├── IMediaManager_MediaFileListStateListener.html
+│   │           │   │   ├── IMediaManager_MediaFrameListener.html
+│   │           │   │   ├── IMediaManager_PullMediaFileListParam.html
+│   │           │   │   ├── IMediaManager_PullMediaFileListParam_Builder.html
+│   │           │   │   ├── IMediaManager_VideoPlayStateListener.html
+│   │           │   │   ├── IMediaManager_VideoPlayStatus.html
+│   │           │   │   ├── IVideoStreamManager.html
+│   │           │   │   ├── IVideoStreamManager_IVideoChannel.html
+│   │           │   │   ├── IVideoStreamManager_IVideoChannel_StreamDataListener.html
+│   │           │   │   ├── IVideoStreamManager_IVideoChannel_VideoChannelStateChangeListener.html
+│   │           │   │   ├── IVideoStreamManager_IVideoDecoder.html
+│   │           │   │   ├── IVideoStreamManager_IVideoDecoder_DecoderStateChangeListener.html
+│   │           │   │   ├── IVideoStreamManager_IVideoDecoder_YuvDataListener.html
+│   │           │   │   ├── IVideoStreamManager_IVideoFrame.html
+│   │           │   │   ├── IVideoStreamManager_StreamSource.html
+│   │           │   │   ├── IVideoStreamManager_StreamSourceListener.html
+│   │           │   │   └── IVideoStreamManager_StreamSource_PhysicalDeviceType.html
+│   │           │   ├── IMegaphoneManager
+│   │           │   │   ├── IMegaphoneManager.html
+│   │           │   │   ├── IMegaphoneManager_FileInfo.html
+│   │           │   │   ├── IMegaphoneManager_MegaphoneInfo.html
+│   │           │   │   ├── IMegaphoneManager_MegaphoneInfoListener.html
+│   │           │   │   └── IMegaphoneManager_RealTimeTransimissionStateListener.html
+│   │           │   ├── IPayloadCenter
+│   │           │   │   ├── IIntelligentBoxManager.html
+│   │           │   │   ├── IIntelligentBoxManager_IntelligentBoxAppInfo.html
+│   │           │   │   ├── IIntelligentBoxManager_IntelligentBoxInfo.html
+│   │           │   │   ├── IIntelligentBoxManager_IntelligentBoxInfoListener.html
+│   │           │   │   ├── IPayloadCenter.html
+│   │           │   │   ├── IPayloadManager.html
+│   │           │   │   ├── IPayloadManager_FloatingWindowWidget.html
+│   │           │   │   ├── IPayloadManager_IconFilePath.html
+│   │           │   │   ├── IPayloadManager_PayloadBasicInfo.html
+│   │           │   │   ├── IPayloadManager_PayloadBasicInfoListener.html
+│   │           │   │   ├── IPayloadManager_PayloadDataListener.html
+│   │           │   │   ├── IPayloadManager_PayloadWidget.html
+│   │           │   │   ├── IPayloadManager_PayloadWidgetInfo.html
+│   │           │   │   ├── IPayloadManager_PayloadWidgetInfoListener.html
+│   │           │   │   ├── IPayloadManager_SpeakerWidget.html
+│   │           │   │   ├── IPayloadManager_SubItems.html
+│   │           │   │   ├── IPayloadManager_TextInputBoxWidget.html
+│   │           │   │   ├── Value_Payload_Struct_CustomizeRcButtonConfig.html
+│   │           │   │   └── Value_Payload_Struct_WidgetValue.html
+│   │           │   ├── IPerceptionManager
+│   │           │   │   ├── IPerceptionManager.html
+│   │           │   │   ├── IPerceptionManager_ObstacleData.html
+│   │           │   │   ├── IPerceptionManager_ObstacleDataListener.html
+│   │           │   │   ├── IPerceptionManager_PerceptionInfo.html
+│   │           │   │   ├── IPerceptionManager_PerceptionInformationListener.html
+│   │           │   │   ├── IRadarManager.html
+│   │           │   │   ├── IRadarManager_RadarInformation.html
+│   │           │   │   └── IRadarManager_RadarInformationListener.html
+│   │           │   ├── IPipelineManager
+│   │           │   │   ├── IPipelineManager.html
+│   │           │   │   ├── IPipelineManager_DataResult.html
+│   │           │   │   ├── IPipelineManager_Pipeline.html
+│   │           │   │   └── IPipelineManager_PipelineConnectionListener.html
+│   │           │   ├── IRTKCenter
+│   │           │   │   ├── INetworkRTKManager.html
+│   │           │   │   ├── INetworkRTKManager_NetworkServiceInfoListener.html
+│   │           │   │   ├── IRTKCenter.html
+│   │           │   │   ├── IRTKCenter_RTKBaseListener.html
+│   │           │   │   ├── IRTKCenter_RTKLocationInfo.html
+│   │           │   │   ├── IRTKCenter_RTKLocationInfoListener.html
+│   │           │   │   ├── IRTKCenter_RTKSystemStateListener.html
+│   │           │   │   ├── IRTKStationManager.html
+│   │           │   │   ├── IRTKStationManager_ConnectedRTKStationInfoListener.html
+│   │           │   │   ├── IRTKStationManager_ConnectedTKStationInfo.html
+│   │           │   │   ├── IRTKStationManager_RTKStationConnectStatusListener.html
+│   │           │   │   ├── IRTKStationManager_SearchStationListener.html
+│   │           │   │   ├── RTKCenter_RTKSystemState.html
+│   │           │   │   ├── Value_RtkBaseStation_Struct_RTKBaseStationConnectInfo.html
+│   │           │   │   ├── Value_RtkBaseStation_Struct_RTKCustomNetworkSetting.html
+│   │           │   │   ├── Value_RtkMobileStation_Struct_RTKLocation.html
+│   │           │   │   ├── Value_RtkMobileStation_Struct_RTKReceiverInfo.html
+│   │           │   │   └── Value_RtkMobileStation_Struct_RTKSatelliteInfo.html
+│   │           │   ├── ISDKManager
+│   │           │   │   ├── ISDKManager.html
+│   │           │   │   └── ISDKManager_SDKManagerCallback.html
+│   │           │   ├── ISimulatorManager
+│   │           │   │   ├── ISimulatorManager.html
+│   │           │   │   ├── ISimulatorManager_InitializationSettings.html
+│   │           │   │   ├── ISimulatorManager_SimulatorState.html
+│   │           │   │   └── ISimulatorManager_SimulatorStatusListener.html
+│   │           │   ├── IUASRemoteIDManager
+│   │           │   │   ├── IUASRemoteIDManager.html
+│   │           │   │   ├── IUASRemoteIDManager_CClassStatusListener.html
+│   │           │   │   ├── IUASRemoteIDManager_ElectronicIDStatus.html
+│   │           │   │   ├── IUASRemoteIDManager_ElectronicIDStatusListener.html
+│   │           │   │   ├── IUASRemoteIDManager_OperatorRegistrationNumberStatus.html
+│   │           │   │   ├── IUASRemoteIDManager_OperatorRegistrationNumberStatusListener.html
+│   │           │   │   ├── IUASRemoteIDManager_RealNameRegistrationStatus.html
+│   │           │   │   ├── IUASRemoteIDManager_RealNameRegistrationStatusListener.html
+│   │           │   │   ├── IUASRemoteIDManager_UARegistrationNumberStatus.html
+│   │           │   │   ├── IUASRemoteIDManager_UARegistrationNumberStatusListener.html
+│   │           │   │   ├── IUASRemoteIDManager_UASRemoteIDStatus.html
+│   │           │   │   └── IUASRemoteIDManager_UASRemoteIDStatusListener.html
+│   │           │   ├── IUpgradeManager
+│   │           │   │   ├── IUpgradeManager.html
+│   │           │   │   ├── IUpgradeManager_FirmwareInformation.html
+│   │           │   │   ├── IUpgradeManager_UpgradeInfo.html
+│   │           │   │   ├── IUpgradeManager_UpgradeInfoListener.html
+│   │           │   │   ├── IUpgradeManager_UpgradeableComponent.html
+│   │           │   │   └── IUpgradeManager_UpgradeableComponentListener.html
+│   │           │   ├── IUserAccountManager
+│   │           │   │   ├── IUserAccountManager.html
+│   │           │   │   ├── IUserAccountManager_LoginInfo.html
+│   │           │   │   └── IUserAccountManager_LoginInfoUpdateListener.html
+│   │           │   ├── IVirtualStickManager
+│   │           │   │   ├── IVirtualStickManager.html
+│   │           │   │   ├── IVirtualStickManager_DJIStick.html
+│   │           │   │   ├── IVirtualStickManager_VirtualStickRange.html
+│   │           │   │   ├── IVirtualStickManager_VirtualStickState.html
+│   │           │   │   ├── IVirtualStickManager_VirtualStickStateListener.html
+│   │           │   │   └── Value_FlightController_Struct_VirtualStickFlightControlParam.html
+│   │           │   ├── IWaypointMissionManager
+│   │           │   │   ├── IWPMZManager.html
+│   │           │   │   ├── IWaypointMissionManager.html
+│   │           │   │   ├── IWaypointMissionManager_BreakPointInfo.html
+│   │           │   │   ├── IWaypointMissionManager_WaylineExecutingInfo.html
+│   │           │   │   ├── IWaypointMissionManager_WaylineExecutingInfoListener.html
+│   │           │   │   ├── IWaypointMissionManager_WaypointActionListener.html
+│   │           │   │   └── IWaypointMissionManager_WaypointMissionExecuteStateListener.html
+│   │           │   ├── KeyManager
+│   │           │   │   ├── DJIKey.html
+│   │           │   │   ├── DJIKeyManager.html
+│   │           │   │   ├── DJIValue.html
+│   │           │   │   ├── Key_Airlink_DJIAirlinkKey.html
+│   │           │   │   ├── Key_Battery_DJIBatteryKey.html
+│   │           │   │   ├── Key_Camera_DJICameraKey.html
+│   │           │   │   ├── Key_FlightAssistant_DJIFlightAssistantKey.html
+│   │           │   │   ├── Key_FlightController_DJIFlightControllerKey.html
+│   │           │   │   ├── Key_Gimbal_DJIGimbalKey.html
+│   │           │   │   ├── Key_Product_DJIProductKey.html
+│   │           │   │   ├── Key_RemoteController_DJIRemoteControllerKey.html
+│   │           │   │   ├── Key_RtkBaseStation_DJIRtkBaseStationKey.html
+│   │           │   │   ├── Value_Accessory_Struct_PlayingAudioFileInfo.html
+│   │           │   │   ├── Value_Airlink_Struct_FrequencyInterference.html
+│   │           │   │   ├── Value_Battery_Struct_BatteryLedsControlMsg.html
+│   │           │   │   ├── Value_Camera_Struct_CameraHybridZoomSpec.html
+│   │           │   │   ├── Value_Camera_Struct_CameraStorageState.html
+│   │           │   │   ├── Value_Camera_Struct_CameraStorageStateMsg.html
+│   │           │   │   ├── Value_Camera_Struct_CameraStreamSettingsMsg.html
+│   │           │   │   ├── Value_Camera_Struct_CameraWatermarkSettings.html
+│   │           │   │   ├── Value_Camera_Struct_CustomExpandNameSettings.html
+│   │           │   │   ├── Value_Camera_Struct_DateTime.html
+│   │           │   │   ├── Value_Camera_Struct_GeneratedMediaFileInfo.html
+│   │           │   │   ├── Value_Camera_Struct_PhotoIntervalShootSettings.html
+│   │           │   │   ├── Value_Camera_Struct_SuperResolutionStateMsg.html
+│   │           │   │   ├── Value_Camera_Struct_ThermalAreaTemperatureAggregationsMsg.html
+│   │           │   │   ├── Value_Camera_Struct_ThermalGainModeTemperatureRangeMsg.html
+│   │           │   │   ├── Value_Camera_Struct_VideoResolutionFrameRate.html
+│   │           │   │   ├── Value_Camera_Struct_WatermarkDisplayContentSettings.html
+│   │           │   │   ├── Value_Common_Struct_Attitude.html
+│   │           │   │   ├── Value_Common_Struct_Date.html
+│   │           │   │   ├── Value_Common_Struct_DoubleMinMax.html
+│   │           │   │   ├── Value_Common_Struct_DoublePoint2D.html
+│   │           │   │   ├── Value_Common_Struct_DoubleRect.html
+│   │           │   │   ├── Value_Common_Struct_IntValueConfig.html
+│   │           │   │   ├── Value_Common_Struct_LocationCoordinate2D.html
+│   │           │   │   ├── Value_Common_Struct_RCAuthorityLockControlMsg.html
+│   │           │   │   ├── Value_Common_Struct_RCAuthorityModeMsg.html
+│   │           │   │   ├── Value_Common_Struct_RectF.html
+│   │           │   │   ├── Value_Common_Struct_Velocity3D.html
+│   │           │   │   ├── Value_FlightController_Struct_GoHomeAssessment.html
+│   │           │   │   ├── Value_FlightController_Struct_IMUState.html
+│   │           │   │   ├── Value_FlightController_Struct_LEDsSettings.html
+│   │           │   │   ├── Value_FlightController_Struct_RemoteControllerFlightModeMsg.html
+│   │           │   │   ├── Value_Gimbal_Struct_GimbalAngleRotation.html
+│   │           │   │   ├── Value_Gimbal_Struct_GimbalAttitudeRange.html
+│   │           │   │   ├── Value_Gimbal_Struct_GimbalCalibrationState.html
+│   │           │   │   ├── Value_Gimbal_Struct_GimbalSpeedRotation.html
+│   │           │   │   ├── Value_RemoteController_Struct_MultiRCFlightControlAuthOwnerMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RCAuthorityLockControlMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RCAuthorityLostPushMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RCAuthorityModeMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RCModeChannelTypeMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RcControllerModeMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RcFiveDimensionPressedStatus.html
+│   │           │   │   ├── Value_RemoteController_Struct_RcMultiStatusMsg.html
+│   │           │   │   ├── Value_RemoteController_Struct_RcParamChargeRemainingInfo.html
+│   │           │   │   ├── Value_RtkBaseStation_Struct_NetworkRTKParam.html
+│   │           │   │   └── Value_RtkBaseStation_Struct_RTKReferenceStationSourceMsg.html
+│   │           │   ├── LDMManager
+│   │           │   │   ├── DJILDMManager.html
+│   │           │   │   ├── ILDMManager.html
+│   │           │   │   └── LDMManager.html
+│   │           │   ├── SDKManager
+│   │           │   │   ├── DJISDKManager.html
+│   │           │   │   ├── ISDKManager_SDKManagerCallback.html
+│   │           │   │   └── SDKManager.html
+│   │           │   └── VirtualStickManager
+│   │           │       ├── DJIVirtualStickManager.html
+│   │           │       ├── DJIVirtualStickManager_DJIStick.html
+│   │           │       ├── DJIVirtualStickManager_VirtualStickStateListener.html
+│   │           │       ├── IVirtualStickManager.html
+│   │           │       ├── IVirtualStickManager_DJIStick.html
+│   │           │       ├── IVirtualStickManager_VirtualStickStateListener.html
+│   │           │       ├── VirtualStickManager.html
+│   │           │       ├── VirtualStickManager_DJIStick.html
+│   │           │       └── VirtualStickManager_VirtualStickStateListener.html
+│   │           ├── fonts
+│   │           │   ├── Gotham
+│   │           │   │   ├── Bold
+│   │           │   │   │   ├── Gotham-Bold.eot
+│   │           │   │   │   ├── Gotham-Bold.ttf
+│   │           │   │   │   └── Gotham-Bold.woff
+│   │           │   │   ├── Book
+│   │           │   │   │   ├── Gotham-Book.eot
+│   │           │   │   │   ├── Gotham-Book.ttf
+│   │           │   │   │   └── Gotham-Book.woff
+│   │           │   │   ├── Light
+│   │           │   │   │   ├── Gotham-Light.eot
+│   │           │   │   │   ├── Gotham-Light.ttf
+│   │           │   │   │   └── Gotham-Light.woff
+│   │           │   │   ├── Medium
+│   │           │   │   │   ├── Gotham-Medium.eot
+│   │           │   │   │   ├── Gotham-Medium.ttf
+│   │           │   │   │   └── Gotham-Medium.woff
+│   │           │   │   └── Ultra
+│   │           │   │       ├── Gotham-Ultra.eot
+│   │           │   │       ├── Gotham-Ultra.ttf
+│   │           │   │       └── Gotham-Ultra.woff
+│   │           │   ├── OpenSans
+│   │           │   │   ├── Bold
+│   │           │   │   │   ├── OpenSans-Bold.eot
+│   │           │   │   │   ├── OpenSans-Bold.svg
+│   │           │   │   │   ├── OpenSans-Bold.ttf
+│   │           │   │   │   ├── OpenSans-Bold.woff
+│   │           │   │   │   └── OpenSans-Bold.woff2
+│   │           │   │   ├── BoldItalic
+│   │           │   │   │   ├── OpenSans-BoldItalic.eot
+│   │           │   │   │   ├── OpenSans-BoldItalic.svg
+│   │           │   │   │   ├── OpenSans-BoldItalic.ttf
+│   │           │   │   │   ├── OpenSans-BoldItalic.woff
+│   │           │   │   │   └── OpenSans-BoldItalic.woff2
+│   │           │   │   ├── ExtraBold
+│   │           │   │   │   ├── OpenSans-ExtraBold.eot
+│   │           │   │   │   ├── OpenSans-ExtraBold.svg
+│   │           │   │   │   ├── OpenSans-ExtraBold.ttf
+│   │           │   │   │   ├── OpenSans-ExtraBold.woff
+│   │           │   │   │   └── OpenSans-ExtraBold.woff2
+│   │           │   │   ├── ExtraBoldItalic
+│   │           │   │   │   ├── OpenSans-ExtraBoldItalic.eot
+│   │           │   │   │   ├── OpenSans-ExtraBoldItalic.svg
+│   │           │   │   │   ├── OpenSans-ExtraBoldItalic.ttf
+│   │           │   │   │   ├── OpenSans-ExtraBoldItalic.woff
+│   │           │   │   │   └── OpenSans-ExtraBoldItalic.woff2
+│   │           │   │   ├── Italic
+│   │           │   │   │   ├── OpenSans-Italic.eot
+│   │           │   │   │   ├── OpenSans-Italic.svg
+│   │           │   │   │   ├── OpenSans-Italic.ttf
+│   │           │   │   │   ├── OpenSans-Italic.woff
+│   │           │   │   │   └── OpenSans-Italic.woff2
+│   │           │   │   ├── Light
+│   │           │   │   │   ├── OpenSans-Light.eot
+│   │           │   │   │   ├── OpenSans-Light.svg
+│   │           │   │   │   ├── OpenSans-Light.ttf
+│   │           │   │   │   ├── OpenSans-Light.woff
+│   │           │   │   │   └── OpenSans-Light.woff2
+│   │           │   │   ├── LightItalic
+│   │           │   │   │   ├── OpenSans-LightItalic.eot
+│   │           │   │   │   ├── OpenSans-LightItalic.svg
+│   │           │   │   │   ├── OpenSans-LightItalic.ttf
+│   │           │   │   │   ├── OpenSans-LightItalic.woff
+│   │           │   │   │   └── OpenSans-LightItalic.woff2
+│   │           │   │   ├── Regular
+│   │           │   │   │   ├── OpenSans-Regular.eot
+│   │           │   │   │   ├── OpenSans-Regular.svg
+│   │           │   │   │   ├── OpenSans-Regular.ttf
+│   │           │   │   │   ├── OpenSans-Regular.woff
+│   │           │   │   │   └── OpenSans-Regular.woff2
+│   │           │   │   ├── Semibold
+│   │           │   │   │   ├── OpenSans-Semibold.eot
+│   │           │   │   │   ├── OpenSans-Semibold.svg
+│   │           │   │   │   ├── OpenSans-Semibold.ttf
+│   │           │   │   │   ├── OpenSans-Semibold.woff
+│   │           │   │   │   └── OpenSans-Semibold.woff2
+│   │           │   │   └── SemiboldItalic
+│   │           │   │       ├── OpenSans-SemiboldItalic.eot
+│   │           │   │       ├── OpenSans-SemiboldItalic.svg
+│   │           │   │       ├── OpenSans-SemiboldItalic.ttf
+│   │           │   │       ├── OpenSans-SemiboldItalic.woff
+│   │           │   │       └── OpenSans-SemiboldItalic.woff2
+│   │           │   ├── bootstrap
+│   │           │   │   ├── glyphicons-halflings-regular.eot
+│   │           │   │   ├── glyphicons-halflings-regular.svg
+│   │           │   │   ├── glyphicons-halflings-regular.ttf
+│   │           │   │   ├── glyphicons-halflings-regular.woff
+│   │           │   │   └── glyphicons-halflings-regular.woff2
+│   │           │   └── fontawesome
+│   │           │       ├── FontAwesome.otf
+│   │           │       ├── fontawesome-webfont.eot
+│   │           │       ├── fontawesome-webfont.svg
+│   │           │       ├── fontawesome-webfont.ttf
+│   │           │       ├── fontawesome-webfont.woff
+│   │           │       └── fontawesome-webfont.woff2
+│   │           ├── images
+│   │           │   ├── dji-logo-foot.png
+│   │           │   ├── dji-logo@2x.png
+│   │           │   ├── favicon.png
+│   │           │   └── results_bg.png
+│   │           ├── index.html
+│   │           ├── javascripts
+│   │           │   ├── api.js
+│   │           │   ├── base
+│   │           │   │   ├── footer.js
+│   │           │   │   └── header.js
+│   │           │   ├── lib
+│   │           │   │   ├── bootstrap.js
+│   │           │   │   ├── jquery-2.1.4.min.js
+│   │           │   │   └── vue.min.js
+│   │           │   ├── search_index.js
+│   │           │   ├── searchdoc.js
+│   │           │   └── util
+│   │           │       ├── ajax-manager.js
+│   │           │       ├── cookie.js
+│   │           │       ├── searcher.js
+│   │           │       └── url-manager.js
+│   │           └── stylesheets
+│   │               ├── doc-app.css
+│   │               ├── doc-app.scss
+│   │               ├── doc-vendor.css
+│   │               ├── doc-vendor.scss
+│   │               ├── layout
+│   │               │   └── search_panel.scss
+│   │               └── lib
+│   │                   ├── fontawesome.scss
+│   │                   ├── highlight
+│   │                   │   └── tomorrow.scss
+│   │                   └── highlight.scss
+│   ├── LICENSE.txt
+│   ├── README.md
+│   ├── README_CN.md
+│   └── SampleCode-V5
+│       ├── android-sdk-v5-as
+│       │   ├── .gradle
+│       │   │   ├── 7.6.2
+│       │   │   │   ├── checksums
+│       │   │   │   │   ├── checksums.lock
+│       │   │   │   │   ├── md5-checksums.bin
+│       │   │   │   │   └── sha1-checksums.bin
+│       │   │   │   ├── dependencies-accessors
+│       │   │   │   │   ├── dependencies-accessors.lock
+│       │   │   │   │   └── gc.properties
+│       │   │   │   ├── fileChanges
+│       │   │   │   │   └── last-build.bin
+│       │   │   │   ├── fileHashes
+│       │   │   │   │   └── fileHashes.lock
+│       │   │   │   ├── gc.properties
+│       │   │   │   └── vcsMetadata
+│       │   │   ├── buildOutputCleanup
+│       │   │   │   ├── buildOutputCleanup.lock
+│       │   │   │   └── cache.properties
+│       │   │   └── vcs-1
+│       │   │       └── gc.properties
+│       │   ├── build.gradle
+│       │   ├── dependencies.gradle
+│       │   ├── gradle
+│       │   │   └── wrapper
+│       │   │       ├── gradle-wrapper.jar
+│       │   │       └── gradle-wrapper.properties
+│       │   ├── gradle.properties
+│       │   ├── gradlew
+│       │   ├── gradlew.bat
+│       │   ├── local.properties
+│       │   ├── msdkkeystore.jks
+│       │   └── settings.gradle
+│       ├── android-sdk-v5-sample
+│       │   ├── build.gradle
+│       │   └── src
+│       │       └── main
+│       │           ├── AndroidManifest.xml
+│       │           ├── assets
+│       │           │   ├── apk
+│       │           │   │   └── app-debug.apk
+│       │           │   ├── flysafe
+│       │           │   │   ├── France.json
+│       │           │   │   └── de.geojson
+│       │           │   ├── mop
+│       │           │   │   ├── mopSample.jpeg
+│       │           │   │   └── mopSample.mp4
+│       │           │   └── waypointsample.kmz
+│       │           ├── java
+│       │           │   └── dji
+│       │           │       ├── barcode
+│       │           │       │   └── BarcodeProcessor.java
+│       │           │       ├── csv
+│       │           │       │   └── CsvExporter.java
+│       │           │       ├── ptp
+│       │           │       │   └── PtpPhotoManager.java
+│       │           │       ├── sampleV5
+│       │           │       │   └── aircraft
+│       │           │       │       ├── AircraftMSDKInfoFragment.kt
+│       │           │       │       ├── AircraftTestingToolsActivity.kt
+│       │           │       │       ├── DJIAircraftApplication.kt
+│       │           │       │       ├── DJIAircraftMainActivity.kt
+│       │           │       │       ├── DJIApplication.kt
+│       │           │       │       ├── DJIMainActivity.kt
+│       │           │       │       ├── DroneScanActivity.java
+│       │           │       │       ├── TestToolsVM.kt
+│       │           │       │       ├── TestingToolsActivity.kt
+│       │           │       │       ├── UsbAttachActivity.java
+│       │           │       │       ├── data
+│       │           │       │       ├── keyvalue
+│       │           │       │       ├── models
+│       │           │       │       ├── pages
+│       │           │       │       ├── util
+│       │           │       │       ├── utils
+│       │           │       │       ├── views
+│       │           │       │       └── virtualstick
+│       │           │       └── sharing
+│       │           │           └── FileSharingHelper.java
+│       │           └── res
+│       │               ├── color
+│       │               │   └── selector_enable_button.xml
+│       │               ├── drawable
+│       │               │   ├── aircraft.png
+│       │               │   ├── back_button_disable.png
+│       │               │   ├── back_button_normal.png
+│       │               │   ├── back_button_press.png
+│       │               │   ├── bg_border_gray.xml
+│       │               │   ├── bg_border_gray_dotted.xml
+│       │               │   ├── bg_dialog_black_radius_15.xml
+│       │               │   ├── bg_edit_common.xml
+│       │               │   ├── bg_oval_red.xml
+│       │               │   ├── bg_selector_common.xml
+│       │               │   ├── bg_stroke_common.xml
+│       │               │   ├── bg_stroke_common_with_color.xml
+│       │               │   ├── black_rectangle.9.png
+│       │               │   ├── btn_bg_stroke_common_with_color.xml
+│       │               │   ├── btn_bg_stroke_common_with_gray.xml
+│       │               │   ├── continue_setting_overlay.png
+│       │               │   ├── divider_camera_stream_list.xml
+│       │               │   ├── home_point.png
+│       │               │   ├── ic_action_playback_repeat.png
+│       │               │   ├── ic_action_playback_repeat_1.png
+│       │               │   ├── ic_media_pause.png
+│       │               │   ├── ic_media_play.png
+│       │               │   ├── ic_media_stop.png
+│       │               │   ├── ic_mic_white_36dp.png
+│       │               │   ├── ic_official_speaker_real_time_start.xml
+│       │               │   ├── ic_official_speaker_real_time_stop.xml
+│       │               │   ├── ic_rotate_progress_circle.xml
+│       │               │   ├── icon_play.png
+│       │               │   ├── icon_tick.png
+│       │               │   ├── msg_icon.png
+│       │               │   ├── offline_upgrade_gray_bg.xml
+│       │               │   ├── picker_black_bg.png
+│       │               │   ├── picker_ok_bg.png
+│       │               │   ├── picker_ok_bg_pressed.png
+│       │               │   ├── pickerbackground_single.png
+│       │               │   ├── pickerbutton_normal.png
+│       │               │   ├── pickerbutton_pressed.png
+│       │               │   ├── progressbar.xml
+│       │               │   ├── release_icon.png
+│       │               │   ├── seekbar_style.xml
+│       │               │   ├── seekbar_thumb.xml
+│       │               │   ├── selector_back_button.xml
+│       │               │   ├── selector_blue_rect_mask.xml
+│       │               │   ├── selector_picker_bg.xml
+│       │               │   ├── selector_picker_btn.xml
+│       │               │   ├── selector_select_icon.xml
+│       │               │   ├── selector_white_gray.xml
+│       │               │   ├── switch_checked.xml
+│       │               │   ├── switch_unchecked.xml
+│       │               │   ├── tec_support_icon.png
+│       │               │   ├── toggle_selector.xml
+│       │               │   ├── video_pause.png
+│       │               │   ├── visual_point_fail.png
+│       │               │   ├── visual_point_now.png
+│       │               │   ├── visual_point_tag.png
+│       │               │   ├── visual_track_now.9.png
+│       │               │   ├── visual_track_target_bg.9.png
+│       │               │   ├── visual_track_weak.9.png
+│       │               │   ├── wheel_bg.xml
+│       │               │   ├── wheel_val.xml
+│       │               │   └── white_rect.9.png
+│       │               ├── drawable-hdpi
+│       │               │   ├── ic_customer_loading.webp
+│       │               │   ├── ic_customer_loading1.webp
+│       │               │   └── mission_edit_panel_toggle_btn_bg.xml
+│       │               ├── drawable-xhdpi
+│       │               │   ├── ic_confirm.png
+│       │               │   ├── ic_topbar_signal_level_0.png
+│       │               │   ├── ic_topbar_signal_level_1.png
+│       │               │   ├── ic_topbar_signal_level_2.png
+│       │               │   ├── ic_topbar_signal_level_3.png
+│       │               │   ├── ic_topbar_signal_level_4.png
+│       │               │   ├── ic_topbar_signal_level_5.png
+│       │               │   ├── mission_edit_collapse.png
+│       │               │   └── mission_edit_expand.png
+│       │               ├── layout
+│       │               │   ├── activity_drone_scan.xml
+│       │               │   ├── activity_main.xml
+│       │               │   ├── activity_testing_tools.xml
+│       │               │   ├── adapter_payload_wdiget_item.xml
+│       │               │   ├── adapter_pipeline_item.xml
+│       │               │   ├── adapter_rtk_connect_status_item.xml
+│       │               │   ├── dialog_add_poipoint.xml
+│       │               │   ├── dialog_add_waypoint.xml
+│       │               │   ├── dialog_list_confirm.xml
+│       │               │   ├── dialog_livestream_agora_config_view.xml
+│       │               │   ├── dialog_livestream_gb28181_config_view.xml
+│       │               │   ├── dialog_livestream_rtmp_config_view.xml
+│       │               │   ├── dialog_livestream_rtsp_config_view.xml
+│       │               │   ├── dialog_mop_upload.xml
+│       │               │   ├── dialog_param_confirm.xml
+│       │               │   ├── dialog_param_input.xml
+│       │               │   ├── dialog_tips.xml
+│       │               │   ├── dialog_two_button.xml
+│       │               │   ├── firmware_offline_upgrade_item.xml
+│       │               │   ├── float_action_button_menu.xml
+│       │               │   ├── frag_aircraft_main_title.xml
+│       │               │   ├── frag_app_silently_upgrade_page.xml
+│       │               │   ├── frag_camera_stream_list.xml
+│       │               │   ├── frag_data_protection_page.xml
+│       │               │   ├── frag_diagnostic_page.xml
+│       │               │   ├── frag_flight_record_page.xml
+│       │               │   ├── frag_fly_safe_page.xml
+│       │               │   ├── frag_intelligent_box_page.xml
+│       │               │   ├── frag_intelligent_flight_page.xml
+│       │               │   ├── frag_key_value_page.xml
+│       │               │   ├── frag_live.xml
+│       │               │   ├── frag_local_file.xml
+│       │               │   ├── frag_log_info_page.xml
+│       │               │   ├── frag_login_account_page.xml
+│       │               │   ├── frag_look_at_page.xml
+│       │               │   ├── frag_lte_page.xml
+│       │               │   ├── frag_main_item.xml
+│       │               │   ├── frag_main_page.xml
+│       │               │   ├── frag_main_title.xml
+│       │               │   ├── frag_media_main_page.xml
+│       │               │   ├── frag_media_page.xml
+│       │               │   ├── frag_mediafile_details.xml
+│       │               │   ├── frag_megaphone_page.xml
+│       │               │   ├── frag_megaphone_realtime.xml
+│       │               │   ├── frag_mop_center_page.xml
+│       │               │   ├── frag_mop_down_page.xml
+│       │               │   ├── frag_mop_interface_page.xml
+│       │               │   ├── frag_multi_video_channel_page.xml
+│       │               │   ├── frag_network_rtk_page.xml
+│       │               │   ├── frag_payload_center_page.xml
+│       │               │   ├── frag_payload_data_page.xml
+│       │               │   ├── frag_payload_widget_page.xml
+│       │               │   ├── frag_perception_page.xml
+│       │               │   ├── frag_record.xml
+│       │               │   ├── frag_rtk_center_page.xml
+│       │               │   ├── frag_security_code_page.xml
+│       │               │   ├── frag_simulator_page.xml
+│       │               │   ├── frag_station_rtk_page.xml
+│       │               │   ├── frag_tts.xml
+│       │               │   ├── frag_uas_china_page.xml
+│       │               │   ├── frag_uas_european_page.xml
+│       │               │   ├── frag_uas_france_page.xml
+│       │               │   ├── frag_uas_jp_page.xml
+│       │               │   ├── frag_uas_page.xml
+│       │               │   ├── frag_uas_us_page.xml
+│       │               │   ├── frag_upgrade_page.xml
+│       │               │   ├── frag_virtual_stick_page.xml
+│       │               │   ├── frag_waypoint_page.xml
+│       │               │   ├── frag_waypointv3_page.xml
+│       │               │   ├── fragment_camera_stream_detail.xml
+│       │               │   ├── fragment_camera_stream_detail_single.xml
+│       │               │   ├── fragment_key_list.xml
+│       │               │   ├── item_camera_key_list.xml
+│       │               │   ├── item_common_string_list.xml
+│       │               │   ├── item_mediafile_list.xml
+│       │               │   ├── item_news.xml
+│       │               │   ├── item_textview.xml
+│       │               │   ├── layout_deliver_horizontal_line.xml
+│       │               │   ├── layout_deliver_vertical_line.xml
+│       │               │   ├── layout_key_operate.xml
+│       │               │   ├── layout_media_play_download_progress.xml
+│       │               │   ├── layout_version_info.xml
+│       │               │   ├── numpicker.xml
+│       │               │   ├── numpicker_continue_shot.xml
+│       │               │   ├── numpicker_double.xml
+│       │               │   ├── numpicker_type_layout.xml
+│       │               │   ├── test_activity.xml
+│       │               │   ├── video_channel_horizontal_scrollview.xml
+│       │               │   ├── video_channel_page.xml
+│       │               │   ├── video_play_page.xml
+│       │               │   ├── view_mission_setting_home.xml
+│       │               │   ├── view_title_bar.xml
+│       │               │   ├── waypoint_marker_style_layout.xml
+│       │               │   ├── window_common_listview.xml
+│       │               │   └── window_simple_listview.xml
+│       │               ├── mipmap-mdpi
+│       │               │   ├── joystick.png
+│       │               │   └── joystick_bg.png
+│       │               ├── mipmap-xhdpi
+│       │               │   ├── aircraft.png
+│       │               │   ├── home_point.png
+│       │               │   ├── ic_map_osd_locate.png
+│       │               │   ├── ic_no_connection.png
+│       │               │   ├── ic_waypoint_kml.png
+│       │               │   ├── icon_arrow.png
+│       │               │   ├── icon_arrow_black.png
+│       │               │   ├── icon_search_black.png
+│       │               │   ├── joystick.png
+│       │               │   ├── joystick_bg.png
+│       │               │   ├── key_search_icon.png
+│       │               │   ├── mission_edit_waypoint_normal.webp
+│       │               │   ├── playback_ic_selected.png
+│       │               │   ├── playback_ic_unselected.png
+│       │               │   ├── question_mark_icon.png
+│       │               │   └── waypoint_position.png
+│       │               ├── mipmap-xxhdpi
+│       │               │   ├── ic_no_connection.png
+│       │               │   ├── ic_pin_map_v2.webp
+│       │               │   ├── ic_waypoint_kml.png
+│       │               │   ├── joystick.png
+│       │               │   ├── joystick_bg.png
+│       │               │   ├── playback_ic_selected.png
+│       │               │   └── playback_ic_unselected.png
+│       │               ├── mipmap-xxxhdpi
+│       │               │   ├── ic_main.png
+│       │               │   ├── ic_no_connection.png
+│       │               │   ├── ic_waypoint_kml.png
+│       │               │   ├── joystick.png
+│       │               │   └── joystick_bg.png
+│       │               ├── navigation
+│       │               │   ├── nav_aircraft.xml
+│       │               │   ├── nav_common.xml
+│       │               │   └── nav_main.xml
+│       │               ├── transition
+│       │               │   └── image_details_transition.xml
+│       │               ├── values
+│       │               │   ├── arrays.xml
+│       │               │   ├── attrs.xml
+│       │               │   ├── attrs_djitop_bar.xml
+│       │               │   ├── color.xml
+│       │               │   ├── dimens.xml
+│       │               │   ├── integers.xml
+│       │               │   ├── leak_cannary.xml
+│       │               │   ├── strings.xml
+│       │               │   ├── styles.xml
+│       │               │   └── wheel__attrs.xml
+│       │               ├── values-zh-rCN
+│       │               │   └── strings.xml
+│       │               └── xml
+│       │                   └── file_paths.xml
+│       └── android-sdk-v5-uxsdk
+│           ├── build.gradle
+│           └── src
+│               └── main
+│                   ├── AndroidManifest.xml
+│                   ├── assets
+│                   │   ├── htmls
+│                   │   │   └── air_sense_terms_of_use.html
+│                   │   ├── rtk_guidance_reset_images
+│                   │   │   ├── img_0.png
+│                   │   │   ├── img_1.png
+│                   │   │   ├── img_10.png
+│                   │   │   ├── img_2.png
+│                   │   │   ├── img_3.png
+│                   │   │   ├── img_4.png
+│                   │   │   ├── img_5.png
+│                   │   │   ├── img_6.png
+│                   │   │   ├── img_7.png
+│                   │   │   ├── img_8.png
+│                   │   │   └── img_9.png
+│                   │   ├── rtk_guidance_step1_images
+│                   │   │   ├── img_0.png
+│                   │   │   ├── img_1.png
+│                   │   │   ├── img_2.png
+│                   │   │   ├── img_3.png
+│                   │   │   ├── img_4.png
+│                   │   │   ├── img_5.png
+│                   │   │   ├── img_6.png
+│                   │   │   ├── img_7.png
+│                   │   │   ├── img_8.png
+│                   │   │   └── img_9.png
+│                   │   ├── rtk_guidance_step2_images
+│                   │   │   ├── RTK.png
+│                   │   │   ├── circle-max.png
+│                   │   │   ├── circle-mini.png
+│                   │   │   ├── drawing_board.png
+│                   │   │   ├── ic-m.png
+│                   │   │   ├── ic-pair frequency.png
+│                   │   │   ├── ic-power.png
+│                   │   │   ├── lightg.png
+│                   │   │   ├── lighty.png
+│                   │   │   ├── number-1.png
+│                   │   │   ├── number-2.png
+│                   │   │   └── righthand.png
+│                   │   └── rtk_guidance_step3_images
+│                   │       ├── img_0.png
+│                   │       ├── img_1.png
+│                   │       ├── img_2.png
+│                   │       ├── img_3.png
+│                   │       ├── img_4.png
+│                   │       ├── img_5.png
+│                   │       ├── img_6.png
+│                   │       ├── img_7.png
+│                   │       ├── img_8.png
+│                   │       └── img_9.png
+│                   ├── java
+│                   │   └── dji
+│                   │       └── v5
+│                   │           └── ux
+│                   │               ├── accessory
+│                   │               ├── cameracore
+│                   │               ├── core
+│                   │               ├── flight
+│                   │               ├── gimbal
+│                   │               ├── map
+│                   │               ├── mapkit
+│                   │               ├── obstacle
+│                   │               ├── remotecontroller
+│                   │               ├── sample
+│                   │               ├── training
+│                   │               ├── util
+│                   │               ├── visualcamera
+│                   │               └── warning
+│                   └── res
+│                       ├── anim
+│                       │   ├── uxsdk_anim_blink.xml
+│                       │   ├── uxsdk_anim_rotate.xml
+│                       │   ├── uxsdk_fade_in.xml
+│                       │   ├── uxsdk_fade_out.xml
+│                       │   ├── uxsdk_push_right_in.xml
+│                       │   ├── uxsdk_push_right_out.xml
+│                       │   ├── uxsdk_slide_right_in.xml
+│                       │   └── uxsdk_slide_right_out.xml
+│                       ├── animator
+│                       │   ├── uxsdk_animator_scale.xml
+│                       │   ├── uxsdk_disable_alpha_040.xml
+│                       │   ├── uxsdk_pressed_alpha_040.xml
+│                       │   └── uxsdk_pressed_disable_alpha_040.xml
+│                       ├── color
+│                       │   ├── uxsdk_color_selector_auto_exposure_lock.xml
+│                       │   ├── uxsdk_dic_color_c10_sea_blue_state.xml
+│                       │   ├── uxsdk_rc_calibration_btn_txt.xml
+│                       │   ├── uxsdk_selector_dialog_button_text.xml
+│                       │   ├── uxsdk_selector_edit_text_color.xml
+│                       │   ├── uxsdk_selector_palette_text_color.xml
+│                       │   ├── uxsdk_selector_radio_button_colors.xml
+│                       │   ├── uxsdk_selector_simulator_preset_text.xml
+│                       │   ├── uxsdk_selector_slider_bar_text.xml
+│                       │   └── uxsdk_selector_text_color.xml
+│                       ├── drawable
+│                       │   ├── uxsdk_background_battery_voltage_bg_danger.xml
+│                       │   ├── uxsdk_background_battery_voltage_bg_normal.xml
+│                       │   ├── uxsdk_background_battery_voltage_bg_overheating.xml
+│                       │   ├── uxsdk_background_black_rectangle.xml
+│                       │   ├── uxsdk_background_dialog_rounded_corners.xml
+│                       │   ├── uxsdk_background_fpv_setting.xml
+│                       │   ├── uxsdk_background_fpv_setting_battery_group.xml
+│                       │   ├── uxsdk_background_rounded_edit_text.xml
+│                       │   ├── uxsdk_background_sliding_seekbar_text.xml
+│                       │   ├── uxsdk_bg_gray_radius.xml
+│                       │   ├── uxsdk_bg_rtk_guidance_replay.xml
+│                       │   ├── uxsdk_bg_rtk_guidance_step_next.xml
+│                       │   ├── uxsdk_bg_rtk_guidance_step_oval_blue.xml
+│                       │   ├── uxsdk_bg_rtk_guidance_step_oval_blue_solid.xml
+│                       │   ├── uxsdk_bg_rtk_guidance_step_oval_gray.xml
+│                       │   ├── uxsdk_bg_selector_blue_rect_mask.xml
+│                       │   ├── uxsdk_bg_setting_ui_rtk_edit.xml
+│                       │   ├── uxsdk_bg_setting_ui_rtk_status.xml
+│                       │   ├── uxsdk_bg_shape_simple_progress.xml
+│                       │   ├── uxsdk_bg_spinner.xml
+│                       │   ├── uxsdk_bg_spinner2.xml
+│                       │   ├── uxsdk_bg_spinner_pop.xml
+│                       │   ├── uxsdk_bg_white_radius.xml
+│                       │   ├── uxsdk_button_text_color.xml
+│                       │   ├── uxsdk_camera_exposure_mode_setting_selector_bg.xml
+│                       │   ├── uxsdk_cancel_landing_selector.xml
+│                       │   ├── uxsdk_common_scrollbar_in_dark.xml
+│                       │   ├── uxsdk_compass_attitude.xml
+│                       │   ├── uxsdk_compass_rc.xml
+│                       │   ├── uxsdk_distance_bg.xml
+│                       │   ├── uxsdk_edge_white_radius_4dp.xml
+│                       │   ├── uxsdk_edit_radiobutton_tab_bg.xml
+│                       │   ├── uxsdk_exposure_setting_menu_content.xml
+│                       │   ├── uxsdk_flyc_home_point_bg_selector.xml
+│                       │   ├── uxsdk_flyzone_legend_drawable.xml
+│                       │   ├── uxsdk_focal_zoom_slider_minus.png
+│                       │   ├── uxsdk_focal_zoom_slider_minus_unclick.png
+│                       │   ├── uxsdk_focal_zoom_slider_plus.png
+│                       │   ├── uxsdk_focal_zoom_slider_plus_unclick.png
+│                       │   ├── uxsdk_fpv_gradient_bottom.xml
+│                       │   ├── uxsdk_fpv_gradient_left.xml
+│                       │   ├── uxsdk_fpv_gradient_right.xml
+│                       │   ├── uxsdk_fpv_hsi_aircraft.png
+│                       │   ├── uxsdk_fpv_hsi_compass_home_point.xml
+│                       │   ├── uxsdk_fpv_hsi_compass_list.xml
+│                       │   ├── uxsdk_fpv_hsi_home_arrow.xml
+│                       │   ├── uxsdk_fpv_hsi_outer_guide_gimbal_1.xml
+│                       │   ├── uxsdk_fpv_hsi_outer_guide_gimbal_2.xml
+│                       │   ├── uxsdk_fpv_hsi_outer_guide_gimbal_3.xml
+│                       │   ├── uxsdk_fpv_hsi_pitch_guide_gimbal_1.xml
+│                       │   ├── uxsdk_fpv_hsi_pitch_guide_gimbal_2.xml
+│                       │   ├── uxsdk_fpv_hsi_pitch_guide_gimbal_3.xml
+│                       │   ├── uxsdk_fpv_hsi_plane_caution.xml
+│                       │   ├── uxsdk_fpv_hsi_plane_danger.xml
+│                       │   ├── uxsdk_fpv_hsi_rc.xml
+│                       │   ├── uxsdk_fpv_hsi_rc_arrow.xml
+│                       │   ├── uxsdk_fpv_hsi_rng_point.png
+│                       │   ├── uxsdk_fpv_hsi_show_barrier_down.xml
+│                       │   ├── uxsdk_fpv_hsi_show_barrier_up.xml
+│                       │   ├── uxsdk_fpv_hsi_smart_track_point.png
+│                       │   ├── uxsdk_fpv_hsi_waypoint.xml
+│                       │   ├── uxsdk_fpv_pfd_show_barrier_down.xml
+│                       │   ├── uxsdk_fpv_pfd_show_barrier_up.xml
+│                       │   ├── uxsdk_fpv_pfd_waypoint_left.xml
+│                       │   ├── uxsdk_fpv_pfd_waypoint_right.xml
+│                       │   ├── uxsdk_freq_range_rect.xml
+│                       │   ├── uxsdk_freq_range_rect_hover.xml
+│                       │   ├── uxsdk_gps_signal_level_list.xml
+│                       │   ├── uxsdk_gradient_error.xml
+│                       │   ├── uxsdk_gradient_good.xml
+│                       │   ├── uxsdk_gradient_offline.xml
+│                       │   ├── uxsdk_gradient_warning.xml
+│                       │   ├── uxsdk_hsi_aircraft_radar_disable.xml
+│                       │   ├── uxsdk_hsi_aircraft_radar_normal.xml
+│                       │   ├── uxsdk_ic_aircraft_battery_temperature.xml
+│                       │   ├── uxsdk_ic_alert_error.xml
+│                       │   ├── uxsdk_ic_alert_good.xml
+│                       │   ├── uxsdk_ic_alert_red.xml
+│                       │   ├── uxsdk_ic_alert_yellow.xml
+│                       │   ├── uxsdk_ic_arrow_drop_down_pink_24dp.xml
+│                       │   ├── uxsdk_ic_auto_exposure_lock.xml
+│                       │   ├── uxsdk_ic_auto_exposure_unlock.xml
+│                       │   ├── uxsdk_ic_avoid_disable_all.xml
+│                       │   ├── uxsdk_ic_avoid_left_danger.xml
+│                       │   ├── uxsdk_ic_avoid_left_warning.xml
+│                       │   ├── uxsdk_ic_avoid_normal_all.xml
+│                       │   ├── uxsdk_ic_avoid_only_down_off.xml
+│                       │   ├── uxsdk_ic_avoid_only_down_on.xml
+│                       │   ├── uxsdk_ic_avoid_only_hori_off.xml
+│                       │   ├── uxsdk_ic_avoid_only_hori_on.xml
+│                       │   ├── uxsdk_ic_avoid_only_up_off.xml
+│                       │   ├── uxsdk_ic_avoid_only_up_on.xml
+│                       │   ├── uxsdk_ic_avoid_right_danger.xml
+│                       │   ├── uxsdk_ic_avoid_right_warning.xml
+│                       │   ├── uxsdk_ic_back_arrow.xml
+│                       │   ├── uxsdk_ic_back_arrow_pressed.xml
+│                       │   ├── uxsdk_ic_bird.xml
+│                       │   ├── uxsdk_ic_butterfly.xml
+│                       │   ├── uxsdk_ic_camera_decrement_minus.xml
+│                       │   ├── uxsdk_ic_camera_increment_plus.xml
+│                       │   ├── uxsdk_ic_camera_mode_photo.xml
+│                       │   ├── uxsdk_ic_camera_mode_video.xml
+│                       │   ├── uxsdk_ic_cancel_landing.xml
+│                       │   ├── uxsdk_ic_cancel_landing_disabled.xml
+│                       │   ├── uxsdk_ic_cat.xml
+│                       │   ├── uxsdk_ic_center_metering_target.xml
+│                       │   ├── uxsdk_ic_centerpoint_cross.xml
+│                       │   ├── uxsdk_ic_centerpoint_frame.xml
+│                       │   ├── uxsdk_ic_centerpoint_frame_and_cross.xml
+│                       │   ├── uxsdk_ic_centerpoint_narrow_cross.xml
+│                       │   ├── uxsdk_ic_centerpoint_square.xml
+│                       │   ├── uxsdk_ic_centerpoint_square_and_cross.xml
+│                       │   ├── uxsdk_ic_centerpoint_standard.xml
+│                       │   ├── uxsdk_ic_chevron_right.xml
+│                       │   ├── uxsdk_ic_chevron_right_disabled.xml
+│                       │   ├── uxsdk_ic_close.xml
+│                       │   ├── uxsdk_ic_close_pressed.xml
+│                       │   ├── uxsdk_ic_common_arrow_r_s.xml
+│                       │   ├── uxsdk_ic_common_arrow_right_8.xml
+│                       │   ├── uxsdk_ic_compass_aircraft.xml
+│                       │   ├── uxsdk_ic_compass_background.xml
+│                       │   ├── uxsdk_ic_compass_home.xml
+│                       │   ├── uxsdk_ic_compass_inner_circles.xml
+│                       │   ├── uxsdk_ic_compass_north.xml
+│                       │   ├── uxsdk_ic_compass_status.xml
+│                       │   ├── uxsdk_ic_config_internal_none.xml
+│                       │   ├── uxsdk_ic_config_internal_normal.xml
+│                       │   ├── uxsdk_ic_config_internal_warning.xml
+│                       │   ├── uxsdk_ic_config_sd_none.xml
+│                       │   ├── uxsdk_ic_config_sd_normal.xml
+│                       │   ├── uxsdk_ic_config_sd_warning.xml
+│                       │   ├── uxsdk_ic_connected.xml
+│                       │   ├── uxsdk_ic_dashboard_compass_background.xml
+│                       │   ├── uxsdk_ic_disconnected.xml
+│                       │   ├── uxsdk_ic_double_arrow.xml
+│                       │   ├── uxsdk_ic_drone.xml
+│                       │   ├── uxsdk_ic_emmc.xml
+│                       │   ├── uxsdk_ic_exposure_settings_aperture.xml
+│                       │   ├── uxsdk_ic_exposure_settings_manual.xml
+│                       │   ├── uxsdk_ic_exposure_settings_normal.xml
+│                       │   ├── uxsdk_ic_exposure_settings_program.xml
+│                       │   ├── uxsdk_ic_exposure_settings_shutter.xml
+│                       │   ├── uxsdk_ic_flight_mode_list_item.xml
+│                       │   ├── uxsdk_ic_flyzone_locked.xml
+│                       │   ├── uxsdk_ic_flyzone_unlocked.xml
+│                       │   ├── uxsdk_ic_focus_switch_auto.xml
+│                       │   ├── uxsdk_ic_focus_switch_manual.xml
+│                       │   ├── uxsdk_ic_focus_target_auto.xml
+│                       │   ├── uxsdk_ic_focus_target_manual.xml
+│                       │   ├── uxsdk_ic_fpv_camera_osd_infrared_cotntrol_pattern_24.xml
+│                       │   ├── uxsdk_ic_fpv_camera_osd_infrared_cotntrol_pattern_active_24.xml
+│                       │   ├── uxsdk_ic_fpv_camera_osd_infrared_cotntrol_thermoregulation_24.xml
+│                       │   ├── uxsdk_ic_fpv_camera_osd_infrared_cotntrol_thermoregulation_active_24.xml
+│                       │   ├── uxsdk_ic_fpv_focusbox_sun_16_active.xml
+│                       │   ├── uxsdk_ic_fpv_hsi_ar_waypoint_break.xml
+│                       │   ├── uxsdk_ic_fpv_setting_rc_a.xml
+│                       │   ├── uxsdk_ic_fpv_setting_rc_b.xml
+│                       │   ├── uxsdk_ic_fpv_setting_return_point.xml
+│                       │   ├── uxsdk_ic_fpv_top_setting.xml
+│                       │   ├── uxsdk_ic_fpv_topbar_img_empty_fpv_message.xml
+│                       │   ├── uxsdk_ic_fpv_topbar_rtk_caution.xml
+│                       │   ├── uxsdk_ic_fpv_topbar_rtk_danger.xml
+│                       │   ├── uxsdk_ic_fpv_topbar_rtk_no_open.xml
+│                       │   ├── uxsdk_ic_fpv_topbar_rtk_normal.xml
+│                       │   ├── uxsdk_ic_fpv_topbar_satellite_normal.xml
+│                       │   ├── uxsdk_ic_gimbal_control_arrow.xml
+│                       │   ├── uxsdk_ic_gimbal_control_move.xml
+│                       │   ├── uxsdk_ic_gimbal_control_point.xml
+│                       │   ├── uxsdk_ic_home.xml
+│                       │   ├── uxsdk_ic_house.xml
+│                       │   ├── uxsdk_ic_imu_status.xml
+│                       │   ├── uxsdk_ic_internal_storage_full.xml
+│                       │   ├── uxsdk_ic_internal_storage_not_inserted.xml
+│                       │   ├── uxsdk_ic_internal_storage_slow.xml
+│                       │   ├── uxsdk_ic_land_yellow.xml
+│                       │   ├── uxsdk_ic_max_flight_altitude.xml
+│                       │   ├── uxsdk_ic_max_flight_distance.xml
+│                       │   ├── uxsdk_ic_metering_switch.xml
+│                       │   ├── uxsdk_ic_navigation_arrow.xml
+│                       │   ├── uxsdk_ic_overview_status.xml
+│                       │   ├── uxsdk_ic_person.xml
+│                       │   ├── uxsdk_ic_person_log_in.xml
+│                       │   ├── uxsdk_ic_person_log_out.xml
+│                       │   ├── uxsdk_ic_photo_mode_aeb_continuous_3.xml
+│                       │   ├── uxsdk_ic_photo_mode_aeb_continuous_5.xml
+│                       │   ├── uxsdk_ic_photo_mode_aeb_continuous_7.xml
+│                       │   ├── uxsdk_ic_photo_mode_continuous_10.xml
+│                       │   ├── uxsdk_ic_photo_mode_continuous_14.xml
+│                       │   ├── uxsdk_ic_photo_mode_continuous_3.xml
+│                       │   ├── uxsdk_ic_photo_mode_continuous_5.xml
+│                       │   ├── uxsdk_ic_photo_mode_continuous_7.xml
+│                       │   ├── uxsdk_ic_photo_mode_hdr.xml
+│                       │   ├── uxsdk_ic_photo_mode_nor.xml
+│                       │   ├── uxsdk_ic_photo_mode_pano_180.xml
+│                       │   ├── uxsdk_ic_photo_mode_pano_3x1.xml
+│                       │   ├── uxsdk_ic_photo_mode_pano_3x3.xml
+│                       │   ├── uxsdk_ic_photo_mode_pano_sphere.xml
+│                       │   ├── uxsdk_ic_photo_mode_raw_burst_10.xml
+│                       │   ├── uxsdk_ic_photo_mode_raw_burst_14.xml
+│                       │   ├── uxsdk_ic_photo_mode_raw_burst_3.xml
+│                       │   ├── uxsdk_ic_photo_mode_raw_burst_5.xml
+│                       │   ├── uxsdk_ic_photo_mode_raw_burst_7.xml
+│                       │   ├── uxsdk_ic_photo_mode_raw_burst_infinity.xml
+│                       │   ├── uxsdk_ic_photo_mode_shallow_focus.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_10s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_15s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_1s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_20s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_2s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_30s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_3s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_40s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_4s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_5s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_60s.xml
+│                       │   ├── uxsdk_ic_photo_mode_timepause_7s.xml
+│                       │   ├── uxsdk_ic_radar_arrow.xml
+│                       │   ├── uxsdk_ic_radar_backward_0.xml
+│                       │   ├── uxsdk_ic_radar_backward_0_0.xml
+│                       │   ├── uxsdk_ic_radar_backward_0_1.xml
+│                       │   ├── uxsdk_ic_radar_backward_0_2.xml
+│                       │   ├── uxsdk_ic_radar_backward_0_3.xml
+│                       │   ├── uxsdk_ic_radar_backward_0_4.xml
+│                       │   ├── uxsdk_ic_radar_backward_0_5.xml
+│                       │   ├── uxsdk_ic_radar_backward_1.xml
+│                       │   ├── uxsdk_ic_radar_backward_1_0.xml
+│                       │   ├── uxsdk_ic_radar_backward_1_1.xml
+│                       │   ├── uxsdk_ic_radar_backward_1_2.xml
+│                       │   ├── uxsdk_ic_radar_backward_1_3.xml
+│                       │   ├── uxsdk_ic_radar_backward_1_4.xml
+│                       │   ├── uxsdk_ic_radar_backward_1_5.xml
+│                       │   ├── uxsdk_ic_radar_backward_2.xml
+│                       │   ├── uxsdk_ic_radar_backward_2_0.xml
+│                       │   ├── uxsdk_ic_radar_backward_2_1.xml
+│                       │   ├── uxsdk_ic_radar_backward_2_2.xml
+│                       │   ├── uxsdk_ic_radar_backward_2_3.xml
+│                       │   ├── uxsdk_ic_radar_backward_2_4.xml
+│                       │   ├── uxsdk_ic_radar_backward_2_5.xml
+│                       │   ├── uxsdk_ic_radar_backward_3.xml
+│                       │   ├── uxsdk_ic_radar_backward_3_0.xml
+│                       │   ├── uxsdk_ic_radar_backward_3_1.xml
+│                       │   ├── uxsdk_ic_radar_backward_3_2.xml
+│                       │   ├── uxsdk_ic_radar_backward_3_3.xml
+│                       │   ├── uxsdk_ic_radar_backward_3_4.xml
+│                       │   ├── uxsdk_ic_radar_backward_3_5.xml
+│                       │   ├── uxsdk_ic_radar_forward_0.xml
+│                       │   ├── uxsdk_ic_radar_forward_0_0.xml
+│                       │   ├── uxsdk_ic_radar_forward_0_1.xml
+│                       │   ├── uxsdk_ic_radar_forward_0_2.xml
+│                       │   ├── uxsdk_ic_radar_forward_0_3.xml
+│                       │   ├── uxsdk_ic_radar_forward_0_4.xml
+│                       │   ├── uxsdk_ic_radar_forward_0_5.xml
+│                       │   ├── uxsdk_ic_radar_forward_1.xml
+│                       │   ├── uxsdk_ic_radar_forward_1_0.xml
+│                       │   ├── uxsdk_ic_radar_forward_1_1.xml
+│                       │   ├── uxsdk_ic_radar_forward_1_2.xml
+│                       │   ├── uxsdk_ic_radar_forward_1_3.xml
+│                       │   ├── uxsdk_ic_radar_forward_1_4.xml
+│                       │   ├── uxsdk_ic_radar_forward_1_5.xml
+│                       │   ├── uxsdk_ic_radar_forward_2.xml
+│                       │   ├── uxsdk_ic_radar_forward_2_0.xml
+│                       │   ├── uxsdk_ic_radar_forward_2_1.xml
+│                       │   ├── uxsdk_ic_radar_forward_2_2.xml
+│                       │   ├── uxsdk_ic_radar_forward_2_3.xml
+│                       │   ├── uxsdk_ic_radar_forward_2_4.xml
+│                       │   ├── uxsdk_ic_radar_forward_2_5.xml
+│                       │   ├── uxsdk_ic_radar_forward_3.xml
+│                       │   ├── uxsdk_ic_radar_forward_3_0.xml
+│                       │   ├── uxsdk_ic_radar_forward_3_1.xml
+│                       │   ├── uxsdk_ic_radar_forward_3_2.xml
+│                       │   ├── uxsdk_ic_radar_forward_3_3.xml
+│                       │   ├── uxsdk_ic_radar_forward_3_4.xml
+│                       │   ├── uxsdk_ic_radar_forward_3_5.xml
+│                       │   ├── uxsdk_ic_radar_left.xml
+│                       │   ├── uxsdk_ic_radar_right.xml
+│                       │   ├── uxsdk_ic_radio_quality.xml
+│                       │   ├── uxsdk_ic_rc_battery.xml
+│                       │   ├── uxsdk_ic_rc_list_item.xml
+│                       │   ├── uxsdk_ic_record_video.xml
+│                       │   ├── uxsdk_ic_record_video_pressed.xml
+│                       │   ├── uxsdk_ic_refresh.png
+│                       │   ├── uxsdk_ic_return_home_altitude.xml
+│                       │   ├── uxsdk_ic_return_home_yellow.xml
+│                       │   ├── uxsdk_ic_rtk_status.xml
+│                       │   ├── uxsdk_ic_sdcard.xml
+│                       │   ├── uxsdk_ic_sdcard_full.xml
+│                       │   ├── uxsdk_ic_sdcard_not_inserted.xml
+│                       │   ├── uxsdk_ic_sdcard_slow.xml
+│                       │   ├── uxsdk_ic_setting_camera.xml
+│                       │   ├── uxsdk_ic_setting_camera_active.xml
+│                       │   ├── uxsdk_ic_setting_drone.xml
+│                       │   ├── uxsdk_ic_setting_drone_active.xml
+│                       │   ├── uxsdk_ic_setting_hd.xml
+│                       │   ├── uxsdk_ic_setting_hd_active.xml
+│                       │   ├── uxsdk_ic_setting_more.xml
+│                       │   ├── uxsdk_ic_setting_more_active.xml
+│                       │   ├── uxsdk_ic_setting_obstacl_avoidance.xml
+│                       │   ├── uxsdk_ic_setting_obstacl_avoidance_active.xml
+│                       │   ├── uxsdk_ic_setting_plane_electricity.xml
+│                       │   ├── uxsdk_ic_setting_plane_electricity_active.xml
+│                       │   ├── uxsdk_ic_setting_psdk.xml
+│                       │   ├── uxsdk_ic_setting_psdk_active.xml
+│                       │   ├── uxsdk_ic_setting_rc.xml
+│                       │   ├── uxsdk_ic_setting_rc_active.xml
+│                       │   ├── uxsdk_ic_setting_rtk.xml
+│                       │   ├── uxsdk_ic_setting_rtk_active.xml
+│                       │   ├── uxsdk_ic_settings_white_24dp.xml
+│                       │   ├── uxsdk_ic_shoot_photo_raw.xml
+│                       │   ├── uxsdk_ic_shutter_stop.xml
+│                       │   ├── uxsdk_ic_simulator.xml
+│                       │   ├── uxsdk_ic_simulator_active.xml
+│                       │   ├── uxsdk_ic_speaker_delete_not_pressed.xml
+│                       │   ├── uxsdk_ic_speaker_delete_pressed.xml
+│                       │   ├── uxsdk_ic_spot_metering_target.xml
+│                       │   ├── uxsdk_ic_ssd.xml
+│                       │   ├── uxsdk_ic_ssd_full.xml
+│                       │   ├── uxsdk_ic_ssd_icon.xml
+│                       │   ├── uxsdk_ic_ssd_not_inserted.xml
+│                       │   ├── uxsdk_ic_ssd_not_inserted_gray.xml
+│                       │   ├── uxsdk_ic_ssd_status_icon.xml
+│                       │   ├── uxsdk_ic_ssd_warning.xml
+│                       │   ├── uxsdk_ic_stop_record_video.xml
+│                       │   ├── uxsdk_ic_stop_record_video_pressed.xml
+│                       │   ├── uxsdk_ic_system_status_list_novice_mode.xml
+│                       │   ├── uxsdk_ic_takeoff_yellow.xml
+│                       │   ├── uxsdk_ic_telemetry_location.xml
+│                       │   ├── uxsdk_ic_topbar_adsb_disconnected.xml
+│                       │   ├── uxsdk_ic_topbar_adsb_normal.xml
+│                       │   ├── uxsdk_ic_topbar_battery_double_land_immediately.xml
+│                       │   ├── uxsdk_ic_topbar_battery_double_nor.xml
+│                       │   ├── uxsdk_ic_topbar_battery_double_overheating.xml
+│                       │   ├── uxsdk_ic_topbar_battery_double_warning.xml
+│                       │   ├── uxsdk_ic_topbar_battery_single_error.xml
+│                       │   ├── uxsdk_ic_topbar_battery_single_land_immediately.xml
+│                       │   ├── uxsdk_ic_topbar_battery_single_nor.xml
+│                       │   ├── uxsdk_ic_topbar_battery_single_overheating.xml
+│                       │   ├── uxsdk_ic_topbar_battery_single_warning.xml
+│                       │   ├── uxsdk_ic_topbar_external_gps.xml
+│                       │   ├── uxsdk_ic_topbar_flight_mode.xml
+│                       │   ├── uxsdk_ic_topbar_gps.xml
+│                       │   ├── uxsdk_ic_topbar_hd.xml
+│                       │   ├── uxsdk_ic_topbar_remote_controller.xml
+│                       │   ├── uxsdk_ic_topbar_signal_level_0.xml
+│                       │   ├── uxsdk_ic_topbar_signal_level_1.xml
+│                       │   ├── uxsdk_ic_topbar_signal_level_2.xml
+│                       │   ├── uxsdk_ic_topbar_signal_level_3.xml
+│                       │   ├── uxsdk_ic_topbar_signal_level_4.xml
+│                       │   ├── uxsdk_ic_topbar_signal_level_5.xml
+│                       │   ├── uxsdk_ic_topbar_visual_closed.xml
+│                       │   ├── uxsdk_ic_topbar_visual_error.xml
+│                       │   ├── uxsdk_ic_topbar_visual_normal.xml
+│                       │   ├── uxsdk_ic_travel_mode_active.xml
+│                       │   ├── uxsdk_ic_travel_mode_inactive.xml
+│                       │   ├── uxsdk_ic_unit_type.xml
+│                       │   ├── uxsdk_ic_upward_obstacle.xml
+│                       │   ├── uxsdk_ic_vision_sensors.xml
+│                       │   ├── uxsdk_ic_vps_disabled.xml
+│                       │   ├── uxsdk_ic_vps_enabled.xml
+│                       │   ├── uxsdk_img_fpv_rc_calibration_shell_stick.xml
+│                       │   ├── uxsdk_isotherm_seekbar_bg.xml
+│                       │   ├── uxsdk_mission_edit_panel_tab_bg.xml
+│                       │   ├── uxsdk_mission_edit_panel_tab_bg_selected.xml
+│                       │   ├── uxsdk_mission_edit_panel_tab_bg_unselected.xml
+│                       │   ├── uxsdk_navigation_close.xml
+│                       │   ├── uxsdk_new_exposure_focus_ic.png
+│                       │   ├── uxsdk_new_exposure_ic.png
+│                       │   ├── uxsdk_range_seekbar_bg.xml
+│                       │   ├── uxsdk_rotate_progress_circle.xml
+│                       │   ├── uxsdk_round_background_highlighted.xml
+│                       │   ├── uxsdk_rtk_status_bg.xml
+│                       │   ├── uxsdk_seek_bar.xml
+│                       │   ├── uxsdk_seek_bar_highlight.xml
+│                       │   ├── uxsdk_seek_thumb.xml
+│                       │   ├── uxsdk_segmented_button_group_bg.xml
+│                       │   ├── uxsdk_selector_blue_oval_mask.xml
+│                       │   ├── uxsdk_selector_blue_rect_mask.xml
+│                       │   ├── uxsdk_selector_camera_auto_exposure_mode.xml
+│                       │   ├── uxsdk_selector_camera_exposure_mode_setting.xml
+│                       │   ├── uxsdk_selector_camera_exposure_mode_text_color.xml
+│                       │   ├── uxsdk_selector_camera_exposure_status_bg.xml
+│                       │   ├── uxsdk_selector_chevron_right.xml
+│                       │   ├── uxsdk_selector_cycle_button_background.xml
+│                       │   ├── uxsdk_selector_dialog_button_background.xml
+│                       │   ├── uxsdk_selector_hasselblad_shoot_photo.xml
+│                       │   ├── uxsdk_selector_icon_bg.xml
+│                       │   ├── uxsdk_selector_icon_delete.xml
+│                       │   ├── uxsdk_selector_map_type_bg.xml
+│                       │   ├── uxsdk_selector_map_type_text.xml
+│                       │   ├── uxsdk_selector_palette_border.xml
+│                       │   ├── uxsdk_selector_radio_button_first.xml
+│                       │   ├── uxsdk_selector_radio_button_last.xml
+│                       │   ├── uxsdk_selector_radio_button_middle.xml
+│                       │   ├── uxsdk_selector_setting_circle.xml
+│                       │   ├── uxsdk_selector_simulator_button_background.xml
+│                       │   ├── uxsdk_selector_slider_bar_track.xml
+│                       │   ├── uxsdk_selector_src_isotherm_icon.xml
+│                       │   ├── uxsdk_selector_src_palette_icon.xml
+│                       │   ├── uxsdk_selector_start_record_video.xml
+│                       │   ├── uxsdk_selector_stop_record_video.xml
+│                       │   ├── uxsdk_selector_switch_thumb.xml
+│                       │   ├── uxsdk_selector_transparent_round_rect.xml
+│                       │   ├── uxsdk_selector_white_round_rect.xml
+│                       │   ├── uxsdk_setting_circle_hover.xml
+│                       │   ├── uxsdk_setting_circle_normal.xml
+│                       │   ├── uxsdk_setting_circle_selected.xml
+│                       │   ├── uxsdk_setting_ui_battery_volume_normal_pgb.xml
+│                       │   ├── uxsdk_setting_ui_flyc_circle.xml
+│                       │   ├── uxsdk_setting_ui_flyc_circle_normal.xml
+│                       │   ├── uxsdk_setting_ui_flyc_circle_selected.xml
+│                       │   ├── uxsdk_setting_ui_item_edittext.xml
+│                       │   ├── uxsdk_setting_ui_item_edittext_focus.xml
+│                       │   ├── uxsdk_setting_ui_item_edittext_normal.xml
+│                       │   ├── uxsdk_setting_ui_progress.xml
+│                       │   ├── uxsdk_setting_ui_status_pgb_green.xml
+│                       │   ├── uxsdk_setting_ui_status_pgb_red.xml
+│                       │   ├── uxsdk_setting_ui_status_pgb_yellow.xml
+│                       │   ├── uxsdk_setting_ui_vision_precise_landing.webp
+│                       │   ├── uxsdk_shape_circle.xml
+│                       │   ├── uxsdk_signal_level_list.xml
+│                       │   ├── uxsdk_simulator_row_background.xml
+│                       │   ├── uxsdk_slider_left.xml
+│                       │   ├── uxsdk_slider_right.xml
+│                       │   ├── uxsdk_sliding_seekbar_progress.xml
+│                       │   ├── uxsdk_sliding_seekbar_thumb.xml
+│                       │   ├── uxsdk_sliding_seekbar_thumb_normal.xml
+│                       │   ├── uxsdk_switch_background.xml
+│                       │   ├── uxsdk_switch_checked_disabled.xml
+│                       │   ├── uxsdk_switch_checked_undisabled.xml
+│                       │   ├── uxsdk_switch_normal_disabled.xml
+│                       │   ├── uxsdk_switch_normal_undisabled.xml
+│                       │   ├── uxsdk_switch_off_background.xml
+│                       │   ├── uxsdk_switch_on_background.xml
+│                       │   ├── uxsdk_system_status_button_background_selector.xml
+│                       │   ├── uxsdk_system_status_edit_background_selector.xml
+│                       │   ├── uxsdk_tab_item_end_black_style.xml
+│                       │   ├── uxsdk_tab_item_end_blue_style.xml
+│                       │   ├── uxsdk_tab_item_end_white_style.xml
+│                       │   ├── uxsdk_tab_item_end_white_v2_style.xml
+│                       │   ├── uxsdk_tab_item_mid_black_style.xml
+│                       │   ├── uxsdk_tab_item_mid_blue_style.xml
+│                       │   ├── uxsdk_tab_item_mid_white_style.xml
+│                       │   ├── uxsdk_tab_item_mid_white_v2_style.xml
+│                       │   ├── uxsdk_tab_item_start_black_style.xml
+│                       │   ├── uxsdk_tab_item_start_blue_style.xml
+│                       │   ├── uxsdk_tab_item_start_white_style.xml
+│                       │   ├── uxsdk_tab_item_start_white_v2_style.xml
+│                       │   ├── uxsdk_title_bar_back_button_selector.xml
+│                       │   ├── uxsdk_title_bar_close_button_selector.xml
+│                       │   └── uxsdk_toggle_green_selector.xml
+│                       ├── drawable-anydpi-v24
+│                       │   ├── uxsdk_ic_arrow_down.xml
+│                       │   ├── uxsdk_ic_arrow_up.xml
+│                       │   ├── uxsdk_ic_compass_gimbal_yaw.xml
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start.xml
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start_pressed.xml
+│                       │   ├── uxsdk_ic_hasselblad_shutter_stop.xml
+│                       │   └── uxsdk_ic_map_gimbal_yaw.xml
+│                       ├── drawable-hdpi
+│                       │   ├── uxsdk_auto_iso.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_a.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_m.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_p.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_s.png
+│                       │   ├── uxsdk_camera_exp_press.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_highlight.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_normal.png
+│                       │   ├── uxsdk_camera_exposure_mode_setting_background.png
+│                       │   ├── uxsdk_ic_arrow_down.png
+│                       │   ├── uxsdk_ic_arrow_up.png
+│                       │   ├── uxsdk_ic_compass_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_customer_loading.webp
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start_pressed.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_stop.png
+│                       │   ├── uxsdk_ic_land.png
+│                       │   ├── uxsdk_ic_map_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_return_home.png
+│                       │   ├── uxsdk_ic_takeoff.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_0.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_1.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_2.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_3.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_4.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_5.png
+│                       │   ├── uxsdk_switch_thumb.png
+│                       │   └── uxsdk_switch_thumb_disabled.png
+│                       ├── drawable-mdpi
+│                       │   ├── uxsdk_auto_iso.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_a.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_m.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_p.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_s.png
+│                       │   ├── uxsdk_camera_exp_press.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_highlight.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_normal.png
+│                       │   ├── uxsdk_camera_exposure_mode_setting_background.png
+│                       │   ├── uxsdk_ic_arrow_down.png
+│                       │   ├── uxsdk_ic_arrow_up.png
+│                       │   ├── uxsdk_ic_compass_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start_pressed.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_stop.png
+│                       │   ├── uxsdk_ic_land.png
+│                       │   ├── uxsdk_ic_map_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_return_home.png
+│                       │   ├── uxsdk_ic_takeoff.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_0.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_1.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_2.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_3.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_4.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_5.png
+│                       │   ├── uxsdk_switch_thumb.png
+│                       │   └── uxsdk_switch_thumb_disabled.png
+│                       ├── drawable-nodpi
+│                       │   ├── uxsdk_fpv_hsi_compass.png
+│                       │   ├── uxsdk_fpv_hsi_compass_tips.png
+│                       │   └── uxsdk_v2_kumquatx_icon_connected.webp
+│                       ├── drawable-xhdpi
+│                       │   ├── uxsdk_arrow_down.png
+│                       │   ├── uxsdk_arrow_down_gray.png
+│                       │   ├── uxsdk_arrow_left.png
+│                       │   ├── uxsdk_arrow_right_active.webp
+│                       │   ├── uxsdk_arrow_right_inactive.webp
+│                       │   ├── uxsdk_arrow_up.png
+│                       │   ├── uxsdk_arrow_up_blue.png
+│                       │   ├── uxsdk_auto_iso.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_a.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_m.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_p.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_s.png
+│                       │   ├── uxsdk_camera_exp_press.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_highlight.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_normal.png
+│                       │   ├── uxsdk_camera_exposure_mode_setting_background.png
+│                       │   ├── uxsdk_ic_arrow_down.png
+│                       │   ├── uxsdk_ic_arrow_up.png
+│                       │   ├── uxsdk_ic_compass_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_confirm.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start_pressed.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_stop.png
+│                       │   ├── uxsdk_ic_hint.png
+│                       │   ├── uxsdk_ic_land.png
+│                       │   ├── uxsdk_ic_map_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_refresh.png
+│                       │   ├── uxsdk_ic_return_home.png
+│                       │   ├── uxsdk_ic_rtk_guidance_close.webp
+│                       │   ├── uxsdk_ic_rtk_guidance_light_green.webp
+│                       │   ├── uxsdk_ic_rtk_guidance_replay.webp
+│                       │   ├── uxsdk_ic_takeoff.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_0.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_1.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_2.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_3.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_4.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_5.png
+│                       │   ├── uxsdk_setting_ui_imu_bg.png
+│                       │   ├── uxsdk_switch_thumb.png
+│                       │   └── uxsdk_switch_thumb_disabled.png
+│                       ├── drawable-xxhdpi
+│                       │   ├── fpv_pitch_down_normal.webp
+│                       │   ├── fpv_pitch_up_normal.webp
+│                       │   ├── fpv_roll_leftarrow_normal.webp
+│                       │   ├── fpv_roll_rightarrow_normal.webp
+│                       │   ├── fpv_yaw_left.webp
+│                       │   ├── fpv_yaw_right.webp
+│                       │   ├── uxsdk_arrow_down.png
+│                       │   ├── uxsdk_arrow_left.png
+│                       │   ├── uxsdk_arrow_next.png
+│                       │   ├── uxsdk_arrow_right.png
+│                       │   ├── uxsdk_arrow_right_active.webp
+│                       │   ├── uxsdk_arrow_right_inactive.webp
+│                       │   ├── uxsdk_arrow_up.png
+│                       │   ├── uxsdk_auto_iso.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_a.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_m.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_p.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_s.png
+│                       │   ├── uxsdk_camera_exp_press.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_highlight.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_normal.png
+│                       │   ├── uxsdk_fpv_compass_horizontal_m30.webp
+│                       │   ├── uxsdk_fpv_compass_horizontal_m300.webp
+│                       │   ├── uxsdk_fpv_compass_horizontal_m3e.png
+│                       │   ├── uxsdk_fpv_compass_vertical_m30.webp
+│                       │   ├── uxsdk_fpv_compass_vertical_m300.webp
+│                       │   ├── uxsdk_fpv_compass_vertical_m3e.png
+│                       │   ├── uxsdk_fpv_hsi_aircraft.png
+│                       │   ├── uxsdk_fpv_pfd_hsi_home_point.png
+│                       │   ├── uxsdk_fpv_pfd_hsi_pin_point.png
+│                       │   ├── uxsdk_fpv_pfd_hsi_rng_point.png
+│                       │   ├── uxsdk_fpv_pfd_hsi_smart_track_point.png
+│                       │   ├── uxsdk_freq_value_range_line.webp
+│                       │   ├── uxsdk_hsi_compass.png
+│                       │   ├── uxsdk_hsi_perception_disable.webp
+│                       │   ├── uxsdk_hsi_perception_radar_on_disable.webp
+│                       │   ├── uxsdk_hsi_perception_radar_on_visual_only.webp
+│                       │   ├── uxsdk_hsi_perception_radar_only.webp
+│                       │   ├── uxsdk_hsi_perception_radar_with_visual.webp
+│                       │   ├── uxsdk_hsi_perception_visual_only.webp
+│                       │   ├── uxsdk_hsiview_aircraft.png
+│                       │   ├── uxsdk_hsiview_aircraft_radar_available.webp
+│                       │   ├── uxsdk_hsiview_aircraft_radar_unavailable.webp
+│                       │   ├── uxsdk_ic_arrow_down.png
+│                       │   ├── uxsdk_ic_arrow_up.png
+│                       │   ├── uxsdk_ic_compass_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_confirm.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start_pressed.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_stop.png
+│                       │   ├── uxsdk_ic_hint.png
+│                       │   ├── uxsdk_ic_hint1.png
+│                       │   ├── uxsdk_ic_hsi_plane_caution.webp
+│                       │   ├── uxsdk_ic_hsi_plane_danger.webp
+│                       │   ├── uxsdk_ic_isotherm_seekbar.png
+│                       │   ├── uxsdk_ic_land.png
+│                       │   ├── uxsdk_ic_map_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_return_home.png
+│                       │   ├── uxsdk_ic_rtk_guidance_light_green.webp
+│                       │   ├── uxsdk_ic_rtk_guidance_replay.webp
+│                       │   ├── uxsdk_ic_rtk_guidance_tick.webp
+│                       │   ├── uxsdk_ic_setting_enter.png
+│                       │   ├── uxsdk_ic_slider_block_orange.png
+│                       │   ├── uxsdk_ic_slider_block_red.png
+│                       │   ├── uxsdk_ic_spinner_cell_collapse.png
+│                       │   ├── uxsdk_ic_spinner_cell_expand.png
+│                       │   ├── uxsdk_ic_stream_palette_seekbar.png
+│                       │   ├── uxsdk_ic_takeoff.png
+│                       │   ├── uxsdk_ic_temp_cold.png
+│                       │   ├── uxsdk_ic_temp_hot.png
+│                       │   ├── uxsdk_ic_themedark_popover_arrow_left.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_0.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_1.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_2.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_3.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_4.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_5.png
+│                       │   ├── uxsdk_img_device_home_m3e.webp
+│                       │   ├── uxsdk_range_center_down.webp
+│                       │   ├── uxsdk_range_center_up.webp
+│                       │   ├── uxsdk_sdr_freq_rect_pgb_bg.xml
+│                       │   ├── uxsdk_setting_ui_fail.png
+│                       │   ├── uxsdk_setting_ui_flyc_c_plus_rc_mode_aps.webp
+│                       │   ├── uxsdk_setting_ui_flyc_m3e_rc_mode_ans.webp
+│                       │   ├── uxsdk_setting_ui_flyc_m3e_rc_mode_tns.webp
+│                       │   ├── uxsdk_setting_ui_flyc_mode_aps.webp
+│                       │   ├── uxsdk_setting_ui_flyc_mode_asp.png
+│                       │   ├── uxsdk_setting_ui_flyc_mode_paf.webp
+│                       │   ├── uxsdk_setting_ui_flyc_mode_s1paf.webp
+│                       │   ├── uxsdk_setting_ui_flyc_mode_tps.webp
+│                       │   ├── uxsdk_setting_ui_flyc_rc_plus_rc_mode.webp
+│                       │   ├── uxsdk_setting_ui_flyc_rm510_rc_mode_white_ans.webp
+│                       │   ├── uxsdk_setting_ui_flyc_rm700_rc_mode_white_aps.webp
+│                       │   ├── uxsdk_setting_ui_flyc_smart_controller_rc_mode.webp
+│                       │   ├── uxsdk_setting_ui_flyc_smart_controller_rc_mode_aps.webp
+│                       │   ├── uxsdk_setting_ui_go_home_mode_height_fixed.png
+│                       │   ├── uxsdk_setting_ui_go_home_mode_height_near_ground.png
+│                       │   ├── uxsdk_setting_ui_imu_behind.webp
+│                       │   ├── uxsdk_setting_ui_imu_behind_in2.webp
+│                       │   ├── uxsdk_setting_ui_imu_behind_m210.png
+│                       │   ├── uxsdk_setting_ui_imu_behind_m300.webp
+│                       │   ├── uxsdk_setting_ui_imu_behind_m320.webp
+│                       │   ├── uxsdk_setting_ui_imu_behind_m350.webp
+│                       │   ├── uxsdk_setting_ui_imu_behind_n3.webp
+│                       │   ├── uxsdk_setting_ui_imu_below_m600.webp
+│                       │   ├── uxsdk_setting_ui_imu_below_m600_pro.webp
+│                       │   ├── uxsdk_setting_ui_imu_bg.png
+│                       │   ├── uxsdk_setting_ui_imu_front.webp
+│                       │   ├── uxsdk_setting_ui_imu_front_in2.webp
+│                       │   ├── uxsdk_setting_ui_imu_front_m210.png
+│                       │   ├── uxsdk_setting_ui_imu_front_m300.webp
+│                       │   ├── uxsdk_setting_ui_imu_front_m320.webp
+│                       │   ├── uxsdk_setting_ui_imu_front_m350.webp
+│                       │   ├── uxsdk_setting_ui_imu_front_m600.webp
+│                       │   ├── uxsdk_setting_ui_imu_front_m600_pro.webp
+│                       │   ├── uxsdk_setting_ui_imu_front_n3.webp
+│                       │   ├── uxsdk_setting_ui_imu_left.webp
+│                       │   ├── uxsdk_setting_ui_imu_left_in2.webp
+│                       │   ├── uxsdk_setting_ui_imu_left_m210.png
+│                       │   ├── uxsdk_setting_ui_imu_left_m300.webp
+│                       │   ├── uxsdk_setting_ui_imu_left_m320.webp
+│                       │   ├── uxsdk_setting_ui_imu_left_m350.webp
+│                       │   ├── uxsdk_setting_ui_imu_left_m600.webp
+│                       │   ├── uxsdk_setting_ui_imu_left_m600_pro.webp
+│                       │   ├── uxsdk_setting_ui_imu_left_n3.webp
+│                       │   ├── uxsdk_setting_ui_imu_p4s_behind.webp
+│                       │   ├── uxsdk_setting_ui_imu_p4s_front.webp
+│                       │   ├── uxsdk_setting_ui_imu_ready.webp
+│                       │   ├── uxsdk_setting_ui_imu_ready_in2.webp
+│                       │   ├── uxsdk_setting_ui_imu_ready_m210.png
+│                       │   ├── uxsdk_setting_ui_imu_ready_m300.webp
+│                       │   ├── uxsdk_setting_ui_imu_ready_m320.png
+│                       │   ├── uxsdk_setting_ui_imu_ready_m600.webp
+│                       │   ├── uxsdk_setting_ui_imu_ready_m600_pro.webp
+│                       │   ├── uxsdk_setting_ui_imu_ready_n3.webp
+│                       │   ├── uxsdk_setting_ui_imu_ready_p4s.webp
+│                       │   ├── uxsdk_setting_ui_imu_ready_pm420.webp
+│                       │   ├── uxsdk_setting_ui_imu_right.webp
+│                       │   ├── uxsdk_setting_ui_imu_right_in2.webp
+│                       │   ├── uxsdk_setting_ui_imu_right_m210.png
+│                       │   ├── uxsdk_setting_ui_imu_right_m300.webp
+│                       │   ├── uxsdk_setting_ui_imu_right_m320.webp
+│                       │   ├── uxsdk_setting_ui_imu_right_m350.webp
+│                       │   ├── uxsdk_setting_ui_imu_right_m600.webp
+│                       │   ├── uxsdk_setting_ui_imu_right_m600_pro.webp
+│                       │   ├── uxsdk_setting_ui_imu_right_n3.webp
+│                       │   ├── uxsdk_setting_ui_imu_top.webp
+│                       │   ├── uxsdk_setting_ui_imu_top_in2.webp
+│                       │   ├── uxsdk_setting_ui_imu_top_m210.png
+│                       │   ├── uxsdk_setting_ui_imu_top_m300.webp
+│                       │   ├── uxsdk_setting_ui_imu_top_m320.webp
+│                       │   ├── uxsdk_setting_ui_imu_top_m350.webp
+│                       │   ├── uxsdk_setting_ui_imu_top_m600.webp
+│                       │   ├── uxsdk_setting_ui_imu_top_m600_pro.webp
+│                       │   ├── uxsdk_setting_ui_imu_top_n3.webp
+│                       │   ├── uxsdk_setting_ui_imu_under.webp
+│                       │   ├── uxsdk_setting_ui_imu_under_n3.webp
+│                       │   ├── uxsdk_setting_ui_imu_underside_m320.png
+│                       │   ├── uxsdk_setting_ui_imucali_front_m3e.webp
+│                       │   ├── uxsdk_setting_ui_imucali_front_m3t.webp
+│                       │   ├── uxsdk_setting_ui_imucali_left_m3e.webp
+│                       │   ├── uxsdk_setting_ui_imucali_left_m3t.webp
+│                       │   ├── uxsdk_setting_ui_imucali_right_m3e.webp
+│                       │   ├── uxsdk_setting_ui_imucali_right_m3t.webp
+│                       │   ├── uxsdk_setting_ui_imucali_top_m3e.webp
+│                       │   ├── uxsdk_setting_ui_imucali_top_m3t.webp
+│                       │   ├── uxsdk_setting_ui_imucali_underside_m3e.webp
+│                       │   ├── uxsdk_setting_ui_imucali_underside_m3t.webp
+│                       │   ├── uxsdk_setting_ui_kumquat_imucali_front.webp
+│                       │   ├── uxsdk_setting_ui_kumquat_imucali_left.webp
+│                       │   ├── uxsdk_setting_ui_kumquat_imucali_ready.webp
+│                       │   ├── uxsdk_setting_ui_kumquat_imucali_right.webp
+│                       │   ├── uxsdk_setting_ui_kumquat_imucali_top.webp
+│                       │   ├── uxsdk_setting_ui_kumquat_imucali_underside.webp
+│                       │   ├── uxsdk_setting_ui_rc_calibration_finished_label.png
+│                       │   ├── uxsdk_setting_ui_rc_calibration_wheel_left_dirc.png
+│                       │   ├── uxsdk_setting_ui_rc_calibration_wheel_right_dirc.png
+│                       │   ├── uxsdk_setting_ui_success.png
+│                       │   ├── uxsdk_switch_thumb.png
+│                       │   ├── uxsdk_switch_thumb_disabled.png
+│                       │   ├── uxsdk_thermal_palette_arctic.webp
+│                       │   ├── uxsdk_thermal_palette_bh.webp
+│                       │   ├── uxsdk_thermal_palette_black_hot.webp
+│                       │   ├── uxsdk_thermal_palette_blue_green_red.webp
+│                       │   ├── uxsdk_thermal_palette_blue_red_yellow.webp
+│                       │   ├── uxsdk_thermal_palette_ink_green_red.webp
+│                       │   ├── uxsdk_thermal_palette_purple_red_yellow.webp
+│                       │   ├── uxsdk_thermal_palette_rainbow1.webp
+│                       │   ├── uxsdk_thermal_palette_rainbow2.webp
+│                       │   └── uxsdk_thermal_palette_wh.webp
+│                       ├── drawable-xxxhdpi
+│                       │   ├── uxsdk_arrow_down.png
+│                       │   ├── uxsdk_arrow_left.png
+│                       │   ├── uxsdk_arrow_up.png
+│                       │   ├── uxsdk_auto_iso.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_a.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_m.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_p.png
+│                       │   ├── uxsdk_camera_controll_exposure_mode_s.png
+│                       │   ├── uxsdk_camera_exp_press.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_highlight.png
+│                       │   ├── uxsdk_camera_exposure_mode_auto_normal.png
+│                       │   ├── uxsdk_camera_exposure_mode_setting_background.png
+│                       │   ├── uxsdk_expose_seekbar_active_bg.png
+│                       │   ├── uxsdk_expose_sun_ic.png
+│                       │   ├── uxsdk_ic_arrow_down.png
+│                       │   ├── uxsdk_ic_arrow_up.png
+│                       │   ├── uxsdk_ic_attr_altitude.png
+│                       │   ├── uxsdk_ic_attr_speed.png
+│                       │   ├── uxsdk_ic_compass_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_confirm.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_start_pressed.png
+│                       │   ├── uxsdk_ic_hasselblad_shutter_stop.png
+│                       │   ├── uxsdk_ic_land.png
+│                       │   ├── uxsdk_ic_map_gimbal_yaw.png
+│                       │   ├── uxsdk_ic_refresh.png
+│                       │   ├── uxsdk_ic_return_home.png
+│                       │   ├── uxsdk_ic_rtk_guidance_close.webp
+│                       │   ├── uxsdk_ic_setting_enter.png
+│                       │   ├── uxsdk_ic_takeoff.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_0.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_1.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_2.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_3.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_4.png
+│                       │   ├── uxsdk_ic_topbar_signal_level_5.png
+│                       │   ├── uxsdk_pic_visual_setting_vps.png
+│                       │   ├── uxsdk_stream_narrow_band_g.webp
+│                       │   ├── uxsdk_stream_narrow_band_nir.webp
+│                       │   ├── uxsdk_stream_narrow_band_r.webp
+│                       │   ├── uxsdk_stream_narrow_band_re.webp
+│                       │   ├── uxsdk_stream_vegatation_gndvi.webp
+│                       │   ├── uxsdk_stream_vegatation_ndre.webp
+│                       │   ├── uxsdk_stream_vegatation_ndvi.webp
+│                       │   ├── uxsdk_switch_thumb.png
+│                       │   └── uxsdk_switch_thumb_disabled.png
+│                       ├── font
+│                       │   ├── d_din_condensed_bold.ttf
+│                       │   └── noto_sans_cjk_sc_medium.otf
+│                       ├── layout
+│                       │   ├── uxsdk_activity_default_layout.xml
+│                       │   ├── uxsdk_activity_widgets.xml
+│                       │   ├── uxsdk_camera_lens_control_widget.xml
+│                       │   ├── uxsdk_camera_status_action_item_content.xml
+│                       │   ├── uxsdk_cell_editor_layout.xml
+│                       │   ├── uxsdk_cell_switcher_layout.xml
+│                       │   ├── uxsdk_cell_tab_select_layout.xml
+│                       │   ├── uxsdk_cell_text_desc_layout.xml
+│                       │   ├── uxsdk_cell_text_layout.xml
+│                       │   ├── uxsdk_dialog_common_loading_layout.xml
+│                       │   ├── uxsdk_dialog_compass_calibration.xml
+│                       │   ├── uxsdk_dialog_fly_zone.xml
+│                       │   ├── uxsdk_dialog_simulator_load_preset.xml
+│                       │   ├── uxsdk_dialog_simulator_save_preset.xml
+│                       │   ├── uxsdk_dialog_sliding_action.xml
+│                       │   ├── uxsdk_expose_focus_view.xml
+│                       │   ├── uxsdk_fpv_pfd_attitude_display_widget.xml
+│                       │   ├── uxsdk_fpv_pfd_speed_display_widget.xml
+│                       │   ├── uxsdk_fpv_top_bar_popover_title_value_cell.xml
+│                       │   ├── uxsdk_fpv_top_bar_widget_gps_signal.xml
+│                       │   ├── uxsdk_fpv_top_bar_widget_gps_signal_popover_rtk.xml
+│                       │   ├── uxsdk_fpv_top_bar_widget_warning_message.xml
+│                       │   ├── uxsdk_fpv_top_bar_widget_warning_message_list_item.xml
+│                       │   ├── uxsdk_fpv_top_bar_widget_warning_message_list_item_no_warning.xml
+│                       │   ├── uxsdk_fpv_top_bar_widget_warning_message_popover.xml
+│                       │   ├── uxsdk_fpv_view_horizontal_situation_indicator.xml
+│                       │   ├── uxsdk_fragemnt_setting_menu_omni_perception_layout.xml
+│                       │   ├── uxsdk_fragemnt_setting_ui_rtk_layout.xml
+│                       │   ├── uxsdk_fragment_battery_info_detail.xml
+│                       │   ├── uxsdk_fragment_not_yet_implement.xml
+│                       │   ├── uxsdk_fragment_rc_calibration.xml
+│                       │   ├── uxsdk_fragment_setting_menu_battery_layout.xml
+│                       │   ├── uxsdk_fragment_setting_menu_remote_controller_layout.xml
+│                       │   ├── uxsdk_fragment_widget.xml
+│                       │   ├── uxsdk_fragment_widget_list.xml
+│                       │   ├── uxsdk_gimbal_fine_tune.xml
+│                       │   ├── uxsdk_gimbal_setting.xml
+│                       │   ├── uxsdk_hdmi_setting_layout.xml
+│                       │   ├── uxsdk_icon_button_widget.xml
+│                       │   ├── uxsdk_layout_dialog_checkbox.xml
+│                       │   ├── uxsdk_layout_simulator_preset_row.xml
+│                       │   ├── uxsdk_layout_title_bar.xml
+│                       │   ├── uxsdk_list_item_title_widget.xml
+│                       │   ├── uxsdk_liveview_pfd_attitude_display_widget.xml
+│                       │   ├── uxsdk_liveview_pfd_speed_display_widget.xml
+│                       │   ├── uxsdk_m3m_stream_palette_bar.xml
+│                       │   ├── uxsdk_m3m_stream_palette_popover_view.xml
+│                       │   ├── uxsdk_palette_bar_panel.xml
+│                       │   ├── uxsdk_palette_selection_panel_list_item.xml
+│                       │   ├── uxsdk_panel_common_camera.xml
+│                       │   ├── uxsdk_panel_exposure_setting.xml
+│                       │   ├── uxsdk_panel_layout_setting.xml
+│                       │   ├── uxsdk_panel_ndvl.xml
+│                       │   ├── uxsdk_primary_flight_display_widget.xml
+│                       │   ├── uxsdk_rtk_guidance_layout.xml
+│                       │   ├── uxsdk_rtk_guidance_step_image_layout.xml
+│                       │   ├── uxsdk_rtk_guidance_step_navigation_layout.xml
+│                       │   ├── uxsdk_sdr_freq_view.xml
+│                       │   ├── uxsdk_setting_battery_widget.xml
+│                       │   ├── uxsdk_setting_circle_view.xml
+│                       │   ├── uxsdk_setting_menu_about.xml
+│                       │   ├── uxsdk_setting_menu_aircraft_go_home_mode_layout.xml
+│                       │   ├── uxsdk_setting_menu_aircraft_home_set_layout.xml
+│                       │   ├── uxsdk_setting_menu_aircraft_layout.xml
+│                       │   ├── uxsdk_setting_menu_battery_controller_layout.xml
+│                       │   ├── uxsdk_setting_menu_common_about.xml
+│                       │   ├── uxsdk_setting_menu_common_device_rename.xml
+│                       │   ├── uxsdk_setting_menu_common_devicename.xml
+│                       │   ├── uxsdk_setting_menu_common_layout.xml
+│                       │   ├── uxsdk_setting_menu_common_led.xml
+│                       │   ├── uxsdk_setting_menu_compass_status_layout.xml
+│                       │   ├── uxsdk_setting_menu_flyc_mode.xml
+│                       │   ├── uxsdk_setting_menu_fragment_layout.xml
+│                       │   ├── uxsdk_setting_menu_frequency_tab_select_layout.xml
+│                       │   ├── uxsdk_setting_menu_gimbal_layout.xml
+│                       │   ├── uxsdk_setting_menu_hd_channel_select.xml
+│                       │   ├── uxsdk_setting_menu_hd_layout.xml
+│                       │   ├── uxsdk_setting_menu_imu_campass_sensor_layout.xml
+│                       │   ├── uxsdk_setting_menu_imu_status_layout.xml
+│                       │   ├── uxsdk_setting_menu_led_layout.xml
+│                       │   ├── uxsdk_setting_menu_limit_distance_set_layout.xml
+│                       │   ├── uxsdk_setting_menu_omni_apas_layout.xml
+│                       │   ├── uxsdk_setting_menu_perception_precision_landing_layout.xml
+│                       │   ├── uxsdk_setting_menu_perception_vps_layout.xml
+│                       │   ├── uxsdk_setting_menu_sdr_band_width_layout.xml
+│                       │   ├── uxsdk_setting_menu_sdr_band_width_select_layout.xml
+│                       │   ├── uxsdk_setting_menu_sdr_channel_select_layout.xml
+│                       │   ├── uxsdk_setting_menu_sdr_info_text_layout.xml
+│                       │   ├── uxsdk_setting_menu_sdr_video_rate_text_layout.xml
+│                       │   ├── uxsdk_setting_menu_sensors_layout.xml
+│                       │   ├── uxsdk_setting_ui_imu_cal_view.xml
+│                       │   ├── uxsdk_setting_ui_imucal_desc_item.xml
+│                       │   ├── uxsdk_setting_ui_rc_smart_controller_calibration.xml
+│                       │   ├── uxsdk_setting_ui_rc_smart_controller_stick_calibration_view.xml
+│                       │   ├── uxsdk_setting_ui_rc_smart_controller_wheel_calibration_view.xml
+│                       │   ├── uxsdk_spinner_desc_layout.xml
+│                       │   ├── uxsdk_spinner_item_bord.xml
+│                       │   ├── uxsdk_spinner_item_drop.xml
+│                       │   ├── uxsdk_ux_ndvi_stream_selection_panel.xml
+│                       │   ├── uxsdk_view_battery_detail_cell.xml
+│                       │   ├── uxsdk_view_battery_info.xml
+│                       │   ├── uxsdk_view_battery_info_detail_bottom.xml
+│                       │   ├── uxsdk_view_battery_info_detail_cells.xml
+│                       │   ├── uxsdk_view_gimbal_control.xml
+│                       │   ├── uxsdk_view_group_battery.xml
+│                       │   ├── uxsdk_view_group_battery_info.xml
+│                       │   ├── uxsdk_view_seek_bar.xml
+│                       │   ├── uxsdk_view_setting_flyc_sensor_progress_tip.xml
+│                       │   ├── uxsdk_view_widget.xml
+│                       │   ├── uxsdk_widget_air_sense.xml
+│                       │   ├── uxsdk_widget_auto_exposure_lock.xml
+│                       │   ├── uxsdk_widget_base_camera_info.xml
+│                       │   ├── uxsdk_widget_base_telemetry.xml
+│                       │   ├── uxsdk_widget_battery.xml
+│                       │   ├── uxsdk_widget_camera_config_ssd.xml
+│                       │   ├── uxsdk_widget_camera_config_storage.xml
+│                       │   ├── uxsdk_widget_camera_controls.xml
+│                       │   ├── uxsdk_widget_camera_settings_menu_indicator.xml
+│                       │   ├── uxsdk_widget_common_led.xml
+│                       │   ├── uxsdk_widget_compass.xml
+│                       │   ├── uxsdk_widget_connection.xml
+│                       │   ├── uxsdk_widget_exposure_mode_setting.xml
+│                       │   ├── uxsdk_widget_exposure_settings_indicator.xml
+│                       │   ├── uxsdk_widget_flight_fpa.xml
+│                       │   ├── uxsdk_widget_flight_lost_action.xml
+│                       │   ├── uxsdk_widget_flight_mode.xml
+│                       │   ├── uxsdk_widget_focus_exposure_switch.xml
+│                       │   ├── uxsdk_widget_focus_mode_switch.xml
+│                       │   ├── uxsdk_widget_fpv.xml
+│                       │   ├── uxsdk_widget_fpv_interaction.xml
+│                       │   ├── uxsdk_widget_gps_signal.xml
+│                       │   ├── uxsdk_widget_iso_ei_setting.xml
+│                       │   ├── uxsdk_widget_keep_status_enable_layout.xml
+│                       │   ├── uxsdk_widget_list_item.xml
+│                       │   ├── uxsdk_widget_map.xml
+│                       │   ├── uxsdk_widget_photo_video_switch.xml
+│                       │   ├── uxsdk_widget_precision_landing_widget_layout.xml
+│                       │   ├── uxsdk_widget_progress_bar_layout.xml
+│                       │   ├── uxsdk_widget_radar.xml
+│                       │   ├── uxsdk_widget_rc_check_frequency_layout.xml
+│                       │   ├── uxsdk_widget_record_video.xml
+│                       │   ├── uxsdk_widget_remote_controller_signal.xml
+│                       │   ├── uxsdk_widget_rtk.xml
+│                       │   ├── uxsdk_widget_rtk_connect_status_item.xml
+│                       │   ├── uxsdk_widget_rtk_connect_status_layout.xml
+│                       │   ├── uxsdk_widget_rtk_enabled.xml
+│                       │   ├── uxsdk_widget_rtk_satellite_status.xml
+│                       │   ├── uxsdk_widget_rtk_type_switch.xml
+│                       │   ├── uxsdk_widget_setting.xml
+│                       │   ├── uxsdk_widget_setting_rc_calibration_layout.xml
+│                       │   ├── uxsdk_widget_shoot_photo.xml
+│                       │   ├── uxsdk_widget_simulator_control.xml
+│                       │   ├── uxsdk_widget_system_status.xml
+│                       │   ├── uxsdk_widget_tab_item.xml
+│                       │   ├── uxsdk_widget_user_account_login.xml
+│                       │   ├── uxsdk_widget_video_signal.xml
+│                       │   ├── uxsdk_widget_vision.xml
+│                       │   └── uxsdk_widget_vision_position_widget_layout.xml
+│                       ├── menu
+│                       │   └── map_select_menu.xml
+│                       ├── mipmap-hdpi
+│                       │   └── ic_launcher.png
+│                       ├── mipmap-mdpi
+│                       │   └── ic_launcher.png
+│                       ├── mipmap-xhdpi
+│                       │   └── ic_launcher.png
+│                       ├── mipmap-xxhdpi
+│                       │   └── ic_launcher.png
+│                       ├── mipmap-xxxhdpi
+│                       │   └── ic_launcher.png
+│                       ├── raw
+│                       │   ├── tips_voice_atti_mode.mp3
+│                       │   ├── uxsdk_camera_ev_center.mp3
+│                       │   ├── uxsdk_camera_simple_click.mp3
+│                       │   ├── uxsdk_end_video_record.mp3
+│                       │   ├── uxsdk_radar_beep_1000.wav
+│                       │   ├── uxsdk_radar_beep_250.wav
+│                       │   ├── uxsdk_radar_beep_500.wav
+│                       │   ├── uxsdk_rtk_guidance_reset.json
+│                       │   ├── uxsdk_rtk_guidance_step1.json
+│                       │   ├── uxsdk_rtk_guidance_step2.json
+│                       │   ├── uxsdk_rtk_guidance_step3.json
+│                       │   ├── uxsdk_shutter_1.mp3
+│                       │   ├── uxsdk_shutter_10.mp3
+│                       │   ├── uxsdk_shutter_14.mp3
+│                       │   ├── uxsdk_shutter_3.mp3
+│                       │   ├── uxsdk_shutter_5.mp3
+│                       │   ├── uxsdk_shutter_7.mp3
+│                       │   ├── uxsdk_tips_voice_atti_mode.mp3
+│                       │   └── uxsdk_video_voice.mp3
+│                       ├── raw-zh
+│                       │   ├── tips_voice_atti_mode.mp3
+│                       │   └── uxsdk_tips_voice_atti_mode.mp3
+│                       ├── values
+│                       │   ├── arrays.xml
+│                       │   ├── attrs.xml
+│                       │   ├── colors.xml
+│                       │   ├── dimens.xml
+│                       │   ├── ids.xml
+│                       │   ├── integers.xml
+│                       │   ├── strings.xml
+│                       │   ├── strings_dimension_ratios.xml
+│                       │   └── styles.xml
+│                       └── values-zh-rCN
+│                           └── strings.xml
+├── README.md
+└── estructura.txt
+
+277 directories, 2379 files
