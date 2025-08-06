@@ -8,6 +8,9 @@ import dji.v5.utils.common.DiskUtil
 import dji.v5.utils.common.FileUtils
 import dji.v5.utils.common.LogUtils
 import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.IOException
 
 /**
  * ClassName : MSDKLogVM
@@ -54,6 +57,26 @@ class MSDKCrashLogVM : DJIViewModel() {
                 stringBuilder.append("\n")
                 stringBuilder.append("\n")
                 log = stringBuilder.toString()
+
+                // Copiar el archivo a Documents/DroneScanLogs/
+                try {
+                    val publicDir = File("/storage/emulated/0/Documents/DroneScanLogs/")
+                    if (!publicDir.exists()) {
+                        publicDir.mkdirs()
+                    }
+                    val destFile = File(publicDir, f.name)
+                    FileInputStream(f).use { input ->
+                        FileOutputStream(destFile).use { output ->
+                            val buffer = ByteArray(4096)
+                            var bytesRead: Int
+                            while (input.read(buffer).also { bytesRead = it } != -1) {
+                                output.write(buffer, 0, bytesRead)
+                            }
+                        }
+                    }
+                } catch (e: IOException) {
+                    logMsg.postValue("Error copiando log a Documents: ${e.message}")
+                }
             }
             logInfo.postValue(log)
         }

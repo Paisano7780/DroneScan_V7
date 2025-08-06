@@ -12,7 +12,7 @@
         android:text="Escanear Fotos del RC" />
 
     <TextView
-        android:id="@+id/txt_results"
+        android:id="@+id/resultTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Resultados aparecerán aquí"

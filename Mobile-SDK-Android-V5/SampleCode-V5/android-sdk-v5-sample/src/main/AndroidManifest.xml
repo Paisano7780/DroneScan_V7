@@ -97,5 +97,10 @@
             android:screenOrientation="landscape"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="false"/>
+        <activity android:name="dji.sampleV5.aircraft.DroneScanActivity"
+            android:theme="@style/full_screen_theme"
+            android:screenOrientation="landscape"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"/>
     </application>
 </manifest>
