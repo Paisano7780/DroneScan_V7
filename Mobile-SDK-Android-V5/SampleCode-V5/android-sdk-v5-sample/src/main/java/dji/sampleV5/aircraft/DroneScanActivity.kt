@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.widget.TextView
+import android.content.pm.PackageManager
 import androidx.annotation.NonNull
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -19,6 +20,9 @@ import dji.v5.common.callback.CommonCallbacks
 import dji.v5.common.error.IDJIError
 import dji.v5.manager.datacenter.MediaDataCenter
 import dji.v5.manager.datacenter.media.*
+import dji.v5.manager.datacenter.media.MediaFileListDataSource
+import dji.sdk.keyvalue.value.camera.MediaFileType
+import dji.sdk.keyvalue.value.camera.DateTime
 import dji.sdk.keyvalue.value.camera.CameraStorageLocation
 import dji.sdk.keyvalue.value.common.ComponentIndexType
 import java.io.File
