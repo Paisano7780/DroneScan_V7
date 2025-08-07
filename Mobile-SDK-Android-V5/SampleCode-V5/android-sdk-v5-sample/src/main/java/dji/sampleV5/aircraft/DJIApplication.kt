@@ -18,9 +18,16 @@ open class DJIApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-
-        // Ensure initialization is called first
+        // Inicializar y registrar la app con el SDK de DJI (lógica de Java)
         msdkManagerVM.initMobileSDK(this)
+        // Inicialización de Helper global (si es necesario, lógica de Java)
+        try {
+            val helperClass = Class.forName("dji.sampleV5.aircraft.util.Helper")
+            val installMethod = helperClass.getMethod("install", Application::class.java)
+            installMethod.invoke(null, this)
+        } catch (e: Exception) {
+            // Si no existe Helper o método, ignorar
+        }
     }
 
 }

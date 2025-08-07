@@ -10,10 +10,4 @@ import android.content.Context
  *
  * Copyright (c) 2022, DJI All Rights Reserved.
  */
-class DJIAircraftApplication : DJIApplication() {
-
-    override fun attachBaseContext(base: Context?) {
-        super.attachBaseContext(base)
-        com.cySdkyc.clx.Helper.install(this)
-    }
-}
+// File removed to avoid duplication and ensure all initialization goes through DJIApplication.
