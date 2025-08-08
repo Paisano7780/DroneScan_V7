@@ -141,14 +141,22 @@ class DroneScanActivity : Activity() {
                 val progress = if (total > 0) (current * 100 / total).toInt() else 0
                 resultTextView?.text = "Descargando: $progress%"
             }
-            override fun onSuccess(fileResult: File) {
-                resultTextView?.text = "Descarga exitosa: ${fileResult.absolutePath}"
+            override fun onRealtimeDataUpdate(data: ByteArray, position: Long) {
+                try {
+                    bos.write(data, 0, data.size)
+                    bos.flush()
+                } catch (e: Exception) {
+                    // Manejo de error de escritura
+                }
+            }
+            override fun onFinish() {
                 try {
                     bos.close()
                     outputStream.close()
                 } catch (e: Exception) {}
+                resultTextView?.text = "Descarga finalizada: ${file.absolutePath}"
                 val scanIntent = Intent(this@DroneScanActivity, dji.barcode.BarcodeScanActivity::class.java)
-                scanIntent.putExtra("image_path", fileResult.absolutePath)
+                scanIntent.putExtra("image_path", file.absolutePath)
                 startActivityForResult(scanIntent, 2001)
             }
             override fun onFailure(error: IDJIError) {
@@ -157,19 +165,6 @@ class DroneScanActivity : Activity() {
                     bos.close()
                     outputStream.close()
                 } catch (e: Exception) {}
-            }
-            override fun onFinish() {
-                // Ya cerrado en onSuccess/onFailure
-            }
-            override fun onRealtimeDataUpdate(data: ByteArray?, position: Long) {
-                if (data != null) {
-                    try {
-                        bos.write(data, 0, data.size)
-                        bos.flush()
-                    } catch (e: Exception) {
-                        // Manejo de error de escritura
-                    }
-                }
             }
         }
         photo.pullOriginalMediaFileFromCamera(0, listener)
