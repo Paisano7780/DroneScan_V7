@@ -29,8 +29,8 @@ import dji.sdk.keyvalue.value.camera.MediaFileType
 import dji.sdk.keyvalue.value.camera.CameraStorageLocation
 import dji.sdk.keyvalue.value.common.ComponentIndexType
 import dji.v5.manager.key.KeyManager
-import dji.sdk.keyvalue.key.camera.CameraKey
-import dji.sdk.keyvalue.value.camera.GeneratedMediaFileInfo
+import dji.v5.manager.key.camera.CameraKey
+import dji.v5.manager.key.camera.value.GeneratedMediaFileInfo
 import java.io.File
 
 class DroneScanActivity : Activity() {
@@ -105,20 +105,17 @@ class DroneScanActivity : Activity() {
         val key = CameraKey.create(CameraKey.KeyNewlyGeneratedMediaFile)
         KeyManager.getInstance().addListener(key) { value ->
             if (value is GeneratedMediaFileInfo) {
-                // Solo descargar si es una foto JPEG
                 if (value.fileType == MediaFileType.JPEG) {
-                    resultTextView?.text = "Nueva foto detectada: ${value.fileName}, descargando..."
-                    // Crear un objeto MediaFile temporal para usar el método de descarga
-                    val mediaFile = MediaFile(
-                        value.fileName,
-                        value.fileType,
-                        value.fileSize,
-                        value.createTime,
-                        value.storageLocation,
-                        value.index,
-                        value.relativePath
-                    )
-                    downloadLatestPhoto(mediaFile)
+                    resultTextView?.text = "Nueva foto detectada: ${value.fileName}, buscando en MediaManager..."
+                    // Buscar el MediaFile correspondiente en la lista actual
+                    val mediaFiles = mediaManager?.getMediaFileListData()?.getData()
+                    val found = mediaFiles?.find { it.fileName == value.fileName }
+                    if (found != null) {
+                        resultTextView?.text = "Descargando: ${found.fileName}"
+                        downloadLatestPhoto(found)
+                    } else {
+                        resultTextView?.text = "No se encontró el archivo en MediaManager: ${value.fileName}"
+                    }
                 }
             }
         }
