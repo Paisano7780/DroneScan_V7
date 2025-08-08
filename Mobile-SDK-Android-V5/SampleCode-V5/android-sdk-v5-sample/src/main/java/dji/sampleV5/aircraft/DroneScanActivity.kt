@@ -28,9 +28,6 @@ import dji.v5.manager.datacenter.media.PullMediaFileListParam
 import dji.sdk.keyvalue.value.camera.MediaFileType
 import dji.sdk.keyvalue.value.camera.CameraStorageLocation
 import dji.sdk.keyvalue.value.common.ComponentIndexType
-import dji.v5.manager.key.KeyManager
-import dji.v5.manager.key.camera.CameraKey
-import dji.v5.manager.key.camera.value.GeneratedMediaFileInfo
 import java.io.File
 
 class DroneScanActivity : Activity() {
@@ -65,7 +62,6 @@ class DroneScanActivity : Activity() {
         registerReceiver(usbReceiver, filter)
         checkAndRequestStoragePermission()
         setupMediaManager()
-        setupKeyManagerListener()
     }
 
     private fun setupMediaManager() {
@@ -98,31 +94,46 @@ class DroneScanActivity : Activity() {
         })
     }
 
-    // Ya no se usará pullAndDownloadLatestPhoto, la lógica será por KeyManager
-
-    private fun setupKeyManagerListener() {
-        // Escuchar el último archivo multimedia generado por la cámara
-        val key = CameraKey.create(CameraKey.KeyNewlyGeneratedMediaFile)
-        KeyManager.getInstance().addListener(key) { value ->
-            if (value is GeneratedMediaFileInfo) {
-                if (value.fileType == MediaFileType.JPEG) {
-                    resultTextView?.text = "Nueva foto detectada: ${value.fileName}, buscando en MediaManager..."
-                    // Buscar el MediaFile correspondiente en la lista actual
-                    val mediaFiles = mediaManager?.getMediaFileListData()?.getData()
-                    val found = mediaFiles?.find { it.fileName == value.fileName }
-                    if (found != null) {
-                        resultTextView?.text = "Descargando: ${found.fileName}"
-                        downloadLatestPhoto(found)
-                    } else {
-                        resultTextView?.text = "No se encontró el archivo en MediaManager: ${value.fileName}"
-                    }
-                }
-            }
+    // Lógica restaurada: buscar la última foto JPEG por nombre correlativo
+    private fun pullAndDownloadLatestPhoto() {
+        val mediaFiles = mediaManager?.getMediaFileListData()?.getData()
+        if (mediaFiles.isNullOrEmpty()) {
+            resultTextView?.text = "No hay fotos en la SD"
+            return
         }
+        // Filtrar solo JPEG
+        val photoFiles = mediaFiles.filter { it.getFileType() == MediaFileType.JPEG }
+        if (photoFiles.isEmpty()) {
+            resultTextView?.text = "No se encontró foto nueva"
+            return
+        }
+        // Buscar el mayor número correlativo en el nombre (ej: DJI_00123.JPG)
+        val latestPhoto = photoFiles.maxByOrNull { extractPhotoIndex(it.fileName) }
+        if (latestPhoto == null) {
+            resultTextView?.text = "No se encontró foto nueva"
+            return
+        }
+        resultTextView?.text = "Descargando: ${latestPhoto.fileName}"
+        downloadLatestPhoto(latestPhoto)
+    }
+
+    // Extrae el número correlativo del nombre de archivo (ej: DJI_00123.JPG -> 123)
+    private fun extractPhotoIndex(fileName: String): Int {
+        val regex = Regex("\\d+")
+        return regex.findAll(fileName)
+            .map { it.value.toIntOrNull() ?: 0 }
+            .maxOrNull() ?: 0
     }
 
     private fun downloadLatestPhoto(photo: MediaFile) {
-        downloadListener = object : MediaFileDownloadListener {
+        val fileDir = File(cacheDir, "media")
+        if (!fileDir.exists()) fileDir.mkdirs()
+        val file = File(fileDir, photo.fileName)
+        if (file.exists()) file.delete()
+        val outputStream = file.outputStream()
+        val bos = java.io.BufferedOutputStream(outputStream)
+        val beginTime = System.currentTimeMillis()
+        val listener = object : MediaFileDownloadListener {
             override fun onStart() {
                 resultTextView?.text = "Iniciando descarga..."
             }
@@ -130,21 +141,38 @@ class DroneScanActivity : Activity() {
                 val progress = if (total > 0) (current * 100 / total).toInt() else 0
                 resultTextView?.text = "Descargando: $progress%"
             }
-            override fun onSuccess(file: File) {
-                resultTextView?.text = "Descarga exitosa: ${file.absolutePath}"
+            override fun onSuccess(fileResult: File) {
+                resultTextView?.text = "Descarga exitosa: ${fileResult.absolutePath}"
+                try {
+                    bos.close()
+                    outputStream.close()
+                } catch (e: Exception) {}
                 val scanIntent = Intent(this@DroneScanActivity, dji.barcode.BarcodeScanActivity::class.java)
-                scanIntent.putExtra("image_path", file.absolutePath)
+                scanIntent.putExtra("image_path", fileResult.absolutePath)
                 startActivityForResult(scanIntent, 2001)
             }
             override fun onFailure(error: IDJIError) {
                 resultTextView?.text = "Descarga fallida de la foto: ${error.description()}"
+                try {
+                    bos.close()
+                    outputStream.close()
+                } catch (e: Exception) {}
             }
-            override fun onFinish() {}
+            override fun onFinish() {
+                // Ya cerrado en onSuccess/onFailure
+            }
             override fun onRealtimeDataUpdate(data: ByteArray?, position: Long) {
-                // Implementación vacía, requerida por la interfaz
+                if (data != null) {
+                    try {
+                        bos.write(data, 0, data.size)
+                        bos.flush()
+                    } catch (e: Exception) {
+                        // Manejo de error de escritura
+                    }
+                }
             }
         }
-        photo.pullOriginalMediaFileFromCamera(0, downloadListener)
+        photo.pullOriginalMediaFileFromCamera(0, listener)
     }
 
     private fun checkAndRequestStoragePermission() {
