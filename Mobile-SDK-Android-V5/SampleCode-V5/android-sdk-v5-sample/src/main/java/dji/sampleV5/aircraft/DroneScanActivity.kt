@@ -28,6 +28,9 @@ import dji.v5.manager.datacenter.media.PullMediaFileListParam
 import dji.sdk.keyvalue.value.camera.MediaFileType
 import dji.sdk.keyvalue.value.camera.CameraStorageLocation
 import dji.sdk.keyvalue.value.common.ComponentIndexType
+import dji.v5.manager.key.KeyManager
+import dji.sdk.keyvalue.key.camera.CameraKey
+import dji.sdk.keyvalue.value.camera.GeneratedMediaFileInfo
 import java.io.File
 
 class DroneScanActivity : Activity() {
@@ -62,6 +65,7 @@ class DroneScanActivity : Activity() {
         registerReceiver(usbReceiver, filter)
         checkAndRequestStoragePermission()
         setupMediaManager()
+        setupKeyManagerListener()
     }
 
     private fun setupMediaManager() {
@@ -94,24 +98,30 @@ class DroneScanActivity : Activity() {
         })
     }
 
-    private fun pullAndDownloadLatestPhoto() {
-    val mediaFiles = mediaManager?.getMediaFileListData()?.getData()
-        if (mediaFiles.isNullOrEmpty()) {
-            resultTextView?.text = "No hay fotos en la SD"
-            return
+    // Ya no se usará pullAndDownloadLatestPhoto, la lógica será por KeyManager
+
+    private fun setupKeyManagerListener() {
+        // Escuchar el último archivo multimedia generado por la cámara
+        val key = CameraKey.create(CameraKey.KeyNewlyGeneratedMediaFile)
+        KeyManager.getInstance().addListener(key) { value ->
+            if (value is GeneratedMediaFileInfo) {
+                // Solo descargar si es una foto JPEG
+                if (value.fileType == MediaFileType.JPEG) {
+                    resultTextView?.text = "Nueva foto detectada: ${value.fileName}, descargando..."
+                    // Crear un objeto MediaFile temporal para usar el método de descarga
+                    val mediaFile = MediaFile(
+                        value.fileName,
+                        value.fileType,
+                        value.fileSize,
+                        value.createTime,
+                        value.storageLocation,
+                        value.index,
+                        value.relativePath
+                    )
+                    downloadLatestPhoto(mediaFile)
+                }
+            }
         }
-    val photoFiles = mediaFiles?.filter { it.getFileType() == MediaFileType.JPEG } ?: emptyList()
-        if (photoFiles.isEmpty()) {
-            resultTextView?.text = "No se encontró foto nueva"
-            return
-        }
-    val latestPhoto = photoFiles.maxByOrNull { it.getDate() }
-        if (latestPhoto == null) {
-            resultTextView?.text = "No se encontró foto nueva"
-            return
-        }
-        resultTextView?.text = "Descargando: ${latestPhoto.fileName}"
-        downloadLatestPhoto(latestPhoto)
     }
 
     private fun downloadLatestPhoto(photo: MediaFile) {
