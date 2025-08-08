@@ -71,7 +71,7 @@ class DroneScanActivity : Activity() {
             .setLocation(CameraStorageLocation.SDCARD)
             .setIndexType(ComponentIndexType.LEFT_OR_MAIN)
             .build()
-        mediaManager?.mediaFileDataSource = source
+    mediaManager?.setMediaFileDataSource(source)
 
         // Habilitar el modo de gestión de archivos
         mediaManager?.enable(object : CommonCallbacks.CompletionCallback {
@@ -95,18 +95,17 @@ class DroneScanActivity : Activity() {
     }
 
     private fun pullAndDownloadLatestPhoto() {
-    val listData = mediaManager?.mediaFileListData
-    val mediaFiles = listData?.data
+    val mediaFiles = mediaManager?.getMediaFileListData()?.getData()
         if (mediaFiles.isNullOrEmpty()) {
             resultTextView?.text = "No hay fotos en la SD"
             return
         }
-    val photoFiles = mediaFiles.filter { it.fileType == MediaFileType.JPEG }
+    val photoFiles = mediaFiles?.filter { it.getFileType() == MediaFileType.JPEG } ?: emptyList()
         if (photoFiles.isEmpty()) {
             resultTextView?.text = "No se encontró foto nueva"
             return
         }
-    val latestPhoto = photoFiles.maxByOrNull { it.createTime ?: 0L }
+    val latestPhoto = photoFiles.maxByOrNull { it.getDate() }
         if (latestPhoto == null) {
             resultTextView?.text = "No se encontró foto nueva"
             return
