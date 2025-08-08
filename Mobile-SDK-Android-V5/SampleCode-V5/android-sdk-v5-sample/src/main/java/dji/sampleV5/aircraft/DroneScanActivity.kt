@@ -15,14 +15,17 @@ import androidx.core.content.ContextCompat
 import dji.barcode.BarcodeProcessor
 import dji.csv.CsvExporter
 import dji.ptp.PtpPhotoManager
-import dji.sharing.FileSharingHelper
 import dji.v5.common.callback.CommonCallbacks
 import dji.v5.common.error.IDJIError
 import dji.v5.manager.datacenter.MediaDataCenter
-import dji.v5.manager.datacenter.media.*
+import dji.v5.manager.datacenter.media.MediaFile
+import dji.v5.manager.datacenter.media.MediaFileDownloadListener
 import dji.v5.manager.datacenter.media.MediaFileListDataSource
+import dji.v5.manager.datacenter.media.MediaFileListState
+import dji.v5.manager.datacenter.media.MediaFileListStateListener
+import dji.v5.manager.datacenter.media.MediaManager
+import dji.v5.manager.datacenter.media.PullMediaFileListParam
 import dji.sdk.keyvalue.value.camera.MediaFileType
-import dji.sdk.keyvalue.value.camera.DateTime
 import dji.sdk.keyvalue.value.camera.CameraStorageLocation
 import dji.sdk.keyvalue.value.common.ComponentIndexType
 import java.io.File
@@ -43,7 +46,10 @@ class DroneScanActivity : Activity() {
         }
     }
 
-    private var mediaManager: MediaManager? = null
+    private val mediaManager: MediaManager? by lazy {
+        val manager = MediaDataCenter.getInstance().mediaManager
+        if (manager is MediaManager) manager else null
+    }
     private var mediaFileListStateListener: MediaFileListStateListener? = null
     private var downloadListener: MediaFileDownloadListener? = null
 
@@ -52,7 +58,6 @@ class DroneScanActivity : Activity() {
         setContentView(R.layout.activity_drone_scan)
         resultTextView = findViewById(R.id.resultTextView)
         ptpPhotoManager = PtpPhotoManager(this)
-        // Registrar receiver para detectar conexión USB
         val filter = IntentFilter(UsbManager.ACTION_USB_DEVICE_ATTACHED)
         registerReceiver(usbReceiver, filter)
         checkAndRequestStoragePermission()
@@ -60,23 +65,18 @@ class DroneScanActivity : Activity() {
     }
 
     private fun setupMediaManager() {
-        mediaManager = MediaDataCenter.getInstance().mediaManager
-        if (mediaManager == null) {
-            resultTextView?.text = "MediaManager no disponible"
-            return
-        }
         // Configurar la fuente de datos (SDCARD y cámara principal por defecto)
+
         val source = MediaFileListDataSource.Builder()
             .setLocation(CameraStorageLocation.SDCARD)
             .setIndexType(ComponentIndexType.LEFT_OR_MAIN)
             .build()
-        mediaManager!!.mediaFileDataSource = source
+        mediaManager?.mediaFileDataSource = source
 
         // Habilitar el modo de gestión de archivos
-        mediaManager!!.enable(object : CommonCallbacks.CompletionCallback {
+        mediaManager?.enable(object : CommonCallbacks.CompletionCallback {
             override fun onSuccess() {
                 resultTextView?.text = "MediaManager habilitado"
-                // Listener para cambios en la lista de archivos
                 mediaFileListStateListener = object : MediaFileListStateListener {
                     override fun onUpdate(state: MediaFileListState) {
                         if (state == MediaFileListState.UP_TO_DATE) {
@@ -84,10 +84,9 @@ class DroneScanActivity : Activity() {
                         }
                     }
                 }
-                mediaManager!!.addMediaFileListStateListener(mediaFileListStateListener!!)
-                // Usar el builder para el parámetro
+                mediaManager?.addMediaFileListStateListener(mediaFileListStateListener!!)
                 val param = PullMediaFileListParam.Builder().build()
-                mediaManager!!.pullMediaFileListFromCamera(param, null)
+                mediaManager?.pullMediaFileListFromCamera(param, null)
             }
             override fun onFailure(error: IDJIError) {
                 resultTextView?.text = "Fallo al habilitar MediaManager: ${error.description()}"
@@ -96,20 +95,18 @@ class DroneScanActivity : Activity() {
     }
 
     private fun pullAndDownloadLatestPhoto() {
-        val listData = mediaManager?.mediaFileListData
-        val mediaFiles = listData?.data
+    val listData = mediaManager?.mediaFileListData
+    val mediaFiles = listData?.data
         if (mediaFiles.isNullOrEmpty()) {
             resultTextView?.text = "No hay fotos en la SD"
             return
         }
-        // Filtrar solo fotos JPEG usando getFileType() == MediaFileType.JPEG
-        val photoFiles = mediaFiles.filter { it.fileType == MediaFileType.JPEG }
+    val photoFiles = mediaFiles.filter { it.fileType == MediaFileType.JPEG }
         if (photoFiles.isEmpty()) {
             resultTextView?.text = "No se encontró foto nueva"
             return
         }
-        // Ordenar por fecha de creación descendente (más nueva primero)
-        val latestPhoto = photoFiles.maxByOrNull { it.createTime }
+    val latestPhoto = photoFiles.maxByOrNull { it.createTime ?: 0L }
         if (latestPhoto == null) {
             resultTextView?.text = "No se encontró foto nueva"
             return
@@ -121,7 +118,7 @@ class DroneScanActivity : Activity() {
     private fun downloadLatestPhoto(photo: MediaFile) {
         downloadListener = object : MediaFileDownloadListener {
             override fun onStart() {
-                // Opcional: mostrar inicio
+                resultTextView?.text = "Iniciando descarga..."
             }
             override fun onProgress(total: Long, current: Long) {
                 val progress = if (total > 0) (current * 100 / total).toInt() else 0
@@ -129,20 +126,18 @@ class DroneScanActivity : Activity() {
             }
             override fun onSuccess(file: File) {
                 resultTextView?.text = "Descarga exitosa: ${file.absolutePath}"
-                // Lanzar actividad de escaneo de código de barras con la foto descargada
                 val scanIntent = Intent(this@DroneScanActivity, dji.barcode.BarcodeScanActivity::class.java)
                 scanIntent.putExtra("image_path", file.absolutePath)
-                // Usar startActivityForResult para saber cuándo termina el escaneo
                 startActivityForResult(scanIntent, 2001)
             }
             override fun onFailure(error: IDJIError) {
                 resultTextView?.text = "Descarga fallida de la foto: ${error.description()}"
             }
-            override fun onFinish() {
-                // Requerido por la interfaz, puede dejarse vacío
+            override fun onFinish() {}
+            override fun onRealtimeDataUpdate(data: ByteArray?, position: Long) {
+                // Implementación vacía, requerida por la interfaz
             }
         }
-        // Usar offset 0 para descargar desde el inicio
         photo.pullOriginalMediaFileFromCamera(0, downloadListener)
     }
 
@@ -225,10 +220,12 @@ class DroneScanActivity : Activity() {
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(usbReceiver)
-        if (mediaManager != null && mediaFileListStateListener != null) {
-            mediaManager!!.removeMediaFileListStateListener(mediaFileListStateListener!!)
+        if (mediaFileListStateListener != null) {
+            mediaManager?.removeMediaFileListStateListener(mediaFileListStateListener!!)
         }
-        // Deshabilitar el modo de gestión de archivos
-        mediaManager?.disable(null)
+        mediaManager?.disable(object : CommonCallbacks.CompletionCallback {
+            override fun onSuccess() {}
+            override fun onFailure(error: IDJIError) {}
+        })
     }
 }
