@@ -1,4 +1,6 @@
+
 package dji.sampleV5.aircraft
+import android.os.Environment
 
 import android.Manifest
 import android.app.Activity
@@ -89,7 +91,8 @@ class DroneScanActivity : Activity() {
                 mediaManager?.pullMediaFileListFromCamera(param, null)
             }
             override fun onFailure(error: IDJIError) {
-                resultTextView?.text = "Fallo al habilitar MediaManager: ${error.description()}"
+                val msg = "Fallo al habilitar MediaManager: ${error.description()}"
+                resultTextView?.text = msg
             }
         })
     }
@@ -146,7 +149,7 @@ class DroneScanActivity : Activity() {
                     bos.write(data, 0, data.size)
                     bos.flush()
                 } catch (e: Exception) {
-                    // Manejo de error de escritura
+                    // Error de escritura, será capturado por el handler global si es fatal
                 }
             }
             override fun onFinish() {
@@ -160,7 +163,8 @@ class DroneScanActivity : Activity() {
                 startActivityForResult(scanIntent, 2001)
             }
             override fun onFailure(error: IDJIError) {
-                resultTextView?.text = "Descarga fallida de la foto: ${error.description()}"
+                val msg = "Descarga fallida de la foto: ${error.description()}"
+                resultTextView?.text = msg
                 try {
                     bos.close()
                     outputStream.close()

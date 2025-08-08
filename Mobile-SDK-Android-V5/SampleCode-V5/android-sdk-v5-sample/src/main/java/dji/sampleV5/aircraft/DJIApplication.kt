@@ -28,6 +28,15 @@ open class DJIApplication : Application() {
         } catch (e: Exception) {
             // Si no existe Helper o método, ignorar
         }
+
+        // Handler global para cualquier excepción no capturada
+        Thread.setDefaultUncaughtExceptionHandler { thread, throwable ->
+            try {
+                dji.sampleV5.aircraft.util.ErrorLogger.log(throwable, "UncaughtException")
+            } catch (_: Exception) {}
+            // Relanzar la excepción para que el sistema muestre el crash
+            Thread.getDefaultUncaughtExceptionHandler()?.uncaughtException(thread, throwable)
+        }
     }
 
 }
