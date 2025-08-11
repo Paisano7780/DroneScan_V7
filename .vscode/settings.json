@@ -1,0 +1,11 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "markdown.preview.fontSize": 16,
+    "chat.editor.fontSize": 16,
+    "terminal.integrated.fontSize": 16,
+    "scm.inputFontSize": 16,
+    "debug.console.fontSize": 16,
+    "editor.minimap.sectionHeaderFontSize": 11,
+    "editor.fontSize": 16,
+    "accessibility.voice.keywordActivation": "chatInView"
+}

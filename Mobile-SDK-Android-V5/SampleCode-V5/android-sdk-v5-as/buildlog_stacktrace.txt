@@ -1,0 +1,101 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. See https://docs.gradle.org/7.6.2/userguide/gradle_daemon.html#sec:disabling_the_daemon.
+Daemon will be stopped at the end of the build 
+Configuration on demand is an incubating feature.
+
+> Configure project :sample
+WARNING:The option setting 'android.disableResourceValidation=true' is experimental.
+The current default is 'false'.
+
+> Task :sample:preBuild UP-TO-DATE
+> Task :sample:preDebugBuild UP-TO-DATE
+> Task :sample:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :uxsdk:preBuild UP-TO-DATE
+> Task :uxsdk:preDebugBuild UP-TO-DATE
+> Task :uxsdk:compileDebugAidl NO-SOURCE
+> Task :sample:compileDebugAidl NO-SOURCE
+> Task :uxsdk:packageDebugRenderscript NO-SOURCE
+> Task :sample:compileDebugRenderscript NO-SOURCE
+> Task :sample:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :sample:generateDebugResValues UP-TO-DATE
+> Task :sample:generateDebugResources UP-TO-DATE
+> Task :uxsdk:compileDebugRenderscript NO-SOURCE
+> Task :uxsdk:generateDebugResValues UP-TO-DATE
+> Task :uxsdk:generateDebugResources UP-TO-DATE
+> Task :uxsdk:packageDebugResources UP-TO-DATE
+> Task :sample:mergeDebugResources UP-TO-DATE
+> Task :uxsdk:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :uxsdk:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :sample:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :sample:generateDebugBuildConfig UP-TO-DATE
+> Task :uxsdk:writeDebugAarMetadata UP-TO-DATE
+> Task :sample:checkDebugAarMetadata UP-TO-DATE
+> Task :sample:mapDebugSourceSetPaths UP-TO-DATE
+> Task :sample:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :sample:extractDeepLinksDebug UP-TO-DATE
+> Task :uxsdk:extractDeepLinksDebug UP-TO-DATE
+> Task :uxsdk:processDebugManifest UP-TO-DATE
+> Task :sample:processDebugMainManifest UP-TO-DATE
+> Task :sample:processDebugManifest UP-TO-DATE
+> Task :sample:processDebugManifestForPackage UP-TO-DATE
+> Task :uxsdk:compileDebugLibraryResources UP-TO-DATE
+> Task :uxsdk:parseDebugLocalResources UP-TO-DATE
+> Task :uxsdk:generateDebugRFile UP-TO-DATE
+> Task :sample:processDebugResources UP-TO-DATE
+> Task :uxsdk:generateDebugBuildConfig UP-TO-DATE
+> Task :uxsdk:kaptGenerateStubsDebugKotlin UP-TO-DATE
+> Task :uxsdk:kaptDebugKotlin UP-TO-DATE
+> Task :uxsdk:compileDebugKotlin UP-TO-DATE
+> Task :uxsdk:javaPreCompileDebug UP-TO-DATE
+> Task :uxsdk:compileDebugJavaWithJavac UP-TO-DATE
+> Task :uxsdk:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :sample:kaptGenerateStubsDebugKotlin UP-TO-DATE
+> Task :sample:kaptDebugKotlin UP-TO-DATE
+> Task :sample:javaPreCompileDebug UP-TO-DATE
+> Task :sample:mergeDebugShaders UP-TO-DATE
+> Task :sample:compileDebugShaders NO-SOURCE
+> Task :sample:generateDebugAssets UP-TO-DATE
+> Task :uxsdk:mergeDebugShaders UP-TO-DATE
+> Task :uxsdk:compileDebugShaders NO-SOURCE
+> Task :uxsdk:generateDebugAssets UP-TO-DATE
+> Task :uxsdk:packageDebugAssets UP-TO-DATE
+> Task :sample:mergeDebugAssets UP-TO-DATE
+> Task :sample:compressDebugAssets UP-TO-DATE
+> Task :sample:processDebugJavaRes NO-SOURCE
+> Task :uxsdk:processDebugJavaRes NO-SOURCE
+> Task :uxsdk:bundleLibResDebug UP-TO-DATE
+> Task :sample:checkDebugDuplicateClasses UP-TO-DATE
+> Task :sample:desugarDebugFileDependencies UP-TO-DATE
+> Task :sample:mergeExtDexDebug UP-TO-DATE
+> Task :uxsdk:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :sample:mergeLibDexDebug UP-TO-DATE
+> Task :sample:mergeDebugJniLibFolders UP-TO-DATE
+> Task :uxsdk:mergeDebugJniLibFolders UP-TO-DATE
+> Task :uxsdk:mergeDebugNativeLibs NO-SOURCE
+> Task :uxsdk:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :sample:mergeDebugNativeLibs UP-TO-DATE
+> Task :sample:stripDebugDebugSymbols UP-TO-DATE
+> Task :sample:validateSigningDebug UP-TO-DATE
+> Task :sample:writeDebugAppMetadata UP-TO-DATE
+> Task :sample:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :uxsdk:stripDebugDebugSymbols NO-SOURCE
+> Task :uxsdk:copyDebugJniLibsProjectAndLocalJars
+
+> Task :uxsdk:extractDebugAnnotations
+Warning: dji.v5.ux.remotecontroller.calibration.OnCalibrationListener.RcPartType: The typedef annotation should have @Retention(RetentionPolicy.SOURCE)
+Warning: dji.v5.ux.mapkit.core.Mapkit.MapProviderConstant: The typedef annotation should have @Retention(RetentionPolicy.SOURCE)
+Warning: dji.v5.ux.core.ui.hsi.HSIMarkerLayer.IndicatorAlign: The typedef annotation should have @Retention(RetentionPolicy.SOURCE)
+Warning: dji.v5.ux.core.widget.battery.BatteryInfoWidget.Temperature: The typedef annotation should have @Retention(RetentionPolicy.SOURCE)
+
+> Task :uxsdk:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :uxsdk:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :uxsdk:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :uxsdk:prepareDebugArtProfile UP-TO-DATE
+> Task :uxsdk:prepareLintJarForPublish UP-TO-DATE
+> Task :uxsdk:mergeDebugJavaResource
+> Task :uxsdk:syncDebugLibJars
+> Task :uxsdk:bundleDebugAar
+> Task :uxsdk:assembleDebug
+> Task :sample:compileDebugKotlin
+
+> Task :sample:compileDebugKotlin FAILED
+63 actionable tasks: 6 executed, 57 up-to-date

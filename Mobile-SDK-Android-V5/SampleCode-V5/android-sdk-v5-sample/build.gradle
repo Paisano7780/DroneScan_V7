@@ -103,8 +103,8 @@ android {
 
 dependencies {
     /** <-----------------依赖MSDK--------------------> **/
-    compileOnly deps.aircraftProvided
-    implementation deps.aircraft
+    implementation 'com.dji:dji-sdk-v5-aircraft:5.15.0'
+    runtimeOnly 'com.dji:dji-sdk-v5-networkImp:5.15.0'
 
     /** <-----------------sample所需--------------------> **/
     implementation project(':uxsdk')

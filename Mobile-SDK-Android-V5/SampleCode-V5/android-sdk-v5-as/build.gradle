@@ -7,6 +7,7 @@ buildscript {
         mavenCentral()
         maven { url 'https://plugins.gradle.org/m2/' }
         mavenCentral()
+        maven { url 'https://dji-sdk.bintray.com/android-sdk-v5' }
     }
 
     dependencies {
@@ -22,5 +23,6 @@ allprojects {
         mavenCentral()
         maven { url 'https://plugins.gradle.org/m2/' }
         maven { url 'https://jitpack.io' }
+        maven { url 'https://dji-sdk.bintray.com/android-sdk-v5' }
     }
 }
