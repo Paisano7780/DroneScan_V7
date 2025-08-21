@@ -15,11 +15,11 @@ import dji.sampleV5.aircraft.data.FragmentPageItemList
 import dji.sampleV5.aircraft.data.MAIN_FRAGMENT_PAGE_TITLE
 import dji.sampleV5.aircraft.databinding.FragMainPageBinding
 import dji.sampleV5.aircraft.models.MSDKCommonOperateVm
-import dji.sampleV5.aircraft.util.ToastUtils
+import dji.v5.utils.common.ToastUtils
 import dji.v5.common.callback.CommonCallbacks
 import dji.v5.common.error.IDJIError
 import dji.v5.common.ldm.LDMExemptModule
-import dji.sampleV5.aircraft.utils.LogUtils
+import dji.v5.utils.common.LogUtils
 import dji.sampleV5.aircraft.utils.StringUtils
 
 /**
