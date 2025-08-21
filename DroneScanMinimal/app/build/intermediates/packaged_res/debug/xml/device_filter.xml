@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <usb-device vendor-id="2237" product-id="0004" /> <!-- DJI Mini 3 -->
-    <usb-device vendor-id="2237" product-id="0005" /> <!-- DJI Air 2S -->
-    <usb-device vendor-id="2237" product-id="0006" /> <!-- Otros drones DJI -->
-</resources>
