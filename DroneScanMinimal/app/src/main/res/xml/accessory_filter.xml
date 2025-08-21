@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <usb-accessory model="DJI Controller" manufacturer="DJI" />
+    <usb-accessory model="DJI Mini 3" manufacturer="DJI" />
+    <usb-accessory model="DJI RC" manufacturer="DJI" />
+</resources>
