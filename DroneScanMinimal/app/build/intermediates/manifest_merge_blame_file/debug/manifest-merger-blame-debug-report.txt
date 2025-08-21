@@ -1,0 +1,154 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.dronescan"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:4:5-80
+11-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:4:22-77
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:5:5-81
+12-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:5:22-78
+13    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+13-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:6:5-82
+13-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:6:22-79
+14    <uses-permission android:name="android.permission.CAMERA" />
+14-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:7:5-65
+14-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:7:22-62
+15    <uses-permission android:name="android.permission.USB_PERMISSION" />
+15-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:8:5-73
+15-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:8:22-70
+16
+17    <uses-feature android:name="android.hardware.usb.host" />
+17-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:10:5-62
+17-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:10:19-59
+18    <uses-feature
+18-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:11:5-85
+19        android:name="android.hardware.camera"
+19-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:11:19-57
+20        android:required="false" />
+20-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:11:58-82
+21    <uses-feature
+21-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:28:5-30:36
+22        android:name="android.hardware.camera.front"
+22-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:29:9-53
+23        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+23-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:30:9-33
+24    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+25    <uses-feature
+25-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:33:5-35:36
+26        android:name="android.hardware.camera.autofocus"
+26-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:34:9-57
+27        android:required="false" />
+27-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:35:9-33
+28    <uses-feature
+28-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:36:5-38:36
+29        android:name="android.hardware.camera.flash"
+29-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:37:9-53
+30        android:required="false" />
+30-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:38:9-33
+31    <uses-feature
+31-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:39:5-41:36
+32        android:name="android.hardware.screen.landscape"
+32-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:40:9-57
+33        android:required="false" />
+33-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:41:9-33
+34    <uses-feature
+34-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:42:5-44:36
+35        android:name="android.hardware.wifi"
+35-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:43:9-45
+36        android:required="false" />
+36-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:44:9-33
+37
+38    <application
+38-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:13:5-38:19
+39        android:allowBackup="true"
+39-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:14:9-35
+40        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+40-->[androidx.core:core:1.8.0] /home/codespace/.gradle/caches/transforms-3/ceb859915e882884e5554fac134dd218/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
+41        android:debuggable="true"
+42        android:extractNativeLibs="true"
+43        android:icon="@android:drawable/ic_menu_camera"
+43-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:15:9-56
+44        android:label="@string/app_name"
+44-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:16:9-41
+45        android:requestLegacyExternalStorage="true"
+45-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:18:9-52
+46        android:theme="@android:style/Theme.Material.Light" >
+46-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:17:9-60
+47        <activity
+47-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:20:9-36:20
+48            android:name="com.dronescan.DroneScanActivity"
+48-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:21:13-46
+49            android:exported="true"
+49-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:22:13-36
+50            android:screenOrientation="portrait" >
+50-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:23:13-49
+51            <intent-filter>
+51-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:24:13-27:29
+52                <action android:name="android.intent.action.MAIN" />
+52-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:25:17-69
+52-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:25:25-66
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+54-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:26:17-77
+54-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:26:27-74
+55            </intent-filter>
+56            <intent-filter>
+56-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:29:13-31:29
+57                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+57-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:30:17-90
+57-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:30:25-87
+58            </intent-filter>
+59
+60            <meta-data
+60-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:33:13-35:57
+61                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+61-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:34:17-79
+62                android:resource="@xml/device_filter" />
+62-->/workspaces/DroneScan_V7/DroneScanMinimal/app/src/main/AndroidManifest.xml:35:17-54
+63        </activity>
+64        <activity
+64-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:47:9-53:63
+65            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+65-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:48:13-74
+66            android:clearTaskOnLaunch="true"
+66-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:49:13-45
+67            android:screenOrientation="sensorLandscape"
+67-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:50:13-56
+68            android:stateNotNeeded="true"
+68-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:51:13-42
+69            android:theme="@style/zxing_CaptureTheme"
+69-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:52:13-54
+70            android:windowSoftInputMode="stateAlwaysHidden" />
+70-->[com.journeyapps:zxing-android-embedded:4.3.0] /home/codespace/.gradle/caches/transforms-3/d3a4e246a99fba97ea878ab378123a9b/transformed/jetified-zxing-android-embedded-4.3.0/AndroidManifest.xml:53:13-60
+71
+72        <provider
+72-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/27fffed7afdfdecad020ed9d2a0edf0c/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+73            android:name="androidx.startup.InitializationProvider"
+73-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/27fffed7afdfdecad020ed9d2a0edf0c/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+74            android:authorities="com.dronescan.androidx-startup"
+74-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/27fffed7afdfdecad020ed9d2a0edf0c/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+75            android:exported="false" >
+75-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/27fffed7afdfdecad020ed9d2a0edf0c/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+76            <meta-data
+76-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/27fffed7afdfdecad020ed9d2a0edf0c/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+77                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+77-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/27fffed7afdfdecad020ed9d2a0edf0c/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+78                android:value="androidx.startup" />
+78-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/27fffed7afdfdecad020ed9d2a0edf0c/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+79            <meta-data
+79-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/codespace/.gradle/caches/transforms-3/93de4612ddd631254ce0b7aa0fc32f15/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+80                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+80-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/codespace/.gradle/caches/transforms-3/93de4612ddd631254ce0b7aa0fc32f15/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+81                android:value="androidx.startup" />
+81-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/codespace/.gradle/caches/transforms-3/93de4612ddd631254ce0b7aa0fc32f15/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+82        </provider>
+83    </application>
+84
+85</manifest>

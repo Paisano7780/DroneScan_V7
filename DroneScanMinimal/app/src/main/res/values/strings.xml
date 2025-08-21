@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DroneScan</string>
+    <string name="usb_device_attached">Dispositivo USB conectado</string>
+    <string name="scanning_photos">Escaneando fotos...</string>
+    <string name="no_photos_found">No se encontraron fotos</string>
+    <string name="scan_complete">Escaneo completado</string>
+    <string name="export_complete">Exportación completada</string>
+    <string name="error_processing">Error al procesar</string>
+    <string name="permission_required">Permisos requeridos</string>
+    <string name="permission_granted">Permisos concedidos</string>
+</resources>
