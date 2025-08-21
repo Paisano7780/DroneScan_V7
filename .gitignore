@@ -1,3 +1,24 @@
 # Archivos de build de Android
 DroneScanMinimal/app/build/
 **/build/
+
+# Build directories
+**/build/
+**/build.gradle.project
+# **/src/
+.gradle/
+*.apk
+*.dex
+*.ap_
+
+# Temporary files
+**/.tmp/
+**/temp/
+*.log
+*.bin
+*.tab*
+
+# OS files
+.DS_Store
+Thumbs.db
+
