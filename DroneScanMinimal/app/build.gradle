@@ -11,8 +11,8 @@ android {
         applicationId "com.dronescan.msdksample"
         minSdk 24
         targetSdk 34
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
@@ -24,9 +24,23 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    // Configuración para nombres de APK personalizados
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def versionName = variant.versionName
+            def buildType = variant.buildType.name
+            def fileName = "DroneScan_v${versionName}_${buildType}.apk"
+            outputFileName = fileName
         }
     }
     
