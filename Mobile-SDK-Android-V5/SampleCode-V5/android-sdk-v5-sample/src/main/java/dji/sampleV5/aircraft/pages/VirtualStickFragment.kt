@@ -14,12 +14,12 @@ import dji.sampleV5.aircraft.util.Helper
 import dji.sampleV5.aircraft.util.ToastUtils
 import dji.sampleV5.aircraft.virtualstick.OnScreenJoystick
 import dji.sampleV5.aircraft.virtualstick.OnScreenJoystickListener
-import dji.sdk.keyvalue.value.common.EmptyMsg
+// import dji.sdk.keyvalue.value.common.EmptyMsg
 import dji.sdk.keyvalue.value.flightcontroller.VirtualStickFlightControlParam
-import dji.v5.common.callback.CommonCallbacks
-import dji.v5.common.error.IDJIError
-import dji.v5.manager.aircraft.virtualstick.Stick
-import dji.v5.utils.common.JsonUtil
+// import dji.v5.common.callback.CommonCallbacks
+// import dji.v5.common.error.IDJIError
+// import dji.v5.manager.aircraft.virtualstick.Stick
+// import dji.v5.utils.common.JsonUtil
 import kotlin.math.abs
 
 /**

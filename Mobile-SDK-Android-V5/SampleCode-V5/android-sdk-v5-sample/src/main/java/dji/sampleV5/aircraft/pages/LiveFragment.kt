@@ -19,16 +19,16 @@ import androidx.fragment.app.viewModels
 import dji.sampleV5.aircraft.R
 import dji.sampleV5.aircraft.models.LiveStreamVM
 import dji.sampleV5.aircraft.util.ToastUtils
-import dji.sdk.keyvalue.value.common.ComponentIndexType
-import dji.v5.common.callback.CommonCallbacks
-import dji.v5.common.error.IDJIError
-import dji.v5.manager.datacenter.MediaDataCenter
-import dji.v5.manager.datacenter.livestream.LiveStreamStatus
-import dji.v5.manager.datacenter.livestream.LiveVideoBitrateMode
-import dji.v5.manager.datacenter.livestream.StreamQuality
-import dji.v5.manager.datacenter.livestream.VideoResolution
-import dji.v5.manager.interfaces.ICameraStreamManager
-import dji.v5.utils.common.NumberUtils
+// import dji.sdk.keyvalue.value.common.ComponentIndexType
+// import dji.v5.common.callback.CommonCallbacks
+// import dji.v5.common.error.IDJIError
+// import dji.v5.manager.datacenter.MediaDataCenter
+// import dji.v5.manager.datacenter.livestream.LiveStreamStatus
+// import dji.v5.manager.datacenter.livestream.LiveVideoBitrateMode
+// import dji.v5.manager.datacenter.livestream.StreamQuality
+// import dji.v5.manager.datacenter.livestream.VideoResolution
+// import dji.v5.manager.interfaces.ICameraStreamManager
+// import dji.v5.utils.common.NumberUtils
 import dji.sampleV5.aircraft.utils.StringUtils
 
 class LiveFragment : DJIFragment() {

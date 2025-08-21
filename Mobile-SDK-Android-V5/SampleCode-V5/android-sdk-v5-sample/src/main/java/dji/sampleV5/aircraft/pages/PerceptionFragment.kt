@@ -11,13 +11,7 @@ import dji.sampleV5.aircraft.databinding.FragAppSilentlyUpgradePageBinding
 import dji.sampleV5.aircraft.databinding.FragPerceptionPageBinding
 import dji.sampleV5.aircraft.models.PerceptionVM
 import dji.sampleV5.aircraft.util.Helper
-import dji.v5.common.callback.CommonCallbacks
-import dji.v5.common.error.IDJIError
-import dji.v5.manager.aircraft.perception.data.ObstacleAvoidanceType
-import dji.v5.manager.aircraft.perception.data.PerceptionDirection
-import dji.v5.manager.aircraft.perception.data.PerceptionInfo
-import dji.v5.manager.aircraft.perception.data.ObstacleData
-import dji.v5.manager.aircraft.perception.radar.RadarInformation
+import dji.sampleV5.aircraft.utils.Stubs.*
 import dji.sampleV5.aircraft.util.ToastUtils
 import dji.v5.ux.core.extension.hide
 import dji.v5.ux.core.extension.show

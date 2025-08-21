@@ -30,7 +30,7 @@ import dji.v5.manager.aircraft.waypoint3.model.BreakPointInfo
 import dji.v5.manager.areacode.AreaCode
 import dji.v5.manager.areacode.AreaCodeManager
 import dji.sampleV5.aircraft.utils.ContextUtil
-import dji.sampleV5.aircraft.utils.DjiSharedPreferencesManager
+import dji.v5.ux.core.util.UxSharedPreferencesUtil
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.disposables.Disposable
@@ -246,11 +246,11 @@ class WayPointV3VM : DJIViewModel() {
     }
 
     fun getMapType(context: Context?): Int {
-        return DjiSharedPreferencesManager.getInt(context, "map_selection", 0)
+    return UxSharedPreferencesUtil.getInt("map_selection", 0, true)
     }
 
     fun saveMapType(context: Context?, pos: Int) {
-        DjiSharedPreferencesManager.putInt(context, "map_selection", pos)
+    UxSharedPreferencesUtil.putInt("map_selection", pos, true)
     }
 
     fun getMapSpinnerAdapter(): ArrayAdapter<String> {

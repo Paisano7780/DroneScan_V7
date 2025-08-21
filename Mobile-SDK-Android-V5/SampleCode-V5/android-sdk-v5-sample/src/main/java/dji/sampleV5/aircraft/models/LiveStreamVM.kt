@@ -14,7 +14,7 @@ import dji.v5.manager.datacenter.livestream.settings.RtmpSettings
 import dji.v5.manager.datacenter.livestream.settings.RtspSettings
 import dji.v5.manager.interfaces.ICameraStreamManager
 import dji.sampleV5.aircraft.utils.ContextUtil
-import dji.sampleV5.aircraft.utils.DjiSharedPreferencesManager
+import dji.v5.ux.core.util.UxSharedPreferencesUtil
 
 /**
  * ClassName : LiveStreamVM
@@ -139,12 +139,12 @@ class LiveStreamVM : DJIViewModel() {
                     .build()
             )
             .build()
-        DjiSharedPreferencesManager.putString(ContextUtil.getContext(), RTMP_KEY, rtmpUrl)
+    UxSharedPreferencesUtil.putString(RTMP_KEY, rtmpUrl, true)
         setLiveStreamConfig(liveStreamConfig)
     }
 
     fun getRtmpUrl(): String {
-        return DjiSharedPreferencesManager.getString(ContextUtil.getContext(), RTMP_KEY, "")
+    return UxSharedPreferencesUtil.getString(RTMP_KEY, "", true)
     }
 
     fun setRTSPConfig(userName: String, password: String, port: Int) {
@@ -158,12 +158,12 @@ class LiveStreamVM : DJIViewModel() {
             .setRtspSettings(rtspConfig)
             .build()
         val rtspSettings = userName + "^_^" + password + "^_^" + port.toString()
-        DjiSharedPreferencesManager.putString(ContextUtil.getContext(), RTSP_KEY, rtspSettings)
+    UxSharedPreferencesUtil.putString(RTSP_KEY, rtspSettings, true)
         setLiveStreamConfig(liveStreamConfig)
     }
 
     fun getRtspSettings(): String {
-        return DjiSharedPreferencesManager.getString(ContextUtil.getContext(), RTSP_KEY, "")
+    return UxSharedPreferencesUtil.getString(RTSP_KEY, "", true)
     }
 
     fun setGB28181(
@@ -190,7 +190,7 @@ class LiveStreamVM : DJIViewModel() {
             .build()
         val gb28181Settings =
             serverIP + "^_^" + serverPort.toString() + "^_^" + serverID + "^_^" + agentID + "^_^" + channel + "^_^" + localPort.toString() + "^_^" + password
-        DjiSharedPreferencesManager.putString(
+    UxSharedPreferencesUtil.putString(
             ContextUtil.getContext(),
             GB28181_KEY,
             gb28181Settings
@@ -199,7 +199,7 @@ class LiveStreamVM : DJIViewModel() {
     }
 
     fun getGb28181Settings(): String {
-        return DjiSharedPreferencesManager.getString(ContextUtil.getContext(), GB28181_KEY, "")
+    return UxSharedPreferencesUtil.getString(GB28181_KEY, "", true)
     }
 
     fun setAgoraConfig(channelId: String, token: String, uid: String) {
@@ -214,7 +214,7 @@ class LiveStreamVM : DJIViewModel() {
             .setAgoraSettings(agoraConfig)
             .build()
         val agoraSettings = channelId + "^_^" + token + "^_^" + uid
-        DjiSharedPreferencesManager.putString(
+    UxSharedPreferencesUtil.putString(
             ContextUtil.getContext(),
             AGORA_KEY,
             agoraSettings
@@ -223,7 +223,7 @@ class LiveStreamVM : DJIViewModel() {
     }
 
     fun getAgoraSettings(): String {
-        return DjiSharedPreferencesManager.getString(ContextUtil.getContext(), AGORA_KEY, "")
+    return UxSharedPreferencesUtil.getString(AGORA_KEY, "", true)
     }
 
     fun addListener() {

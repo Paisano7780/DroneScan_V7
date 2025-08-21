@@ -19,16 +19,16 @@ import dji.sampleV5.aircraft.keyvalue.KeyValueDialogUtil
 import dji.sampleV5.aircraft.models.CameraStreamDetailVM
 import dji.sampleV5.aircraft.util.Helper
 import dji.sampleV5.aircraft.util.ToastUtils
-import dji.sdk.keyvalue.value.camera.CameraMode
-import dji.sdk.keyvalue.value.airlink.ChannelPriority
-import dji.sdk.keyvalue.value.camera.CameraVideoStreamSourceType
-import dji.sdk.keyvalue.value.common.ComponentIndexType
-import dji.sdk.keyvalue.value.flightassistant.VisionAssistDirection
-import dji.v5.manager.interfaces.ICameraStreamManager
-import dji.v5.utils.common.LogPath
+// import dji.sdk.keyvalue.value.camera.CameraMode
+// import dji.sdk.keyvalue.value.airlink.ChannelPriority
+// import dji.sdk.keyvalue.value.camera.CameraVideoStreamSourceType
+// import dji.sdk.keyvalue.value.common.ComponentIndexType
+// import dji.sdk.keyvalue.value.flightassistant.VisionAssistDirection
+// import dji.v5.manager.interfaces.ICameraStreamManager
+// import dji.v5.utils.common.LogPath
 import dji.sampleV5.aircraft.utils.LogUtils
 import dji.sampleV5.aircraft.utils.StringUtils
-import dji.v5.ux.core.extension.textColor
+// import dji.v5.ux.core.extension.textColor
 
 class CameraStreamDetailFragment : DJIFragment() {
 

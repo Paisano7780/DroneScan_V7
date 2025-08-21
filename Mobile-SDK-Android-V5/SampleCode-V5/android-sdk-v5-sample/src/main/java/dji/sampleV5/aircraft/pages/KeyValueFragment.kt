@@ -20,19 +20,19 @@ import dji.sampleV5.aircraft.databinding.FragmentKeyListBinding
 import dji.sampleV5.aircraft.keyvalue.KeyItemHelper.processSubListLogic
 import dji.sampleV5.aircraft.util.ToastUtils.showToast
 import dji.sampleV5.aircraft.util.Util
-import dji.sdk.keyvalue.converter.EmptyValueConverter
-import dji.sdk.keyvalue.key.CameraKey
-import dji.sdk.keyvalue.key.ComponentType
-import dji.sdk.keyvalue.key.KeyTools
-import dji.sdk.keyvalue.value.common.BoolMsg
-import dji.sdk.keyvalue.value.common.CameraLensType
-import dji.sdk.keyvalue.value.common.ComponentIndexType
-import dji.sdk.keyvalue.value.product.ProductType
-import dji.v5.manager.KeyManager
-import dji.v5.manager.capability.CapabilityManager
-import dji.sampleV5.aircraft.utils.DjiSharedPreferencesManager
-import dji.v5.utils.common.JsonUtil
-import dji.v5.utils.common.LogPath
+// import dji.sdk.keyvalue.converter.EmptyValueConverter
+// import dji.sdk.keyvalue.key.CameraKey
+// import dji.sdk.keyvalue.key.ComponentType
+// import dji.sdk.keyvalue.key.KeyTools
+// import dji.sdk.keyvalue.value.common.BoolMsg
+// import dji.sdk.keyvalue.value.common.CameraLensType
+// import dji.sdk.keyvalue.value.common.ComponentIndexType
+// import dji.sdk.keyvalue.value.product.ProductType
+// import dji.v5.manager.KeyManager
+// import dji.v5.manager.capability.CapabilityManager
+// import dji.v5.ux.core.util.UxSharedPreferencesUtil
+// import dji.v5.utils.common.JsonUtil
+// import dji.v5.utils.common.LogPath
 import dji.sampleV5.aircraft.utils.LogUtils
 import io.reactivex.rxjava3.schedulers.Schedulers
 import java.text.SimpleDateFormat
@@ -500,7 +500,7 @@ class KeyValueFragment : DJIFragment(), View.OnClickListener {
         setKeyCount(showList.size)
         resetSelected()
         cameraParamsAdapter?.notifyDataSetChanged()
-        DjiSharedPreferencesManager.putBoolean(context, CAPABILITY_ENABLE, enable)
+    UxSharedPreferencesUtil.putBoolean(CAPABILITY_ENABLE, enable, true)
         if (enable) {
             binding?.tvCapablity?.text = "Officially released key"
         } else {
@@ -590,7 +590,7 @@ class KeyValueFragment : DJIFragment(), View.OnClickListener {
     }
 
     private fun isCapabilitySwitchOn(): Boolean {
-        return DjiSharedPreferencesManager.getBoolean(context, CAPABILITY_ENABLE, false)
+    return UxSharedPreferencesUtil.getBoolean(CAPABILITY_ENABLE, false, true)
     }
 
     private fun setKeyCount(count: Int) {

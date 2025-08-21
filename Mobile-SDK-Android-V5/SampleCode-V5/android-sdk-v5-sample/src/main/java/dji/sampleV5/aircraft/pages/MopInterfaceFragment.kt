@@ -13,9 +13,9 @@ import androidx.fragment.app.viewModels
 import dji.sampleV5.aircraft.R
 import dji.sampleV5.aircraft.databinding.FragMopInterfacePageBinding
 import dji.sampleV5.aircraft.models.MopVM
-import dji.sdk.keyvalue.value.common.ComponentIndexType
-import dji.sdk.keyvalue.value.mop.PipelineDeviceType
-import dji.sdk.keyvalue.value.mop.TransmissionControlType
+// import dji.sdk.keyvalue.value.common.ComponentIndexType
+// import dji.sdk.keyvalue.value.mop.PipelineDeviceType
+// import dji.sdk.keyvalue.value.mop.TransmissionControlType
 import dji.sampleV5.aircraft.utils.LogUtils
 
 /**

@@ -4,7 +4,7 @@ import dji.sdk.keyvalue.value.common.LocationCoordinate2D
 import dji.v5.manager.aircraft.lte.LTEPrivatizationServerInfo
 import dji.v5.manager.areacode.AreaCode
 import dji.v5.utils.common.ContextUtil
-import dji.v5.utils.common.DjiSharedPreferencesManager
+import dji.v5.ux.core.util.UxSharedPreferencesUtil
 import dji.v5.utils.common.JsonUtil
 
 object QuickTestConfig {
@@ -25,39 +25,39 @@ object QuickTestConfig {
     )
 
     fun getCacheLTEAuthenticationInfo(): LTEAuthCacheInfo? {
-        val str = DjiSharedPreferencesManager.getString(ContextUtil.getContext(), KEY_LTE_AUTHENTICATION_INFO, "")
+    val str = UxSharedPreferencesUtil.getString(KEY_LTE_AUTHENTICATION_INFO, "", true)
         if (str.isEmpty()) {
             return LTEAuthCacheInfo()
         }
-        return JsonUtil.toBean(DjiSharedPreferencesManager.getString(ContextUtil.getContext(), KEY_LTE_AUTHENTICATION_INFO, ""), LTEAuthCacheInfo::class.java)
+    return JsonUtil.toBean(UxSharedPreferencesUtil.getString(KEY_LTE_AUTHENTICATION_INFO, "", true), LTEAuthCacheInfo::class.java)
     }
 
     fun updateCacheLTEAuthenticationInfo(info: LTEAuthCacheInfo) {
-        DjiSharedPreferencesManager.putString(ContextUtil.getContext(), KEY_LTE_AUTHENTICATION_INFO, JsonUtil.toJson(info))
+    UxSharedPreferencesUtil.putString(KEY_LTE_AUTHENTICATION_INFO, JsonUtil.toJson(info), true)
     }
 
     fun getCacheACLTEPrivatizationServerInfo(): LTEPrivatizationServerInfo? {
-        val str = DjiSharedPreferencesManager.getString(ContextUtil.getContext(), KEY_AC_LTE_PRIVATIZATION_SERVER_INFO, "")
+    val str = UxSharedPreferencesUtil.getString(KEY_AC_LTE_PRIVATIZATION_SERVER_INFO, "", true)
         if (str.isEmpty()) {
             return LTEPrivatizationServerInfo()
         }
-        return JsonUtil.toBean(DjiSharedPreferencesManager.getString(ContextUtil.getContext(), KEY_AC_LTE_PRIVATIZATION_SERVER_INFO, ""), LTEPrivatizationServerInfo::class.java)
+    return JsonUtil.toBean(UxSharedPreferencesUtil.getString(KEY_AC_LTE_PRIVATIZATION_SERVER_INFO, "", true), LTEPrivatizationServerInfo::class.java)
     }
 
     fun updateCacheACLTEPrivatizationServerInfo(info: LTEPrivatizationServerInfo) {
-        DjiSharedPreferencesManager.putString(ContextUtil.getContext(), KEY_AC_LTE_PRIVATIZATION_SERVER_INFO, JsonUtil.toJson(info))
+    UxSharedPreferencesUtil.putString(KEY_AC_LTE_PRIVATIZATION_SERVER_INFO, JsonUtil.toJson(info), true)
     }
 
     fun getCacheRCLTEPrivatizationServerInfo(): LTEPrivatizationServerInfo? {
-        val str = DjiSharedPreferencesManager.getString(ContextUtil.getContext(), KEY_RC_LTE_PRIVATIZATION_SERVER_INFO, "")
+    val str = UxSharedPreferencesUtil.getString(KEY_RC_LTE_PRIVATIZATION_SERVER_INFO, "", true)
         if (str.isEmpty()) {
             return LTEPrivatizationServerInfo()
         }
-        return JsonUtil.toBean(DjiSharedPreferencesManager.getString(ContextUtil.getContext(), KEY_RC_LTE_PRIVATIZATION_SERVER_INFO, ""), LTEPrivatizationServerInfo::class.java)
+    return JsonUtil.toBean(UxSharedPreferencesUtil.getString(KEY_RC_LTE_PRIVATIZATION_SERVER_INFO, "", true), LTEPrivatizationServerInfo::class.java)
     }
 
     fun updateCacheRCLTEPrivatizationServerInfo(info: LTEPrivatizationServerInfo) {
-        DjiSharedPreferencesManager.putString(ContextUtil.getContext(), KEY_RC_LTE_PRIVATIZATION_SERVER_INFO, JsonUtil.toJson(info))
+    UxSharedPreferencesUtil.putString(KEY_RC_LTE_PRIVATIZATION_SERVER_INFO, JsonUtil.toJson(info), true)
     }
 
     data class SimulatorArea(

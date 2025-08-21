@@ -19,32 +19,32 @@ import dji.sampleV5.aircraft.models.CameraStreamDetailVM
 import dji.sampleV5.aircraft.models.IntelligentFlightVM
 import dji.sampleV5.aircraft.util.Helper
 import dji.sampleV5.aircraft.util.ToastUtils
-import dji.sdk.keyvalue.value.camera.CameraVideoStreamSourceType
-import dji.sdk.keyvalue.value.common.ComponentIndexType
-import dji.sdk.keyvalue.value.common.DoubleRect
-import dji.sdk.keyvalue.value.common.LocationCoordinate2D
-import dji.sdk.keyvalue.value.common.LocationCoordinate3D
-import dji.sdk.keyvalue.value.flightcontroller.FlyToMode
-import dji.v5.manager.intelligent.AutoSensingInfo
-import dji.v5.manager.intelligent.IntelligentFlightInfo
-import dji.v5.manager.intelligent.IntelligentModel
-import dji.v5.manager.intelligent.flyto.FlyToInfo
-import dji.v5.manager.intelligent.flyto.FlyToTarget
-import dji.v5.manager.intelligent.poi.POIInfo
-import dji.v5.manager.intelligent.poi.POITarget
-import dji.v5.manager.intelligent.smarttrack.SmartTrackInfo
-import dji.v5.manager.intelligent.spotlight.SpotLightInfo
-import dji.v5.manager.interfaces.ICameraStreamManager
-import dji.sampleV5.aircraft.utils.AndUtil
-import dji.v5.utils.common.JsonUtil
-import dji.v5.ux.map.MapWidget
-import dji.v5.ux.mapkit.core.maps.DJIMap
-import dji.v5.ux.mapkit.core.models.DJIBitmapDescriptor
-import dji.v5.ux.mapkit.core.models.DJIBitmapDescriptorFactory
-import dji.v5.ux.mapkit.core.models.DJILatLng
-import dji.v5.ux.mapkit.core.models.annotations.DJICircle
-import dji.v5.ux.mapkit.core.models.annotations.DJICircleOptions
-import dji.v5.ux.mapkit.core.models.annotations.DJIMarkerOptions
+// import dji.sdk.keyvalue.value.camera.CameraVideoStreamSourceType
+// import dji.sdk.keyvalue.value.common.ComponentIndexType
+// import dji.sdk.keyvalue.value.common.DoubleRect
+// import dji.sdk.keyvalue.value.common.LocationCoordinate2D
+// import dji.sdk.keyvalue.value.common.LocationCoordinate3D
+// import dji.sdk.keyvalue.value.flightcontroller.FlyToMode
+// import dji.v5.manager.intelligent.AutoSensingInfo
+// import dji.v5.manager.intelligent.IntelligentFlightInfo
+// import dji.v5.manager.intelligent.IntelligentModel
+// import dji.v5.manager.intelligent.flyto.FlyToInfo
+// import dji.v5.manager.intelligent.flyto.FlyToTarget
+// import dji.v5.manager.intelligent.poi.POIInfo
+// import dji.v5.manager.intelligent.poi.POITarget
+// import dji.v5.manager.intelligent.smarttrack.SmartTrackInfo
+// import dji.v5.manager.intelligent.spotlight.SpotLightInfo
+// import dji.v5.manager.interfaces.ICameraStreamManager
+// import dji.sampleV5.aircraft.utils.AndUtil
+// import dji.v5.utils.common.JsonUtil
+// import dji.v5.ux.map.MapWidget
+// import dji.v5.ux.mapkit.core.maps.DJIMap
+// import dji.v5.ux.mapkit.core.models.DJIBitmapDescriptor
+// import dji.v5.ux.mapkit.core.models.DJIBitmapDescriptorFactory
+// import dji.v5.ux.mapkit.core.models.DJILatLng
+// import dji.v5.ux.mapkit.core.models.annotations.DJICircle
+// import dji.v5.ux.mapkit.core.models.annotations.DJICircleOptions
+// import dji.v5.ux.mapkit.core.models.annotations.DJIMarkerOptions
 import java.math.BigDecimal
 import java.math.RoundingMode
 import kotlin.math.abs

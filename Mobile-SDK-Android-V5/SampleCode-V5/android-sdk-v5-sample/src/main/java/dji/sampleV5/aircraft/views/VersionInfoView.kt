@@ -12,7 +12,7 @@ import dji.sampleV5.aircraft.data.source.VersionInfo
 import dji.sampleV5.aircraft.databinding.LayoutVersionInfoBinding
 import dji.sampleV5.aircraft.models.VersionInfoVm
 import dji.sampleV5.aircraft.util.DialogUtil
-import dji.v5.utils.common.DjiSharedPreferencesManager
+import dji.v5.ux.core.util.UxSharedPreferencesUtil
 import dji.v5.utils.common.StringUtils
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -75,7 +75,7 @@ class VersionInfoView @JvmOverloads constructor(
         )
 
         binding.itemLatestVersionInfo.setOnClickListener {
-            DjiSharedPreferencesManager.putString(context, SP_KEY_CLICKED_LATEST_VERSION_INFO_STRING, latest.versionName)
+            UxSharedPreferencesUtil.putString(SP_KEY_CLICKED_LATEST_VERSION_INFO_STRING, latest.versionName, true)
             showVersionInfoTo(binding.itemLatestVersionInfo, latest, R.string.release_note_tile_latest, !isClickedLatestVersionInfo(latest))
 
             DialogUtil.showTwoButtonDialog(context, StringUtils.getResStr(R.string.news_dialog_content_tips),
@@ -97,7 +97,7 @@ class VersionInfoView @JvmOverloads constructor(
     }
 
     private fun isClickedLatestVersionInfo(latest: VersionInfo): Boolean {
-        val clickedVersionName = DjiSharedPreferencesManager.getString(context, SP_KEY_CLICKED_LATEST_VERSION_INFO_STRING, "")
+    val clickedVersionName = UxSharedPreferencesUtil.getString(SP_KEY_CLICKED_LATEST_VERSION_INFO_STRING, "", true)
         // 空字符串、或者版本信息不匹配时表示没有点击过
         return clickedVersionName.equals(latest.versionName)
     }

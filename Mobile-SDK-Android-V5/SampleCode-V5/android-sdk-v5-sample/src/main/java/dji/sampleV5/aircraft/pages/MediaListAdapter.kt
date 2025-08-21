@@ -13,10 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 import dji.sampleV5.aircraft.R
 import dji.sampleV5.aircraft.util.AnimationUtils
-import dji.v5.common.callback.CommonCallbacks
-import dji.v5.common.error.IDJIError
-
-import dji.v5.manager.datacenter.media.MediaFile
+// import dji.v5.common.callback.CommonCallbacks
+// import dji.v5.common.error.IDJIError
+// import dji.v5.manager.datacenter.media.MediaFile
 import dji.sampleV5.aircraft.utils.ContextUtil
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import java.util.ArrayList
