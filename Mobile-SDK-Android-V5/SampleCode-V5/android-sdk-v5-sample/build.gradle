@@ -43,6 +43,37 @@ android {
         }
     }
 
+    // EXCLUSIÓN DE ARCHIVOS PROBLEMÁTICOS - Solo compilar DroneScan
+    sourceSets {
+        main {
+            java {
+                // Excluir archivos que causan errores de compilación
+                exclude '**/pages/WayPointV3Fragment.kt'
+                exclude '**/pages/PerceptionFragment.kt'
+                exclude '**/pages/IntelligentFlightFragment.kt'
+                exclude '**/pages/RTKCenterFragment.kt'
+                exclude '**/pages/SimulatorFragment.kt'
+                exclude '**/pages/KeyValueFragment.kt'
+                exclude '**/pages/FlySafeFragment.kt'
+                exclude '**/pages/DataProtectionFragment.kt'
+                exclude '**/pages/TTSFragment.kt'
+                exclude '**/pages/UAS*Fragment.kt'
+                exclude '**/pages/APPSilentlyUpgradeFragment.kt'
+                exclude '**/pages/CameraStreamDetailFragment.kt'
+                exclude '**/pages/MediaFileDetailsFragment.kt'
+                exclude '**/pages/MopDownFragment.kt'
+                exclude '**/pages/PayloadCenterFragment.kt'
+                exclude '**/pages/RealTimeFragment.kt'
+                exclude '**/util/DialogUtil.kt'
+                exclude '**/util/Helper.kt'
+                exclude '**/util/ToastUtils.kt'
+                exclude '**/views/MSDKInfoFragment.kt'
+                exclude '**/views/VersionInfoView.kt'
+                exclude '**/virtualstick/OnScreenJoystick.kt'
+            }
+        }
+    }
+
     packagingOptions {
         // 因为mrtc库内部使用了NDK的c++_shared的编译参数
         // 与其他库重复引用了，因此选其中一个即可
@@ -104,7 +135,19 @@ android {
 dependencies {
     /** <-----------------依赖MSDK--------------------> **/
     implementation 'com.dji:dji-sdk-v5-aircraft:5.15.0'
+    compileOnly 'com.dji:dji-sdk-v5-aircraft-provided:5.15.0'
     runtimeOnly 'com.dji:dji-sdk-v5-networkImp:5.15.0'
+
+    /** <-----------------DroneScan específicas--------------------> **/
+    // ZXing para códigos QR/barras
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.google.zxing:core:3.5.1'
+    
+    // OpenCSV para manejo CSV
+    implementation 'com.opencsv:opencsv:5.7.1'
+    
+    // Permisos USB/MTP
+    implementation 'androidx.documentfile:documentfile:1.0.1'
 
     /** <-----------------sample所需--------------------> **/
     implementation project(':uxsdk')

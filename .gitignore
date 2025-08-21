@@ -5,7 +5,7 @@ DroneScanMinimal/app/build/
 # Build directories
 **/build/
 **/build.gradle.project
-# **/src/
+# # **/src/ (disabled)
 .gradle/
 *.apk
 *.dex
@@ -21,4 +21,25 @@ DroneScanMinimal/app/build/
 # OS files
 .DS_Store
 Thumbs.db
+
+
+# VS Code settings
+.vscode/
+
+# Gradle build cache (temporal)
+**/.gradle/
+*.lock
+
+# Archivo temporal fixed
+**/build.gradle.fixed
+
+# Directorio src extra
+# **/src/ (disabled)
+
+# Archivos backup
+*.bak
+
+
+# Solo excluir el directorio src específico
+DroneScanMinimal/src/
 

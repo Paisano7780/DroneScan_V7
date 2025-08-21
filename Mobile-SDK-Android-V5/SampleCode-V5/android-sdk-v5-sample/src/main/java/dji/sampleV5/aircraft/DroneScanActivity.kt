@@ -159,7 +159,7 @@ class DroneScanActivity : Activity() {
                 } catch (e: Exception) {}
                 resultTextView?.text = "Descarga finalizada: ${file.absolutePath}"
                 val scanIntent = Intent(this@DroneScanActivity, dji.barcode.BarcodeScanActivity::class.java)
-                scanIntent.putExtra("image_path", file.absolutePath)
+                scanIntent.putExtra(dji.barcode.BarcodeScanActivity.EXTRA_IMAGE_PATH, file.absolutePath)
                 startActivityForResult(scanIntent, 2001)
             }
             override fun onFailure(error: IDJIError) {
@@ -233,19 +233,24 @@ class DroneScanActivity : Activity() {
                 resultTextView?.text = "Permiso de acceso a todos los archivos denegado"
             }
         } else if (requestCode == 2001) { // Resultado del escaneo de código de barras
-            if (data != null && data.hasExtra("scan_success")) {
-                val scanSuccess = data.getBooleanExtra("scan_success", false)
-                val imagePath = data.getStringExtra("image_path")
-                if (scanSuccess) {
-                    resultTextView?.text = "Escaneo exitoso"
-                    val csvIntent = Intent(this@DroneScanActivity, CsvExporter::class.java)
-                    csvIntent.putExtra("image_path", imagePath)
+            if (data != null && data.hasExtra(dji.barcode.BarcodeScanActivity.EXTRA_SCAN_SUCCESS)) {
+                val scanSuccess = data.getBooleanExtra(dji.barcode.BarcodeScanActivity.EXTRA_SCAN_SUCCESS, false)
+                val imagePath = data.getStringExtra(dji.barcode.BarcodeScanActivity.EXTRA_IMAGE_PATH)
+                val scanResults = data.getStringArrayListExtra(dji.barcode.BarcodeScanActivity.EXTRA_SCAN_RESULTS)
+                
+                if (scanSuccess && !scanResults.isNullOrEmpty()) {
+                    resultTextView?.text = "Códigos encontrados: ${scanResults.joinToString(", ")}"
+                    
+                    // Exportar a CSV automáticamente
+                    val csvIntent = Intent(this@DroneScanActivity, dji.csv.CsvExporter::class.java)
+                    csvIntent.putExtra(dji.csv.CsvExporter.EXTRA_IMAGE_PATH, imagePath)
+                    csvIntent.putStringArrayListExtra(dji.csv.CsvExporter.EXTRA_SCAN_RESULTS, ArrayList(scanResults))
                     startActivity(csvIntent)
                 } else {
-                    resultTextView?.text = "Escaneo fallido, no se generará CSV"
+                    resultTextView?.text = "No se encontraron códigos en la imagen"
                 }
             } else {
-                resultTextView?.text = "Escaneo fallido, no se generará CSV"
+                resultTextView?.text = "Error en el escaneo de códigos"
             }
         }
     }
