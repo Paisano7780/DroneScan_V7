@@ -193,21 +193,15 @@ class UsbDroneManager(private val context: Context) {
     }
     
     fun initialize() {
-        DebugLogger.d(TAG, "=== INICIALIZANDO UsbDroneManager v2.5 ===")
-        DebugLogger.d(TAG, "🔧 Implementando patrón UsbAccessory + Timer automático")
+        DebugLogger.d(TAG, "=== INICIALIZANDO UsbDroneManager v2.9 ===")
+        DebugLogger.d(TAG, "🔧 Implementando detección USB Device + Accessory")
         
-        // 🔍 DIAGNÓSTICO INICIAL COMPLETO
+        // 🔍 DIAGNÓSTICO INICIAL DEL SISTEMA
         DebugLogger.d(TAG, "📋 === DIAGNÓSTICO INICIAL DEL SISTEMA ===")
-        DebugLogger.d(TAG, "📋 Build.MODEL: ${Build.MODEL}")
-        DebugLogger.d(TAG, "📋 Build.MANUFACTURER: ${Build.MANUFACTURER}")
-        DebugLogger.d(TAG, "📋 Build.PRODUCT: ${Build.PRODUCT}")
-        DebugLogger.d(TAG, "📋 Build.HARDWARE: ${Build.HARDWARE}")
         DebugLogger.d(TAG, "📋 Android API Level: ${Build.VERSION.SDK_INT}")
+        DebugLogger.d(TAG, "📋 Celular MODEL: ${Build.MODEL} (${Build.MANUFACTURER})")
         
-        // Verificar modelo de dispositivo (para RM330)
-        checkDeviceModel()
-        
-        // Verificar capacidades USB
+        // Verificar capacidades USB del sistema
         val packageManager = context.packageManager
         DebugLogger.d(TAG, "📋 USB_HOST feature: ${packageManager.hasSystemFeature(PackageManager.FEATURE_USB_HOST)}")
         DebugLogger.d(TAG, "📋 USB_ACCESSORY feature: ${packageManager.hasSystemFeature(PackageManager.FEATURE_USB_ACCESSORY)}")
@@ -283,22 +277,6 @@ class UsbDroneManager(private val context: Context) {
             DebugLogger.d(TAG, "✅ UsbDroneManager limpiado correctamente")
         } catch (e: Exception) {
             DebugLogger.e(TAG, "Error al limpiar receivers", e)
-        }
-    }
-    
-    // Verificación de modelo de dispositivo (como Data2SD)
-    private fun checkDeviceModel() {
-        try {
-            val deviceModel = getSystemProperty("ro.product.odm.device", "unknown")
-            DebugLogger.d(TAG, "📱 Modelo de dispositivo detectado: $deviceModel")
-            
-            if (deviceModel.equals("rm330", ignoreCase = true)) {
-                DebugLogger.d(TAG, "✅ DJI RC RM330 confirmado!")
-            } else {
-                DebugLogger.w(TAG, "⚠️ No es RM330, pero continuando...")
-            }
-        } catch (e: Exception) {
-            DebugLogger.e(TAG, "Error verificando modelo de dispositivo", e)
         }
     }
     
@@ -419,11 +397,25 @@ class UsbDroneManager(private val context: Context) {
                     DebugLogger.d(TAG, "   📋 SerialNumber: ${device.serialNumber}")
                     
                     // Verificar si es DJI por VendorId, nombres o seriales
-                    val isDJIVendor = device.vendorId == 0x2CA3 || device.vendorId == 0x0B05 // VIDs conocidos de DJI
+                    val isDJIVendor = device.vendorId == 0x2CA3 || // DJI oficial
+                                     device.vendorId == 0x0B05 || // ASUS para algunos RCs
+                                     device.vendorId == 0x18D1 || // Google para dispositivos Android
+                                     device.vendorId == 0x1234 || // Posible genérico
+                                     device.vendorId == 0x045E || // Microsoft para algunos devices
+                                     device.vendorId == 0x05AC    // Apple para ciertos adaptadores
+                    
                     val isDJIName = device.manufacturerName?.contains("DJI", ignoreCase = true) == true ||
                                    device.productName?.contains("DJI", ignoreCase = true) == true ||
                                    device.productName?.contains("RM330", ignoreCase = true) == true ||
+                                   device.productName?.contains("RC", ignoreCase = true) == true ||
+                                   device.productName?.contains("Remote", ignoreCase = true) == true ||
+                                   device.deviceName?.contains("DJI", ignoreCase = true) == true ||
+                                   device.deviceName?.contains("RM330", ignoreCase = true) == true ||
                                    device.serialNumber?.contains("DJI", ignoreCase = true) == true
+                    
+                    DebugLogger.d(TAG, "   🔍 isDJIVendor: $isDJIVendor (VID: 0x${device.vendorId.toString(16)})")
+                    DebugLogger.d(TAG, "   🔍 isDJIName: $isDJIName")
+                    DebugLogger.d(TAG, "   🔍 hasPermission: ${usbManager.hasPermission(device)}")
                     
                     if (isDJIVendor || isDJIName) {
                         DebugLogger.d(TAG, "✅ DISPOSITIVO DJI DETECTADO!")
@@ -445,9 +437,13 @@ class UsbDroneManager(private val context: Context) {
                     }
                 }
                 
-                DebugLogger.d(TAG, "⚠️ Dispositivos USB detectados pero ninguno es DJI")
+                DebugLogger.d(TAG, "⚠️ Dispositivos USB detectados pero NINGUNO es DJI reconocido")
+                DebugLogger.d(TAG, "💡 POSIBLE SOLUCIÓN: El RM330 puede usar un VendorID no conocido")
+                DebugLogger.d(TAG, "💡 Si ves dispositivos arriba, puede ser el RM330 con VendorID diferente")
             } else {
                 DebugLogger.d(TAG, "📋 No hay dispositivos USB")
+                DebugLogger.d(TAG, "💡 POSIBLE CAUSA: RM330 no conectado o Android no lo detecta como USB Device")
+                DebugLogger.d(TAG, "💡 VERIFICAR: Cable USB, modo del RM330, permisos USB debugging")
             }
             
             // Si llegamos aquí, no hay conexión DJI
