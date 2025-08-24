@@ -11,8 +11,8 @@ android {
         applicationId "com.dronescan.msdksample"
         minSdk 26
         targetSdk 34
-        versionCode 34
-        versionName "2.14"
+        versionCode 35
+        versionName "2.15"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
@@ -93,13 +93,15 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     
-    // DJI SDK dependencies (core only - excluimos dependencias pesadas innecesarias)
+    // DJI SDK dependencies (MINIMAL for registration only)
     implementation('com.dji:dji-sdk:4.16.4') {
         exclude group: 'com.dji', module: 'utmiss'
-        exclude group: 'com.dji', module: 'fly-safe-database'
+        exclude group: 'com.dji', module: 'fly-safe-database' 
         exclude group: 'com.dji', module: 'library-anti-distortion'
+        exclude group: 'com.dji', module: 'dji-sdk-provided'
     }
-    implementation 'com.dji:dji-sdk-provided:4.16.4'
+    // Keep provided as compileOnly - only for compilation, not runtime
+    compileOnly 'com.dji:dji-sdk-provided:4.16.4'
     
     // Barcode scanning
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'

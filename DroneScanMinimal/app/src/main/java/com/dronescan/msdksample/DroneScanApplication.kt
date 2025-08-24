@@ -76,61 +76,29 @@ class DroneScanApplication : Application(), Application.ActivityLifecycleCallbac
      * Inicia el registro DJI SDK - Basado en el patrón del SDK original
      */
     private fun startDJISDKRegistration() {
-        if (isRegistrationInProgress.compareAndSet(false, true)) {
+        try {
             DebugLogger.d(TAG, "=== Iniciando registro DJI SDK ===")
+            
+            // Verificar disponibilidad del SDK antes de usar
+            val sdkManagerClass = Class.forName("dji.sdk.sdkmanager.DJISDKManager")
+            DebugLogger.d(TAG, "✅ Clase DJISDKManager encontrada: ${sdkManagerClass.name}")
             
             Thread {
                 try {
-                    DJISDKManager.getInstance().registerApp(applicationContext, object : DJISDKManager.SDKManagerCallback {
-                        override fun onRegister(error: DJIError?) {
-                            if (error == DJISDKError.REGISTRATION_SUCCESS) {
-                                DebugLogger.d(TAG, "✅ DJI SDK registrado exitosamente")
-                                DJISDKManager.getInstance().startConnectionToProduct()
-                                DebugLogger.d(TAG, "🔄 Iniciando conexión a producto DJI...")
-                            } else {
-                                DebugLogger.e(TAG, "❌ Error registrando DJI SDK: ${error?.description}")
-                            }
-                            isRegistrationInProgress.set(false)
-                        }
-                        
-                        override fun onProductDisconnect() {
-                            DebugLogger.d(TAG, "🔌 Producto DJI desconectado")
-                        }
-                        
-                        override fun onProductConnect(product: BaseProduct?) {
-                            DebugLogger.d(TAG, "🔌 Producto DJI conectado: ${product?.model}")
-                        }
-                        
-                        override fun onProductChanged(product: BaseProduct?) {
-                            DebugLogger.d(TAG, "🔄 Producto DJI cambiado: ${product?.model}")
-                        }
-                        
-                        override fun onComponentChange(
-                            key: BaseProduct.ComponentKey?,
-                            oldComponent: BaseComponent?,
-                            newComponent: BaseComponent?
-                        ) {
-                            DebugLogger.v(TAG, "🔧 Componente DJI cambió: $key")
-                        }
-                        
-                        override fun onInitProcess(event: DJISDKInitEvent?, totalProcess: Int) {
-                            DebugLogger.v(TAG, "⚙️ DJI SDK inicializando: $totalProcess%")
-                        }
-                        
-                        override fun onDatabaseDownloadProgress(current: Long, total: Long) {
-                            val progress = if (total > 0) (100 * current / total).toInt() else 0
-                            if (progress % 25 == 0 || progress == 100) {
-                                DebugLogger.d(TAG, "📦 Descargando BD DJI: $progress%")
-                            }
-                        }
-                    })
+                    DebugLogger.d(TAG, "🔄 DJI SDK registration TEMPORALMENTE DESHABILITADO")
+                    DebugLogger.w(TAG, "⚠️ VerifyError evitado - USB detection funcionará independientemente")
+                    DebugLogger.d(TAG, "✅ App iniciada sin DJI SDK - lista para USB testing")
                 } catch (e: Exception) {
-                    DebugLogger.e(TAG, "❌ Excepción registrando DJI SDK", e)
-                    isRegistrationInProgress.set(false)
+                    DebugLogger.e(TAG, "❌ Error en thread simplificado: ${e.message}")
                 }
             }.start()
-        } else {
-            DebugLogger.w(TAG, "⚠️ Registro DJI SDK ya en progreso")
+            
+        } catch (e: ClassNotFoundException) {
+            DebugLogger.e(TAG, "❌ Clase DJISDKManager no encontrada: ${e.message}")
+        } catch (e: VerifyError) {
+            DebugLogger.e(TAG, "❌ VerifyError al acceder a DJISDKManager: ${e.message}")
+        } catch (e: Exception) {
+            DebugLogger.e(TAG, "❌ Error general al iniciar DJI SDK: ${e.message}")
         }
     }
     
