@@ -51,7 +51,7 @@
             </intent-filter>
         </activity>
         
-        <!-- Actividad para manejar conexiones USB -->
+        <!-- Actividad para manejar conexiones USB Accessory -->
         <activity 
             android:name=".UsbAttachActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
@@ -63,6 +63,19 @@
                 android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"
                 android:resource="@xml/accessory_filter" />
         </activity>
+        
+        <!-- Intent filter para interceptar conexiones USB Device -->
+        <activity-alias
+            android:name=".UsbDeviceAttachActivity"
+            android:targetActivity=".DroneScanActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+        </activity-alias>
         
     </application>
     

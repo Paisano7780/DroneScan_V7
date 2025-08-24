@@ -20,6 +20,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.dronescan.barcode.BarcodeProcessor
 import com.dronescan.csv.CsvExporter
+import com.dronescan.debug.DebugLogger
 import com.dronescan.usb.UsbDroneManager
 import java.io.File
 
@@ -33,6 +34,7 @@ class DroneScanActivity : AppCompatActivity() {
     private var scanButton: Button? = null
     private var exportButton: Button? = null
     private var connectButton: Button? = null
+    private var debugLogsButton: Button? = null
     
     private lateinit var usbDroneManager: UsbDroneManager
     private lateinit var barcodeProcessor: BarcodeProcessor
@@ -118,7 +120,7 @@ class DroneScanActivity : AppCompatActivity() {
                 0,
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 1f
-            ).apply { setMargins(0, 0, 8, 0) }
+            ).apply { setMargins(0, 0, 4, 0) }
         }
         
         exportButton = Button(this).apply {
@@ -127,11 +129,21 @@ class DroneScanActivity : AppCompatActivity() {
                 0,
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 1f
-            ).apply { setMargins(8, 0, 0, 0) }
+            ).apply { setMargins(4, 0, 4, 0) }
+        }
+        
+        debugLogsButton = Button(this).apply {
+            text = "🔍 Logs"
+            layoutParams = LinearLayout.LayoutParams(
+                0,
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                1f
+            ).apply { setMargins(4, 0, 0, 0) }
         }
         
         buttonLayout.addView(scanButton)
         buttonLayout.addView(exportButton)
+        buttonLayout.addView(debugLogsButton)
         
         layout.addView(titleTextView)
         layout.addView(statusTextView)
@@ -153,6 +165,8 @@ class DroneScanActivity : AppCompatActivity() {
     
     private fun setupButtons() {
         connectButton?.setOnClickListener {
+            DebugLogger.d("DroneScan", "🔍 Usuario tocó botón verificar conexión")
+            usbDroneManager.forceCheckDevices()
             checkUsbConnection()
         }
         
@@ -169,16 +183,20 @@ class DroneScanActivity : AppCompatActivity() {
         exportButton?.setOnClickListener {
             openExportFolder()
         }
+        
+        debugLogsButton?.setOnClickListener {
+            showDebugLogs()
+        }
     }
     
     private fun updateStatus(message: String) {
         statusTextView?.text = "Estado: $message"
-        Log.d("DroneScan", message)
+        DebugLogger.d("DroneScan", message)
     }
     
     private fun updateResult(message: String) {
         resultTextView?.text = message
-        Log.d("DroneScan", message)
+        DebugLogger.d("DroneScan", message)
     }
     
     private fun updateConnectionStatus() {
@@ -378,7 +396,7 @@ class DroneScanActivity : AppCompatActivity() {
         }
     }
 
-    private fun processPhotos(photos: List<File>) {
+    private fun processPhotos(photos: List<UsbDroneManager.DronePhoto>) {
         val allBarcodes = mutableListOf<String>()
         var processedCount = 0
 
@@ -386,7 +404,7 @@ class DroneScanActivity : AppCompatActivity() {
 
         for (photo in photos) {
             try {
-                val barcodes = barcodeProcessor.processImage(photo.absolutePath)
+                val barcodes = barcodeProcessor.processImage(photo.file.absolutePath)
                 allBarcodes.addAll(barcodes)
                 processedCount++
                 
@@ -409,11 +427,11 @@ class DroneScanActivity : AppCompatActivity() {
         }
     }
 
-    private fun exportToCSV(barcodes: List<String>, photos: List<File>) {
+    private fun exportToCSV(barcodes: List<String>, photos: List<UsbDroneManager.DronePhoto>) {
         try {
             updateStatus("💾 Exportando a CSV...")
             
-            val csvFile = csvExporter.exportBarcodes(barcodes, photos)
+            val csvFile = csvExporter.exportBarcodes(barcodes, photos.map { it.file })
             
             updateStatus("🎉 Exportación completada")
             updateResult("🎉 ¡Exportación exitosa!\\n\\n📄 Archivo: ${csvFile.name}\\n📁 Ubicación: Documents/DroneScan/\\n\\n📊 Estadísticas detalladas:\\n• 🎯 Códigos totales: ${barcodes.size}\\n• 📸 Fotos procesadas: ${photos.size}\\n• 🔢 Códigos únicos: ${barcodes.distinct().size}\\n• 📋 Duplicados: ${barcodes.size - barcodes.distinct().size}\\n\\n💾 Encuentra tu archivo CSV en la carpeta de exportaciones")
@@ -451,5 +469,40 @@ class DroneScanActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Toast.makeText(this, "📁 Ve a: Documents/DroneScan", Toast.LENGTH_LONG).show()
         }
+    }
+    
+    private fun showDebugLogs() {
+        val errorLogs = DebugLogger.getErrorLogs()
+        val allLogs = DebugLogger.getAllLogs()
+        
+        AlertDialog.Builder(this)
+            .setTitle("🔍 Debug Logs - DroneScan v2.4")
+            .setMessage("Selecciona qué logs quieres ver:")
+            .setPositiveButton("❌ Solo Errores") { _, _ ->
+                showLogsDialog(errorLogs, "Logs de Errores")
+            }
+            .setNeutralButton("📋 Todos los Logs") { _, _ ->
+                showLogsDialog(allLogs, "Todos los Logs")
+            }
+            .setNegativeButton("🗑️ Limpiar") { _, _ ->
+                DebugLogger.clearLogs()
+                Toast.makeText(this, "Logs limpiados", Toast.LENGTH_SHORT).show()
+            }
+            .show()
+    }
+    
+    private fun showLogsDialog(logs: String, title: String) {
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage(logs)
+            .setPositiveButton("📋 Copiar") { _, _ ->
+                if (DebugLogger.copyLogsToClipboard(this, title.contains("Errores"))) {
+                    Toast.makeText(this, "Logs copiados al portapapeles", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(this, "Error al copiar logs", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .setNegativeButton("Cerrar", null)
+            .show()
     }
 }

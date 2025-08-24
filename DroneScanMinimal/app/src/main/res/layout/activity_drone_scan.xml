@@ -59,7 +59,7 @@
             android:background="#2196F3"
             android:textColor="#ffffff"
             android:textStyle="bold"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="4dp" />
 
         <Button
             android:id="@+id/export_button"
@@ -70,7 +70,19 @@
             android:background="#4CAF50"
             android:textColor="#ffffff"
             android:textStyle="bold"
-            android:layout_marginStart="8dp" />
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp" />
+
+        <Button
+            android:id="@+id/debug_logs_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🔍 Logs"
+            android:background="#FF9800"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp" />
 
     </LinearLayout>
 

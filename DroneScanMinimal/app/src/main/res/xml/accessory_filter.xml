@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <usb-accessory model="DJI Controller" manufacturer="DJI" />
-    <usb-accessory model="DJI Mini 3" manufacturer="DJI" />
-    <usb-accessory model="DJI RC" manufacturer="DJI" />
+    <!-- Filtros para DJI USB Accessory basados en Bridge App -->
+    <usb-accessory manufacturer="DJI" model="DJI Controller" />
+    <usb-accessory manufacturer="DJI" model="DJI RC" />
+    <usb-accessory manufacturer="DJI" model="DJI RC Pro" />
+    <usb-accessory manufacturer="DJI" model="DJI RC Plus" />
+    <usb-accessory manufacturer="DJI" model="RM330" />
+    <usb-accessory manufacturer="DJI" model="AG410" />
+    <usb-accessory manufacturer="DJI" model="WM160" />
+    <usb-accessory manufacturer="DJI" model="com.dji.logiclink" />
+    
+    <!-- Modelos adicionales -->
+    <usb-accessory manufacturer="DJI" model="DJI Mini 3" />
+    <usb-accessory manufacturer="DJI" model="DJI Mini 3 Pro" />
+    <usb-accessory manufacturer="DJI" model="DJI Air 2S" />
+    <usb-accessory manufacturer="DJI" model="DJI Mavic 3" />
 </resources>

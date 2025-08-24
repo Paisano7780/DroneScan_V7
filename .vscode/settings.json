@@ -10,5 +10,10 @@
     "accessibility.voice.keywordActivation": "chatInView",
     "emulator.emulatorPath": "/home/codespace/android-sdk/emulator",
     "emulator.emulatorPathLinux": "/home/codespace/android-sdk/emulator",
-    "docked-android-ios-emulator.sdkPath": "/home/codespace/android-sdk/emulator"
+    "docked-android-ios-emulator.sdkPath": "/home/codespace/android-sdk/emulator",
+    "simpleBrowser.focusLockIndicator.enabled": true,
+    "workbench.webview.experimental.additionalUrlRules": [
+        "https://accounts.google.com/*",
+        "https://client.logdog.app/*"
+    ]
 }
