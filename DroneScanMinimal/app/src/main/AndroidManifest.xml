@@ -29,10 +29,15 @@
         android:theme="@style/AppTheme"
         android:requestLegacyExternalStorage="true">
         
+        <!-- DJI SDK App Key -->
+        <meta-data
+            android:name="com.dji.sdk.API_KEY"
+            android:value="3196948d4ecce3e531187b11" />
+        
         <!-- Provider para compartir archivos -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.dronescan.fileProvider"
+            android:authorities="com.dronescan.msdksample.fileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

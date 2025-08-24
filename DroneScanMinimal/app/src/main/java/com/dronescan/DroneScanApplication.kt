@@ -7,6 +7,13 @@ import android.os.Bundle
 import android.os.StrictMode
 import android.util.Log
 import com.dronescan.debug.DebugLogger
+import dji.common.error.DJIError
+import dji.common.error.DJISDKError  
+import dji.sdk.base.BaseComponent
+import dji.sdk.base.BaseProduct
+import dji.sdk.sdkmanager.DJISDKInitEvent
+import dji.sdk.sdkmanager.DJISDKManager
+import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * DroneScanApplication - Basado en BridgeApplication.java de Android-Bridge-App
@@ -23,6 +30,9 @@ class DroneScanApplication : Application(), Application.ActivityLifecycleCallbac
             
         @JvmStatic
         fun getContext(): Context? = instance
+        
+        // Flag para evitar registros múltiples
+        private val isRegistrationInProgress = AtomicBoolean(false)
     }
     
     override fun onCreate() {
@@ -59,6 +69,69 @@ class DroneScanApplication : Application(), Application.ActivityLifecycleCallbac
         }
         
         initializeApp()
+        startDJISDKRegistration()
+    }
+    
+    /**
+     * Inicia el registro DJI SDK - Basado en el patrón del SDK original
+     */
+    private fun startDJISDKRegistration() {
+        if (isRegistrationInProgress.compareAndSet(false, true)) {
+            DebugLogger.d(TAG, "=== Iniciando registro DJI SDK ===")
+            
+            Thread {
+                try {
+                    DJISDKManager.getInstance().registerApp(applicationContext, object : DJISDKManager.SDKManagerCallback {
+                        override fun onRegister(error: DJIError?) {
+                            if (error == DJISDKError.REGISTRATION_SUCCESS) {
+                                DebugLogger.d(TAG, "✅ DJI SDK registrado exitosamente")
+                                DJISDKManager.getInstance().startConnectionToProduct()
+                                DebugLogger.d(TAG, "🔄 Iniciando conexión a producto DJI...")
+                            } else {
+                                DebugLogger.e(TAG, "❌ Error registrando DJI SDK: ${error?.description}")
+                            }
+                            isRegistrationInProgress.set(false)
+                        }
+                        
+                        override fun onProductDisconnect() {
+                            DebugLogger.d(TAG, "🔌 Producto DJI desconectado")
+                        }
+                        
+                        override fun onProductConnect(product: BaseProduct?) {
+                            DebugLogger.d(TAG, "🔌 Producto DJI conectado: ${product?.model}")
+                        }
+                        
+                        override fun onProductChanged(product: BaseProduct?) {
+                            DebugLogger.d(TAG, "🔄 Producto DJI cambiado: ${product?.model}")
+                        }
+                        
+                        override fun onComponentChange(
+                            key: BaseProduct.ComponentKey?,
+                            oldComponent: BaseComponent?,
+                            newComponent: BaseComponent?
+                        ) {
+                            DebugLogger.v(TAG, "🔧 Componente DJI cambió: $key")
+                        }
+                        
+                        override fun onInitProcess(event: DJISDKInitEvent?, totalProcess: Int) {
+                            DebugLogger.v(TAG, "⚙️ DJI SDK inicializando: $totalProcess%")
+                        }
+                        
+                        override fun onDatabaseDownloadProgress(current: Long, total: Long) {
+                            val progress = if (total > 0) (100 * current / total).toInt() else 0
+                            if (progress % 25 == 0 || progress == 100) {
+                                DebugLogger.d(TAG, "📦 Descargando BD DJI: $progress%")
+                            }
+                        }
+                    })
+                } catch (e: Exception) {
+                    DebugLogger.e(TAG, "❌ Excepción registrando DJI SDK", e)
+                    isRegistrationInProgress.set(false)
+                }
+            }.start()
+        } else {
+            DebugLogger.w(TAG, "⚠️ Registro DJI SDK ya en progreso")
+        }
     }
     
     private fun initializeApp() {

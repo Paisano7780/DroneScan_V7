@@ -206,8 +206,11 @@ class UsbDroneManager(private val context: Context) {
         DebugLogger.d(TAG, "📋 USB_HOST feature: ${packageManager.hasSystemFeature(PackageManager.FEATURE_USB_HOST)}")
         DebugLogger.d(TAG, "📋 USB_ACCESSORY feature: ${packageManager.hasSystemFeature(PackageManager.FEATURE_USB_ACCESSORY)}")
         
-        // Verificar UsbManager
+        // Verificar UsbManager y modo USB actual
         DebugLogger.d(TAG, "📋 UsbManager disponible: ${usbManager != null}")
+        
+        // Diagnóstico crítico de modo USB
+        checkUSBHostMode()
         
         val filter = IntentFilter().apply {
             addAction(UsbManager.ACTION_USB_ACCESSORY_ATTACHED)
@@ -280,6 +283,56 @@ class UsbDroneManager(private val context: Context) {
         }
     }
     
+    // Verificación crítica del modo USB Host vs Device
+    private fun checkUSBHostMode() {
+        try {
+            DebugLogger.d(TAG, "📋 === DIAGNÓSTICO CRÍTICO DE MODO USB ===")
+            
+            // Verificar si el celular está actuando como USB Host o Device
+            val defaultUsbFunction = getSystemProperty("sys.usb.config", "none")
+            val currentUsbFunction = getSystemProperty("sys.usb.state", "none")
+            
+            DebugLogger.d(TAG, "📋 sys.usb.config: $defaultUsbFunction")
+            DebugLogger.d(TAG, "📋 sys.usb.state: $currentUsbFunction")
+            
+            // Verificar modo USB debugging
+            val usbDebugging = getSystemProperty("sys.usb.debugging", "0")
+            DebugLogger.d(TAG, "📋 USB debugging: $usbDebugging")
+            
+            // Verificar propiedades relacionadas con OTG
+            val otgProperty = getSystemProperty("persist.vendor.otg.enable", "unknown")
+            DebugLogger.d(TAG, "📋 OTG enable: $otgProperty")
+            
+            // Diagnóstico del problema según logs
+            when {
+                currentUsbFunction.contains("mtp") -> {
+                    DebugLogger.w(TAG, "⚠️ PROBLEMA: Celular en modo MTP (Media Transfer Protocol)")
+                    DebugLogger.w(TAG, "💡 SOLUCIÓN: RM330 ve al celular como dispositivo de almacenamiento")
+                    DebugLogger.w(TAG, "💡 NECESARIO: Cambiar a modo USB Host/OTG en celular")
+                }
+                currentUsbFunction.contains("ptp") -> {
+                    DebugLogger.w(TAG, "⚠️ PROBLEMA: Celular en modo PTP (Picture Transfer Protocol)")
+                    DebugLogger.w(TAG, "💡 SOLUCIÓN: Similar a MTP, celular es dispositivo")
+                }
+                currentUsbFunction.contains("charging") -> {
+                    DebugLogger.w(TAG, "⚠️ PROBLEMA: Celular en modo CHARGING")
+                    DebugLogger.w(TAG, "💡 SOLUCIÓN: Solo carga, no transfiere datos")
+                }
+                else -> {
+                    DebugLogger.d(TAG, "📋 Modo USB: $currentUsbFunction")
+                }
+            }
+            
+            DebugLogger.d(TAG, "💡 PARA DETECTAR RM330 NECESITAS:")
+            DebugLogger.d(TAG, "💡 1. Celular = USB Host (puede ver dispositivos)")
+            DebugLogger.d(TAG, "💡 2. RM330 = USB Device (aparece en deviceList)")
+            DebugLogger.d(TAG, "💡 3. Cable OTG o configuración correcta")
+            
+        } catch (e: Exception) {
+            DebugLogger.e(TAG, "Error verificando modo USB", e)
+        }
+    }
+    
     // Timer automático para verificación continua (como Bridge App)
     private fun startAutoCheckTimer() {
         if (isTimerRunning) return
@@ -320,59 +373,55 @@ class UsbDroneManager(private val context: Context) {
         }
     }
     
-    // checkForDJIAccessory() EXTENDIDO para Device + Accessory
+    // checkForDJIAccessory() EXACTO como Android-Bridge-App línea 158-174
     private fun checkForDJIAccessory() {
         try {
-            DebugLogger.d(TAG, "🔍 === VERIFICACIÓN COMPLETA USB (Device + Accessory) ===")
+            DebugLogger.d(TAG, "🔍 === BRIDGE APP PATTERN - VERIFICACIÓN EXACTA ===")
             
-            // PASO 1: Verificar USB Accessories (como Bridge App)
+            // PASO 1: LÓGICA EXACTA del Bridge App
             val accessoryList = usbManager.accessoryList
             DebugLogger.d(TAG, "📋 accessoryList: $accessoryList")
             DebugLogger.d(TAG, "📋 accessoryList?.size: ${accessoryList?.size}")
             
-            // LÓGICA EXACTA como Bridge App línea 160-174
+            // Bridge App línea 160-174: verificación EXACTA
             if (accessoryList != null 
                 && accessoryList.size > 0 
                 && !TextUtils.isEmpty(accessoryList[0].manufacturer) 
                 && accessoryList[0].manufacturer.equals("DJI")) {
                 
-                val accessory = accessoryList[0] // Solo el PRIMER accesorio
-                DebugLogger.d(TAG, "🎯 ¡DJI ACCESSORY DETECTADO!")
-                DebugLogger.d(TAG, "  Manufacturer: ${accessory.manufacturer}")
-                DebugLogger.d(TAG, "  Model: ${accessory.model}")
-                DebugLogger.d(TAG, "  Description: ${accessory.description}")
-                DebugLogger.d(TAG, "  Version: ${accessory.version}")
-                DebugLogger.d(TAG, "  Serial: ${accessory.serial}")
-                DebugLogger.d(TAG, "  Uri: ${accessory.uri}")
+                DebugLogger.d(TAG, "✅ *** DJI ACCESSORY DETECTADO - BRIDGE PATTERN! ***")
+                DebugLogger.d(TAG, "📱 mAccessory = accessoryList[0]")
+                DebugLogger.d(TAG, "📱 Manufacturer: '${accessoryList[0].manufacturer}'")
+                DebugLogger.d(TAG, "📱 Model: '${accessoryList[0].model}'")
+                DebugLogger.d(TAG, "📱 Description: '${accessoryList[0].description}'")
+                DebugLogger.d(TAG, "📱 Serial: '${accessoryList[0].serial}'")
+                DebugLogger.d(TAG, "📱 Version: '${accessoryList[0].version}'")
                 
-                val model = UsbModel.find(accessory.model)
-                currentModel = model
-                DebugLogger.d(TAG, "📋 Modelo identificado: ${model.getModel()}")
+                // Bridge App: RCConnectionEvent(true)
+                onConnectionStatusChanged?.invoke(true, "DJI ${accessoryList[0].model} detectado")
                 
-                // Notificar conexión como Bridge App
-                onConnectionStatusChanged?.invoke(true, "DJI ${accessory.model} conectado")
-                
-                // Verificar permisos
-                if (usbManager.hasPermission(accessory)) {
-                    DebugLogger.d(TAG, "✅ RC CONNECTED - Permisos ya concedidos")
-                    handlePermissionGranted(accessory)
+                // Bridge App: Check permission
+                if (usbManager.hasPermission(accessoryList[0])) {
+                    DebugLogger.d(TAG, "✅ RC CONNECTED")
                 } else {
-                    DebugLogger.d(TAG, "🔐 NO Permission to USB Accessory - solicitando...")
-                    requestAccessoryPermission(accessory)
+                    DebugLogger.d(TAG, "🔐 NO Permission to USB Accessory")
+                    requestAccessoryPermission(accessoryList[0])
                 }
                 return
-                
             } else {
-                DebugLogger.d(TAG, "📋 No hay accesorios DJI detectados")
+                // Bridge App: RCConnectionEvent(false) 
+                DebugLogger.d(TAG, "❌ RC DISCONNECTED")
                 
-                // Diagnóstico adicional de accesorios
-                if (accessoryList != null && accessoryList.isNotEmpty()) {
-                    DebugLogger.d(TAG, "📱 Accesorios NO-DJI encontrados:")
-                    for ((index, acc) in accessoryList.withIndex()) {
-                        DebugLogger.d(TAG, "  [$index] Manufacturer: ${acc.manufacturer}, Model: ${acc.model}")
-                    }
+                // Debugging adicional
+                if (accessoryList == null) {
+                    DebugLogger.d(TAG, "📋 accessoryList is NULL")
+                } else if (accessoryList.isEmpty()) {
+                    DebugLogger.d(TAG, "📋 accessoryList is EMPTY")
+                } else if (TextUtils.isEmpty(accessoryList[0].manufacturer)) {
+                    DebugLogger.d(TAG, "📋 accessoryList[0].manufacturer is EMPTY")
                 } else {
-                    DebugLogger.d(TAG, "📋 No hay accesorios USB en absoluto")
+                    DebugLogger.d(TAG, "📋 accessoryList[0].manufacturer: '${accessoryList[0].manufacturer}'")
+                    DebugLogger.d(TAG, "📋 Expected: 'DJI' (exact match)")
                 }
             }
             
