@@ -342,11 +342,12 @@ class UsbDroneManager(private val context: Context) {
         }
     }
     
-    // checkForDJIAccessory() EXACTO como Bridge App - línea 158-174
+    // checkForDJIAccessory() EXTENDIDO para Device + Accessory
     private fun checkForDJIAccessory() {
         try {
-            DebugLogger.d(TAG, "🔍 === VERIFICACIÓN DJI ACCESSORY (Bridge App Pattern) ===")
+            DebugLogger.d(TAG, "🔍 === VERIFICACIÓN COMPLETA USB (Device + Accessory) ===")
             
+            // PASO 1: Verificar USB Accessories (como Bridge App)
             val accessoryList = usbManager.accessoryList
             DebugLogger.d(TAG, "📋 accessoryList: $accessoryList")
             DebugLogger.d(TAG, "📋 accessoryList?.size: ${accessoryList?.size}")
@@ -381,13 +382,12 @@ class UsbDroneManager(private val context: Context) {
                     DebugLogger.d(TAG, "🔐 NO Permission to USB Accessory - solicitando...")
                     requestAccessoryPermission(accessory)
                 }
+                return
                 
             } else {
-                // Como Bridge App línea 176-178
-                DebugLogger.d(TAG, "❌ RC DISCONNECTED - No hay accesorios DJI")
-                onConnectionStatusChanged?.invoke(false, "No hay dispositivos DJI")
+                DebugLogger.d(TAG, "📋 No hay accesorios DJI detectados")
                 
-                // Diagnóstico adicional
+                // Diagnóstico adicional de accesorios
                 if (accessoryList != null && accessoryList.isNotEmpty()) {
                     DebugLogger.d(TAG, "📱 Accesorios NO-DJI encontrados:")
                     for ((index, acc) in accessoryList.withIndex()) {
@@ -397,6 +397,62 @@ class UsbDroneManager(private val context: Context) {
                     DebugLogger.d(TAG, "📋 No hay accesorios USB en absoluto")
                 }
             }
+            
+            // PASO 2: Verificar USB Devices (CRÍTICO para RM330 en celular)
+            val deviceList = usbManager.deviceList
+            DebugLogger.d(TAG, "📋 deviceList: $deviceList")
+            DebugLogger.d(TAG, "📋 deviceList?.size: ${deviceList?.size}")
+            
+            if (deviceList != null && deviceList.isNotEmpty()) {
+                DebugLogger.d(TAG, "🔌 Dispositivos USB encontrados: ${deviceList.size}")
+                
+                deviceList.values.forEachIndexed { index, device ->
+                    DebugLogger.d(TAG, "🔌 Device #${index + 1}:")
+                    DebugLogger.d(TAG, "   📋 DeviceName: ${device.deviceName}")
+                    DebugLogger.d(TAG, "   📋 VendorId: ${device.vendorId} (0x${device.vendorId.toString(16)})")
+                    DebugLogger.d(TAG, "   📋 ProductId: ${device.productId} (0x${device.productId.toString(16)})")
+                    DebugLogger.d(TAG, "   📋 DeviceClass: ${device.deviceClass}")
+                    DebugLogger.d(TAG, "   📋 DeviceSubclass: ${device.deviceSubclass}")
+                    DebugLogger.d(TAG, "   📋 DeviceProtocol: ${device.deviceProtocol}")
+                    DebugLogger.d(TAG, "   📋 ManufacturerName: ${device.manufacturerName}")
+                    DebugLogger.d(TAG, "   📋 ProductName: ${device.productName}")
+                    DebugLogger.d(TAG, "   📋 SerialNumber: ${device.serialNumber}")
+                    
+                    // Verificar si es DJI por VendorId, nombres o seriales
+                    val isDJIVendor = device.vendorId == 0x2CA3 || device.vendorId == 0x0B05 // VIDs conocidos de DJI
+                    val isDJIName = device.manufacturerName?.contains("DJI", ignoreCase = true) == true ||
+                                   device.productName?.contains("DJI", ignoreCase = true) == true ||
+                                   device.productName?.contains("RM330", ignoreCase = true) == true ||
+                                   device.serialNumber?.contains("DJI", ignoreCase = true) == true
+                    
+                    if (isDJIVendor || isDJIName) {
+                        DebugLogger.d(TAG, "✅ DISPOSITIVO DJI DETECTADO!")
+                        DebugLogger.d(TAG, "🎯 VendorId: 0x${device.vendorId.toString(16)}")
+                        DebugLogger.d(TAG, "🎯 ProductName: ${device.productName}")
+                        DebugLogger.d(TAG, "🎯 ManufacturerName: ${device.manufacturerName}")
+                        
+                        // Notificar conexión
+                        onConnectionStatusChanged?.invoke(true, "DJI ${device.productName ?: "Device"} detectado vía USB")
+                        
+                        // Verificar permisos para el device
+                        if (usbManager.hasPermission(device)) {
+                            DebugLogger.d(TAG, "✅ RC CONNECTED - Permisos USB Device concedidos")
+                        } else {
+                            DebugLogger.d(TAG, "🔐 Solicitando permisos para USB Device...")
+                            requestDevicePermission(device)
+                        }
+                        return
+                    }
+                }
+                
+                DebugLogger.d(TAG, "⚠️ Dispositivos USB detectados pero ninguno es DJI")
+            } else {
+                DebugLogger.d(TAG, "📋 No hay dispositivos USB")
+            }
+            
+            // Si llegamos aquí, no hay conexión DJI
+            DebugLogger.d(TAG, "❌ RC DISCONNECTED - No hay dispositivos DJI")
+            onConnectionStatusChanged?.invoke(false, "No hay dispositivos DJI")
             
         } catch (e: Exception) {
             DebugLogger.e(TAG, "Error en checkForDJIAccessory()", e)
@@ -414,6 +470,19 @@ class UsbDroneManager(private val context: Context) {
         )
         
         usbManager.requestPermission(accessory, permissionIntent)
+    }
+    
+    private fun requestDevicePermission(device: UsbDevice) {
+        DebugLogger.d(TAG, "Solicitando permiso para device: ${device.productName}")
+        
+        val permissionIntent = PendingIntent.getBroadcast(
+            context, 
+            0, 
+            Intent(ACTION_USB_PERMISSION),
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+        
+        usbManager.requestPermission(device, permissionIntent)
     }
     
     private fun handleAccessoryAttached(accessory: UsbAccessory) {

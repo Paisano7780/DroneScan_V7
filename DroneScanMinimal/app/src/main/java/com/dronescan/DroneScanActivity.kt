@@ -340,12 +340,27 @@ class DroneScanActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         when (requestCode) {
             REQUEST_ALL_PERMISSIONS -> {
-                if (grantResults.isNotEmpty() && grantResults.all { it == PackageManager.PERMISSION_GRANTED }) {
-                    updateStatus("✅ Permisos básicos concedidos")
+                // Verificar permisos críticos (cámara y almacenamiento)
+                val criticalPermissions = arrayOf(
+                    Manifest.permission.CAMERA,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE
+                )
+                
+                val criticalGranted = criticalPermissions.all { permission ->
+                    ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
+                }
+                
+                if (criticalGranted) {
+                    updateStatus("✅ Permisos críticos concedidos")
                     checkManageAllFilesPermission()
                 } else {
-                    updateStatus("⚠️ Algunos permisos denegados")
-                    updateResult("⚠️ Algunos permisos fueron denegados\\n\\n🔧 Para funcionalidad completa:\\n1. Ve a Configuración → Aplicaciones → DroneScan\\n2. Habilita todos los permisos\\n3. Reinicia la aplicación\\n\\n💡 La app puede funcionar con limitaciones")
+                    // Solo mostrar advertencia si permisos críticos fueron denegados
+                    val deniedCritical = criticalPermissions.filter { permission ->
+                        ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED
+                    }
+                    
+                    updateStatus("⚠️ Permisos críticos denegados: ${deniedCritical.joinToString()}")
+                    updateResult("⚠️ Algunos permisos críticos fueron denegados\\n\\n🔧 Para funcionalidad completa:\\n1. Ve a Configuración → Aplicaciones → DroneScan\\n2. Habilita permisos de Cámara y Almacenamiento\\n3. Reinicia la aplicación\\n\\n💡 La app puede funcionar con limitaciones")
                 }
             }
         }
