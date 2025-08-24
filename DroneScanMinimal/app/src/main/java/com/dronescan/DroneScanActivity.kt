@@ -505,4 +505,34 @@ class DroneScanActivity : AppCompatActivity() {
             .setNegativeButton("Cerrar", null)
             .show()
     }
+    
+    /**
+     * onNewIntent - CRÍTICO como Bridge App
+     * ACTION_USB_ACCESSORY_ATTACHED es un Activity Broadcast.
+     * Debe estar aquí, no en USBConnectionManager
+     * Basado en BridgeActivity.java línea 161-184
+     */
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        
+        if (intent?.action != null) {
+            DebugLogger.d("DroneScanActivity", "📱 onNewIntent: ${intent.action}")
+            
+            when (intent.action) {
+                UsbManager.ACTION_USB_ACCESSORY_ATTACHED -> {
+                    DebugLogger.d("DroneScanActivity", "🔗 USB_ACCESSORY_ATTACHED detectado en onNewIntent")
+                    
+                    // Forzar verificación inmediata como Bridge App
+                    usbDroneManager.forceCheckDevices()
+                    
+                    // Mostrar notificación al usuario
+                    Toast.makeText(this, "🔗 Accesorio USB conectado", Toast.LENGTH_SHORT).show()
+                    updateStatus("📱 Verificando accesorio conectado...")
+                }
+                else -> {
+                    DebugLogger.d("DroneScanActivity", "📱 Acción no manejada en onNewIntent: ${intent.action}")
+                }
+            }
+        }
+    }
 }

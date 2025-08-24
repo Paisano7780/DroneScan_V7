@@ -10,8 +10,13 @@ import java.util.*
 object DebugLogger {
     private const val TAG = "DroneScan_Debug"
     private val logs = mutableListOf<String>()
-    private val maxLogs = 100
+    private val maxLogs = 1000  // Aumentado de 100 a 1000 para más logging
     private val dateFormat = SimpleDateFormat("HH:mm:ss.SSS", Locale.getDefault())
+    
+    // Función init() como Bridge App
+    fun init() {
+        Log.d(TAG, "DebugLogger inicializado")
+    }
     
     fun log(level: String, tag: String, message: String, throwable: Throwable? = null) {
         val timestamp = dateFormat.format(Date())

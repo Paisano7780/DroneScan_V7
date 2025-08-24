@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.hardware.usb.UsbAccessory
 import android.hardware.usb.UsbDevice
 import android.hardware.usb.UsbManager
@@ -18,6 +19,12 @@ import android.text.TextUtils
 import android.util.Log
 import androidx.documentfile.provider.DocumentFile
 import com.dronescan.debug.DebugLogger
+import io.reactivex.Observable
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -81,6 +88,9 @@ class UsbDroneManager(private val context: Context) {
     private var checkRunnable: Runnable? = null
     private var isTimerRunning = false
     
+    // Observable Timer como Bridge App (crítico)
+    private var timerDisposable: Disposable? = null
+    
     private var isDjiConnected = false
     private var connectedDjiAccessory: UsbAccessory? = null
     private var currentModel = UsbModel.UNKNOWN
@@ -100,7 +110,10 @@ class UsbDroneManager(private val context: Context) {
     
     private val usbReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
-            when (intent.action) {
+            val action = intent.action
+            DebugLogger.d(TAG, "🎭 BroadcastReceiver onReceive: $action")
+            
+            when (action) {
                 UsbManager.ACTION_USB_ACCESSORY_ATTACHED -> {
                     DebugLogger.d(TAG, "🔌 USB Accessory ATTACHED detectado")
                     val accessory = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -109,7 +122,13 @@ class UsbDroneManager(private val context: Context) {
                         @Suppress("DEPRECATION")
                         intent.getParcelableExtra(UsbManager.EXTRA_ACCESSORY)
                     }
-                    accessory?.let { handleAccessoryAttached(it) }
+                    
+                    if (accessory != null) {
+                        DebugLogger.d(TAG, "  📱 Accesorio: ${accessory.manufacturer} ${accessory.model}")
+                        handleAccessoryAttached(accessory)
+                    } else {
+                        DebugLogger.w(TAG, "⚠️ USB Accessory ATTACHED pero es null")
+                    }
                 }
                 
                 UsbManager.ACTION_USB_ACCESSORY_DETACHED -> {
@@ -120,13 +139,23 @@ class UsbDroneManager(private val context: Context) {
                         @Suppress("DEPRECATION")
                         intent.getParcelableExtra(UsbManager.EXTRA_ACCESSORY)
                     }
+                    
+                    if (accessory != null) {
+                        DebugLogger.d(TAG, "  📱 Accesorio desconectado: ${accessory.manufacturer} ${accessory.model}")
+                    }
                     accessory?.let { handleAccessoryDetached(it) }
                 }
                 
                 "android.hardware.usb.action.USB_STATE" -> {
                     DebugLogger.d(TAG, "🔌 USB STATE cambio detectado")
-                    if (intent.extras?.getBoolean("connected") == true) {
-                        DebugLogger.d(TAG, "USB_STATE: CONECTADO")
+                    val connected = intent.extras?.getBoolean("connected", false) ?: false
+                    val configured = intent.extras?.getBoolean("configured", false) ?: false
+                    val hostConnected = intent.extras?.getBoolean("host_connected", false) ?: false
+                    
+                    DebugLogger.d(TAG, "📋 USB_STATE - connected: $connected, configured: $configured, host: $hostConnected")
+                    
+                    if (connected) {
+                        DebugLogger.d(TAG, "USB_STATE: CONECTADO - verificando accesorios...")
                         checkForDJIAccessory()
                     } else {
                         DebugLogger.d(TAG, "USB_STATE: DESCONECTADO")
@@ -135,6 +164,7 @@ class UsbDroneManager(private val context: Context) {
                 }
                 
                 ACTION_USB_PERMISSION -> {
+                    DebugLogger.d(TAG, "🔐 Respuesta de permisos USB recibida")
                     val accessory = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                         intent.getParcelableExtra(UsbManager.EXTRA_ACCESSORY, UsbAccessory::class.java)
                     } else {
@@ -143,11 +173,20 @@ class UsbDroneManager(private val context: Context) {
                     }
                     
                     if (intent.getBooleanExtra(UsbManager.EXTRA_PERMISSION_GRANTED, false)) {
-                        accessory?.let { handlePermissionGranted(it) }
+                        DebugLogger.d(TAG, "✅ Permisos USB concedidos")
+                        if (accessory != null) {
+                            handlePermissionGranted(accessory)
+                        } else {
+                            DebugLogger.w(TAG, "⚠️ Permisos concedidos pero accesorio es null")
+                        }
                     } else {
-                        DebugLogger.w(TAG, "Permiso USB denegado para accesorio: ${accessory?.model}")
+                        DebugLogger.w(TAG, "❌ Permiso USB denegado para accesorio: ${accessory?.model}")
                         onConnectionStatusChanged?.invoke(false, "Permiso USB denegado")
                     }
+                }
+                
+                else -> {
+                    DebugLogger.d(TAG, "🎭 Acción USB no manejada: $action")
                 }
             }
         }
@@ -157,8 +196,24 @@ class UsbDroneManager(private val context: Context) {
         DebugLogger.d(TAG, "=== INICIALIZANDO UsbDroneManager v2.5 ===")
         DebugLogger.d(TAG, "🔧 Implementando patrón UsbAccessory + Timer automático")
         
+        // 🔍 DIAGNÓSTICO INICIAL COMPLETO
+        DebugLogger.d(TAG, "📋 === DIAGNÓSTICO INICIAL DEL SISTEMA ===")
+        DebugLogger.d(TAG, "📋 Build.MODEL: ${Build.MODEL}")
+        DebugLogger.d(TAG, "📋 Build.MANUFACTURER: ${Build.MANUFACTURER}")
+        DebugLogger.d(TAG, "📋 Build.PRODUCT: ${Build.PRODUCT}")
+        DebugLogger.d(TAG, "📋 Build.HARDWARE: ${Build.HARDWARE}")
+        DebugLogger.d(TAG, "📋 Android API Level: ${Build.VERSION.SDK_INT}")
+        
         // Verificar modelo de dispositivo (para RM330)
         checkDeviceModel()
+        
+        // Verificar capacidades USB
+        val packageManager = context.packageManager
+        DebugLogger.d(TAG, "📋 USB_HOST feature: ${packageManager.hasSystemFeature(PackageManager.FEATURE_USB_HOST)}")
+        DebugLogger.d(TAG, "📋 USB_ACCESSORY feature: ${packageManager.hasSystemFeature(PackageManager.FEATURE_USB_ACCESSORY)}")
+        
+        // Verificar UsbManager
+        DebugLogger.d(TAG, "📋 UsbManager disponible: ${usbManager != null}")
         
         val filter = IntentFilter().apply {
             addAction(UsbManager.ACTION_USB_ACCESSORY_ATTACHED)
@@ -183,10 +238,28 @@ class UsbDroneManager(private val context: Context) {
         // Verificar accesorios ya conectados
         checkForDJIAccessory()
         
-        // Iniciar timer automático (como Bridge App)
-        startAutoCheckTimer()
+        // CRÍTICO: Observable Timer automático como Bridge App
+        startObservableTimer()
         
-        DebugLogger.d(TAG, "=== UsbDroneManager v2.5 inicializado ===")
+        DebugLogger.d(TAG, "=== UsbDroneManager v2.7 inicializado ===")
+    }
+    
+    // Observable Timer como Bridge App (CRÍTICO) - línea 119-152
+    private fun startObservableTimer() {
+        DebugLogger.d(TAG, "🔄 Iniciando Observable Timer cada 2 segundos (como Bridge App)")
+        
+        timerDisposable = Observable.timer(2, TimeUnit.SECONDS)
+            .observeOn(Schedulers.computation())
+            .repeat()
+            .subscribe(
+                { 
+                    DebugLogger.v(TAG, "⏰ Timer tick: ejecutando checkForDJIAccessory()")
+                    checkForDJIAccessory()
+                },
+                { e ->
+                    DebugLogger.e(TAG, "❌ Error en Observable Timer", e)
+                }
+            )
     }
     
     fun forceCheckDevices() {
@@ -196,9 +269,18 @@ class UsbDroneManager(private val context: Context) {
     
     fun cleanup() {
         try {
+            DebugLogger.d(TAG, "🧹 Limpiando UsbDroneManager...")
+            
+            // Detener Observable Timer
+            timerDisposable?.dispose()
+            timerDisposable = null
+            DebugLogger.d(TAG, "✅ Observable Timer detenido")
+            
+            // Detener timer legacy
             stopAutoCheckTimer()
+            
             context.unregisterReceiver(usbReceiver)
-            DebugLogger.d(TAG, "UsbDroneManager limpiado correctamente")
+            DebugLogger.d(TAG, "✅ UsbDroneManager limpiado correctamente")
         } catch (e: Exception) {
             DebugLogger.e(TAG, "Error al limpiar receivers", e)
         }
@@ -260,55 +342,64 @@ class UsbDroneManager(private val context: Context) {
         }
     }
     
-    // Método principal para verificar accesorios DJI (basado en Bridge App)
+    // checkForDJIAccessory() EXACTO como Bridge App - línea 158-174
     private fun checkForDJIAccessory() {
         try {
-            val accessoryList = usbManager.accessoryList
+            DebugLogger.d(TAG, "🔍 === VERIFICACIÓN DJI ACCESSORY (Bridge App Pattern) ===")
             
-            if (accessoryList != null && accessoryList.isNotEmpty()) {
-                DebugLogger.d(TAG, "🔍 Verificando ${accessoryList.size} accesorio(s) USB...")
+            val accessoryList = usbManager.accessoryList
+            DebugLogger.d(TAG, "📋 accessoryList: $accessoryList")
+            DebugLogger.d(TAG, "📋 accessoryList?.size: ${accessoryList?.size}")
+            
+            // LÓGICA EXACTA como Bridge App línea 160-174
+            if (accessoryList != null 
+                && accessoryList.size > 0 
+                && !TextUtils.isEmpty(accessoryList[0].manufacturer) 
+                && accessoryList[0].manufacturer.equals("DJI")) {
                 
-                for ((index, accessory) in accessoryList.withIndex()) {
-                    DebugLogger.d(TAG, "📱 ACCESORIO ${index + 1}:")
-                    DebugLogger.d(TAG, "  Manufacturer: ${accessory.manufacturer}")
-                    DebugLogger.d(TAG, "  Model: ${accessory.model}")
-                    DebugLogger.d(TAG, "  Description: ${accessory.description}")
-                    DebugLogger.d(TAG, "  Version: ${accessory.version}")
-                    DebugLogger.d(TAG, "  Serial: ${accessory.serial}")
-                    DebugLogger.d(TAG, "  Uri: ${accessory.uri}")
-                    
-                    // Verificación específica DJI (como Bridge App)
-                    if (!TextUtils.isEmpty(accessory.manufacturer) && 
-                        accessory.manufacturer.equals("DJI", ignoreCase = true)) {
-                        
-                        DebugLogger.d(TAG, "🎯 ¡ACCESORIO DJI DETECTADO!")
-                        
-                        val model = UsbModel.find(accessory.model)
-                        currentModel = model
-                        DebugLogger.d(TAG, "📋 Modelo identificado: ${model.getModel()}")
-                        
-                        // Verificar permisos
-                        if (usbManager.hasPermission(accessory)) {
-                            DebugLogger.d(TAG, "✅ Permisos ya concedidos")
-                            handlePermissionGranted(accessory)
-                        } else {
-                            DebugLogger.d(TAG, "🔐 Solicitando permisos...")
-                            requestAccessoryPermission(accessory)
-                        }
-                        return
-                    }
+                val accessory = accessoryList[0] // Solo el PRIMER accesorio
+                DebugLogger.d(TAG, "🎯 ¡DJI ACCESSORY DETECTADO!")
+                DebugLogger.d(TAG, "  Manufacturer: ${accessory.manufacturer}")
+                DebugLogger.d(TAG, "  Model: ${accessory.model}")
+                DebugLogger.d(TAG, "  Description: ${accessory.description}")
+                DebugLogger.d(TAG, "  Version: ${accessory.version}")
+                DebugLogger.d(TAG, "  Serial: ${accessory.serial}")
+                DebugLogger.d(TAG, "  Uri: ${accessory.uri}")
+                
+                val model = UsbModel.find(accessory.model)
+                currentModel = model
+                DebugLogger.d(TAG, "📋 Modelo identificado: ${model.getModel()}")
+                
+                // Notificar conexión como Bridge App
+                onConnectionStatusChanged?.invoke(true, "DJI ${accessory.model} conectado")
+                
+                // Verificar permisos
+                if (usbManager.hasPermission(accessory)) {
+                    DebugLogger.d(TAG, "✅ RC CONNECTED - Permisos ya concedidos")
+                    handlePermissionGranted(accessory)
+                } else {
+                    DebugLogger.d(TAG, "🔐 NO Permission to USB Accessory - solicitando...")
+                    requestAccessoryPermission(accessory)
                 }
                 
-                DebugLogger.w(TAG, "❌ No se encontraron accesorios DJI")
             } else {
-                DebugLogger.d(TAG, "📋 No hay accesorios USB conectados")
+                // Como Bridge App línea 176-178
+                DebugLogger.d(TAG, "❌ RC DISCONNECTED - No hay accesorios DJI")
+                onConnectionStatusChanged?.invoke(false, "No hay dispositivos DJI")
+                
+                // Diagnóstico adicional
+                if (accessoryList != null && accessoryList.isNotEmpty()) {
+                    DebugLogger.d(TAG, "📱 Accesorios NO-DJI encontrados:")
+                    for ((index, acc) in accessoryList.withIndex()) {
+                        DebugLogger.d(TAG, "  [$index] Manufacturer: ${acc.manufacturer}, Model: ${acc.model}")
+                    }
+                } else {
+                    DebugLogger.d(TAG, "📋 No hay accesorios USB en absoluto")
+                }
             }
             
-            // Fallback: verificar dispositivos USB tradicionales
-            checkConnectedDevices()
-            
         } catch (e: Exception) {
-            DebugLogger.e(TAG, "Error verificando accesorios DJI", e)
+            DebugLogger.e(TAG, "Error en checkForDJIAccessory()", e)
         }
     }
     

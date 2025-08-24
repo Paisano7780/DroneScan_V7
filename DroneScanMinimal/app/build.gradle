@@ -11,8 +11,8 @@ android {
         applicationId "com.dronescan"
         minSdk 24
         targetSdk 34
-        versionCode 5
-        versionName "2.5"
+        versionCode 27
+        versionName "2.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
@@ -87,6 +87,10 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.5.5'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    
+    // RxJava dependencies (como Android-Bridge-App)
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     
     // Barcode scanning
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
