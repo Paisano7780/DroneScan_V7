@@ -1,4 +1,4 @@
-package com.dronescan
+package com.dronescan.msdksample
 
 import android.Manifest
 import android.content.*
@@ -18,10 +18,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.dronescan.barcode.BarcodeProcessor
-import com.dronescan.csv.CsvExporter
-import com.dronescan.debug.DebugLogger
-import com.dronescan.usb.UsbDroneManager
+import com.dronescan.msdksample.barcode.BarcodeProcessor
+import com.dronescan.msdksample.csv.CsvExporter
+import com.dronescan.msdksample.debug.DebugLogger
+import com.dronescan.msdksample.usb.UsbDroneManager
 import java.io.File
 
 class DroneScanActivity : AppCompatActivity() {

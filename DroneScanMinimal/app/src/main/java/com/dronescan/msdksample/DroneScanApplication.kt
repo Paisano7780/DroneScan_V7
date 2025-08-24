@@ -1,4 +1,4 @@
-package com.dronescan
+package com.dronescan.msdksample
 
 import android.app.Activity
 import android.app.Application
@@ -6,7 +6,7 @@ import android.content.Context
 import android.os.Bundle
 import android.os.StrictMode
 import android.util.Log
-import com.dronescan.debug.DebugLogger
+import com.dronescan.msdksample.debug.DebugLogger
 import dji.common.error.DJIError
 import dji.common.error.DJISDKError  
 import dji.sdk.base.BaseComponent
