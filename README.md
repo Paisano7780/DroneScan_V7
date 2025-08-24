@@ -1,5 +1,22 @@
 
-# DroneScan_V7 — Descripción Técnica y Guía de Reconstrucción
+# DroneScan_V7
+
+## Requisitos Java
+
+**⚠️ IMPORTANTE: Esta aplicación requiere Java 17 para compilar.**
+
+Ver [JAVA_VERSION_REQUIREMENTS.md](JAVA_VERSION_REQUIREMENTS.md) para detalles completos sobre requisitos y configuración.
+
+```bash
+# Verificar versión de Java
+java -version
+# Debe mostrar Java 17 o superior
+
+# Compilar APK
+./debug-celular.sh
+```
+
+## Descripción — Descripción Técnica y Guía de Reconstrucción
 
 ## Descripción General
 DroneScan_V7 es una aplicación Android para la gestión y escaneo de fotos tomadas por drones DJI, modernizada y optimizada para funcionar con el SDK DJI Mobile V5.15.0. El proyecto ha sido migrado completamente a Kotlin, eliminando duplicados y dependencias Java innecesarias, y asegurando compatibilidad con dispositivos modernos como el DJI RM330.
