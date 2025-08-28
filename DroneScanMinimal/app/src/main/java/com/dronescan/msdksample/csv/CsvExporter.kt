@@ -18,6 +18,72 @@ class CsvExporter(private val context: Context) {
         private const val CSV_FILENAME = "DroneScan_Codes.csv"
     }
     
+    // Lista de resultados acumulados
+    private val scanResults = mutableListOf<ScanResult>()
+    
+    data class ScanResult(
+        val photoName: String,
+        val barcodes: List<String>,
+        val timestamp: Date = Date()
+    )
+    
+    /**
+     * Añadir resultado de escaneo para ser incluido en el CSV.
+     */
+    fun addScanResult(photoName: String, barcodes: List<String>) {
+        scanResults.add(ScanResult(photoName, barcodes))
+    }    /**
+     * Exporta todos los resultados acumulados a CSV.
+     */
+    @Throws(IOException::class)
+    fun exportToCsv(): File {
+        // Crear directorio DroneScan en Documents
+        val documentsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
+        val droneScanDir = File(documentsDir, "DroneScan")
+        if (!droneScanDir.exists()) {
+            droneScanDir.mkdirs()
+        }
+        
+        val csvFile = File(droneScanDir, CSV_FILENAME)
+        val isNewFile = !csvFile.exists()
+        
+        CSVWriter(FileWriter(csvFile, true)).use { writer ->
+            // Escribir encabezados si es archivo nuevo
+            if (isNewFile) {
+                writer.writeNext(arrayOf(
+                    "Timestamp",
+                    "Photo_Name", 
+                    "Code_Type",
+                    "Code_Data",
+                    "Format",
+                    "Latitude",
+                    "Longitude",
+                    "Altitude"
+                ))
+            }
+            
+            // Escribir cada resultado
+            scanResults.forEach { result ->
+                val timestamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(result.timestamp)
+                
+                result.barcodes.forEach { barcode ->
+                    writer.writeNext(arrayOf(
+                        timestamp,
+                        result.photoName,
+                        detectCodeType(barcode),
+                        barcode,
+                        "UNKNOWN", // Tipo de formato no disponible con este approach
+                        "0.0", // TODO: Obtener coordenadas GPS del drone
+                        "0.0", 
+                        "0.0"
+                    ))
+                }
+            }
+        }
+        
+        return csvFile
+    }
+    
     /**
      * Exporta códigos escaneados a un archivo CSV.
      * @param codes Lista de códigos encontrados.

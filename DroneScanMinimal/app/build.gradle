@@ -9,10 +9,10 @@ android {
 
     defaultConfig {
         applicationId "com.dronescan.msdksample"
-        minSdk 26
-        targetSdk 34
-        versionCode 37
-        versionName "2.17"
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 240
+        versionName "2.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         
