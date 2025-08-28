@@ -11,8 +11,8 @@ android {
         applicationId "com.dronescan.msdksample"
         minSdk 26
         targetSdk 34
-        versionCode 36
-        versionName "2.16"
+        versionCode 37
+        versionName "2.17"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         

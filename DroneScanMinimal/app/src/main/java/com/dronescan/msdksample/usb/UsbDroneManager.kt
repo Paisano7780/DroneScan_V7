@@ -1,5 +1,6 @@
 package com.dronescan.msdksample.usb
 
+import android.Manifest
 import android.app.PendingIntent
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -11,8 +12,10 @@ import android.hardware.usb.UsbDevice
 import android.hardware.usb.UsbManager
 import android.net.Uri
 import android.os.Build
+import android.os.Environment
 import android.os.Handler
 import android.os.Looper
+import androidx.core.content.ContextCompat
 import android.os.storage.StorageManager
 import android.provider.DocumentsContract
 import android.text.TextUtils
@@ -981,11 +984,33 @@ class UsbDroneManager(private val context: Context) {
         try {
             DebugLogger.d(TAG, "🔍 Buscando almacenamiento RM330...")
             
-            // El RM330 en modo Host puede no aparecer como USB Device tradicional
-            // Pero puede ser accesible vía DocumentFile o StorageManager
-            DebugLogger.d(TAG, "💡 RM330 Host: Almacenamiento puede requerir implementación específica")
-            DebugLogger.d(TAG, "💡 Considerando DocumentsContract o MediaStore para acceso")
+            // Para RM330 en modo Host, puede que no aparezca como USB Device tradicional
+            // Pero Android puede detectarlo como almacenamiento externo
+            DebugLogger.d(TAG, "💡 RM330 Host: Verificando almacenamiento accesible...")
             
+            // Verificar permisos antes de intentar acceso
+            val context = this.context
+            val hasStoragePermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                Environment.isExternalStorageManager()
+            } else {
+                ContextCompat.checkSelfPermission(context, 
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+            }
+            
+            DebugLogger.d(TAG, "� Storage permission granted: $hasStoragePermission")
+            
+            if (!hasStoragePermission) {
+                DebugLogger.w(TAG, "⚠️ Sin permisos de almacenamiento - funcionalidad limitada")
+                DebugLogger.w(TAG, "💡 Usuario debe conceder permisos manualmente en Configuración")
+                return
+            }
+            
+            // Continuar con búsqueda de almacenamiento una vez confirmados permisos
+            DebugLogger.d(TAG, "✅ Permisos OK - implementando búsqueda específica RM330...")
+            
+        } catch (e: SecurityException) {
+            DebugLogger.e(TAG, "SecurityException en almacenamiento RM330: ${e.message}")
+            DebugLogger.w(TAG, "💡 SOLUCIÓN: Conceder permisos 'Administrar todos los archivos' en Configuración")
         } catch (e: Exception) {
             DebugLogger.e(TAG, "Error buscando almacenamiento RM330", e)
         }
