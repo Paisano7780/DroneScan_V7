@@ -1,0 +1,22 @@
+
+===============================================================================
+RESUMEN FINAL - DJI SDK v4 CRAWLING COMPLETO
+===============================================================================
+Fecha de completado: 2025-08-29 01:10:33
+Total páginas procesadas: 1
+Total métodos encontrados: 0
+
+DISTRIBUCIÓN POR COMPONENTES:
+- MediaManager páginas: 0
+- PlaybackManager páginas: 0
+- Camera páginas: 0
+- Otras páginas: 1
+
+ARCHIVOS GENERADOS:
+1. dji_docs_full_content.txt - Contenido completo de todas las páginas
+2. dji_media_manager_info.txt - Información específica de MediaManager
+3. dji_playback_manager_info.txt - Información específica de PlaybackManager
+4. dji_camera_methods.txt - Métodos y funciones de Camera
+5. dji_all_methods_summary.txt - Resumen de todos los métodos encontrados
+
+===============================================================================

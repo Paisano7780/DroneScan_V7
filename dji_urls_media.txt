@@ -1,0 +1,4 @@
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJIMediaManager.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJIPlaybackManager.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJIMediaFile.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJIFetchMediaTaskScheduler.html

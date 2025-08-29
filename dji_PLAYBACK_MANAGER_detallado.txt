@@ -1,0 +1,811 @@
+🎮 PLAYBACK MANAGER - INFORMACIÓN DETALLADA
+============================================================
+
+🔗 URL: https://developer.dji.com/api-reference/android-api/Components/Camera/DJIPlaybackManager.html
+📊 Métodos: 44
+----------------------------------------
+DJI Mobile SDK Documentation
+Developer
+Mobile SDK
+UX SDK
+Onboard SDK
+Payload SDK
+Windows SDK
+Login
+Register
+User Center
+Logout
+Mobile SDK
+OverviewDocumentationAPI Reference
+IOS SDK
+Android SDK
+IOS UX SDK
+Android UX SDK
+DownloadsSupport
+Manager Classes
+DJISDKManager
+SDKManagerCallback
+BluetoothProductConnector
+BluetoothDevicesListCallback
+BluetoothDevice
+DJISDKInitEvent
+KeyManager
+DJIKey
+BatteryKey
+CameraKey
+FlightControllerKey
+RadarKey
+PayloadKey
+GimbalKey
+ProductKey
+RemoteControllerKey
+HandheldControllerKey
+AirLinkKey
+AccessoryAggregationKey
+LidarKey
+BaseStationKey
+DiagnosticsKey
+GetCallback
+SetCallback
+ActionCallback
+KeyListener
+FlyZoneManager
+UnlockedZoneGroup
+FlyZoneInformation
+SubFlyZoneInformation
+Callback
+BasicDatabaseUpgradeProgressUpdatedCallback
+CustomUnlockZone
+FlySafeWarningInformation
+FlySafeSeriousWarningInformation
+FlySafeTipInformation
+FlySafeReturnToHomeInformation
+FlySafeNotification
+Callback
+AppActivationManager
+AircraftBindingStateListener
+AppActivationStateListener
+UserAccountManager
+UserAccountStateChangeListener
+UserAccountInformation
+DataProtectionManager
+LDMManager
+LDMModule
+Builder
+LDMCallback
+UTMISSManager
+Callback
+UTMISSParam
+FlightHubManager
+OnlineDevice
+BoundDevice
+User
+Team
+UpStream
+LiveStream
+FlightPathNode
+FlightHistoricalDetail
+Statistics
+HistoricalFlight
+RealTimeFlightData
+UpdatedUploadStateCallback
+Callback
+LiveStreamManager
+OnLiveErrorStatusListener
+LiveVideoResolution
+IUASRemoteIDManager
+UASRemoteIDStatus
+UASRemoteIDStatusListener
+UpgradeManager
+UpgradeComponent
+UpgradeFirmwareListener
+FirmwareUpgradeProgress
+FirmwareInformation
+UpgradeComponentChangeListener
+Base Classes
+BaseProduct
+VideoFeeder
+VideoDataListener
+VideoActiveStatusListener
+VideoFeed
+Callback
+PhysicalSourceListener
+BaseComponent
+ComponentListener
+Product Classes
+Aircraft
+HandHeld
+Component Classes
+FlightController
+OnboardSDKDeviceDataCallback
+FlightControllerState
+Callback
+Attitude
+LocationCoordinate3D
+GoHomeAssessment
+GravityCenterState
+Compass
+RTK
+RTKBaseStationInformation
+RTKBaseStationListCallback
+RTKConnectionStateWithBaseStationReferenceSourceCallback
+RTKState
+Callback
+RTKNetworkServiceProvider
+NetworkServiceState
+Callback
+NetworkServicePlan
+NetworkServicePlansState
+Builder
+NetworkServiceSettings
+Builder
+ReceiverInfo
+LocationStandardDeviation
+LandingGear
+FlightAssistant
+Callback
+Callback
+Callback
+VisionDetectionState
+Callback
+ObstacleDetectionSector
+VisionControlState
+Callback
+SmartCaptureState
+PerceptionInformation
+ObstacleAvoidanceSensorState
+AccessLocker
+FormattingState
+Callback
+UserAccountInfo
+Radar
+Simulator
+InitializationData
+SimulatorState
+Callback
+IMUState
+Callback
+MultipleOrientationCalibrationHint
+FlightControlData
+LocationCoordinate2D
+AirSenseSystemInformation
+Callback
+AirSenseAirplaneState
+Callback
+LEDsSettings
+Builder
+Limits
+Battery
+AggregationState
+Callback
+BatteryOverview
+BatteryState
+Callback
+WarningRecord
+Camera
+SuperResolutionInfo
+Callback
+PinPoint
+PinPointInfo
+CalibrationCallback
+TimeLapsePreviewCallback
+HistogramCallback
+TapZoomStateCallback
+TemperatureDataCallback
+SystemState
+Callback
+FocusState
+Callback
+StorageState
+Callback
+SSDState
+Callback
+MediaManager
+VideoPlaybackStateListener
+DownloadListener<E>
+FileListStateListener
+MediaFile
+Callback
+AudioMediaFile
+MediaFileInfo
+NewFileInfoCallback
+VideoPlaybackState
+FetchMediaTaskScheduler
+FetchMediaTask
+Callback
+PlaybackManager
+FileDownloadCallback
+PlaybackState
+CallBack
+Capabilities
+DJICameraParametersListener
+MultispectralShutterSpeedRangeCallback
+MultispectralExposureCompensationRangeCallback
+SettingsDefinitions
+ExposureSettings
+Callback
+OpticalZoomSpec
+HybridZoomSpec
+PhotoTimeIntervalSettings
+PictureStylePreset
+ThermalProfile
+ThermalAreaTemperatureAggregations
+Callback
+ThermalExternalSceneSettings
+Callback
+WhiteBalance
+SSDClipFileName
+OriginalPhotoSettings
+MultispectralStoragePhotoSettings
+StoragePhotoCamerasParamBuilder
+MultispectralExposureState
+Callback
+WatermarkSettings
+LaserMeasureInformation
+Callback
+FocusAssistantSettings
+PhotoTimeLapseSettings
+ResolutionAndFrameRate
+CameraStreamSettings
+ColorWaveformSettings
+StabilizationState
+CameraPeakThreshold
+Lens
+TapZoomStateCallback
+TemperatureDataCallback
+ThermalGlobalTemperatureCallback
+LensCapabilities
+DJILensParametersListener
+ThermalGainModeTemperatureRangeCallback
+Gimbal
+GimbalState
+MovementSettings
+Attitude
+Callback
+Callback
+BatteryChargeRemainingCallback
+Rotation
+Builder
+MultiGimbalConnectionWorkingStatus
+GimbalBalanceDetectionState
+Callback
+DirectionState
+GimbalControlParametersAutoTuningState
+Callback
+GimbalCoaxialityDetectionState
+Callback
+AirLink
+SignalQualityCallback
+CountryCodeCallback
+BaseStationSignalQualityUpdatedCallback
+LightbridgeLink
+ChannelInterference
+LightbridgeAntennaRSSI
+AntennaRSSICallback
+ChannelInterferenceCallback
+OcuSyncLink
+VideoDataRateCallback
+WarningMessagesCallback
+ChannelInterferenceCallback
+FrequencyInterference
+WiFiLink
+MagneticInterferenceCallback
+ChannelInterferenceCallback
+WifiChannelInterference
+RemoteController
+GimbalMapping
+GimbalStickMapping
+Callback
+MasterSearchingCallback
+RTKChannelEnabledUpdatedCallback
+HardwareState
+HardwareStateCallback
+RightDial
+TransformationSwitch
+Button
+FiveDButton
+GPSData
+Time
+GPSLocation
+BatteryState
+Callback
+FocusControllerState
+FocusControllerStateCallback
+AircraftMapping
+AircraftStickMapping
+CustomButtonTags
+Builder
+Information
+ControlRequestCallback
+MasterSlaveState
+Callback
+GimbalControlSpeedCoefficient
+ResponseForGimbalControl
+AuthorizationInfo
+Credentials
+ProfessionalRC
+Event
+ButtonConfiguration
+ButtonConfigurationBuilder
+Callback
+MultiDeviceAggregationState
+Callback
+HandheldController
+HardwareState
+Callback
+LEDCommand
+LEDColorPattern
+MobileRemoteController
+Payload
+PayloadWidget
+PayloadWidgetListener
+PayloadWidgetDownloadListener
+HintMessageCallback
+CommandDataCallback
+VideoDataReceivedCallback
+StreamDataCallback
+WidgetValueChangedCallback
+ActivateInfo
+Pipeline
+Pipelines
+AccessoryAggregation
+Spotlight
+SpotlightState
+Callback
+Beacon
+Speaker
+SpeakerState
+Callback
+AudioFileInfo
+TransmissionListener
+AccessoryAggregationState
+Callback
+BaseStation
+BaseStationBatteryState
+Callback
+BaseStationState
+Callback
+Lidar
+DJIPointCloudStatusListener
+DJIPointCloudLiveDataListener
+IDJILidarLiveViewDataProcessor
+Capabilities
+DJILidarParametersListener
+PointCloudLiveViewData
+PointCloudView
+Mission Classes
+MissionControl
+Triggerable
+TimelineElement
+Listener
+TimelineElementFeedback
+MissionControlError
+MissionAction
+TakeOffAction
+AircraftYawAction
+AircraftYawActionError
+GoToAction
+GoToActionError
+GoHomeAction
+HotpointAction
+GimbalAttitudeAction
+GimbalAttitudeActionError
+RecordVideoAction
+RecordVideoActionError
+ShootPhotoAction
+ShootPhotoActionError
+LandAction
+TimelineMission
+Trigger
+Action
+Listener
+BatteryPowerLevelTrigger
+WaypointReachedTrigger
+AircraftLandedTrigger
+WaypointMissionOperator
+WaypointMission
+Builder
+Waypoint
+WaypointAction
+WaypointMissionInterruption
+WaypointMissionEvent
+WaypointMissionUploadEvent
+WaypointUploadProgress
+WaypointMissionDownloadEvent
+WaypointDownloadProgress
+WaypointMissionExecutionEvent
+WaypointExecutionProgress
+WaypointMissionState
+WaypointMissionOperatorListener
+WaypointV2MissionOperator
+WaypointV2Mission
+WaypointV2
+Builder
+Builder
+WaypointV2MissionOperatorListener
+WaypointV2ActionListener
+ActionDownloadEvent
+ActionUploadEvent
+ActionExecutionEvent
+ActionUploadProgress
+WaypointV2MissionExecutionEvent
+WaypointV2MissionDownloadEvent
+WaypointV2MissionUploadEvent
+WaypointV2Action
+Builder
+WaypointActuator
+WaypointGimbalActuatorParam
+WaypointGimbalPathShooting
+WaypointGimbalPathPointInfo
+Builder
+WaypointGimbalStartPathShootingParam
+Builder
+WaypointGimbalStopPathShootingParam
+Builder
+Builder
+Builder
+WaypointAircraftControlParam
+Builder
+WaypointAircraftControlStartStopFlyParam
+Builder
+WaypointAircraftControlRotateYawParam
+Builder
+WaypointPointCloudRecordActuatorParam
+WaypointLidarActuatorParam
+Builder
+Builder
+WaypointCameraActuatorParam
+Builder
+WaypointCameraZoomParam
+Builder
+WaypointCameraFocusModeParam
+Builder
+WaypointCameraFocusParam
+WaypointCameraFocusRectangleTargetParam
+Builder
+WaypointCameraFocusPointTargetParam
+Builder
+Builder
+WaypointCameraCustomNameParam
+Builder
+Builder
+WaypointTrigger
+Builder
+WaypointIntervalTriggerParam
+Builder
+WaypointTrajectoryTriggerParam
+Builder
+WaypointV2AssociateTriggerParam
+Builder
+WaypointReachPointTriggerParam
+Builder
+ActionDownloadProgress
+ActionExecutionProgress
+ActionTypes
+WaypointV2UploadProgress
+WaypointV2DownloadProgress
+WaypointV2ExecutionProgress
+FollowMeMissionOperator
+FollowMeMissionOperatorListener
+FollowMeMission
+FollowMeMissionEvent
+FollowMeMissionState
+PanoramaMissionOperator
+PanoramaMissionOperatorListener
+PanoramaMissionEvent
+PanoramaMissionState
+PanoramaMissionExecutionState
+HotpointMissionOperator
+HotpointMission
+HotpointMissionOperatorListener
+HotpointMissionEvent
+HotpointMissionState
+IntelligentHotpointMissionOperator
+IntelligentHotpointMission
+IntelligentHotpointMissionOperatorListener
+IntelligentHotpointMissionState
+IntelligentHotpointMissionEvent
+TapFlyMissionOperator
+TapFlyMissionOperatorListener
+TapFlyMission
+TapFlyExecutionState
+Vector
+TapFlyMissionEvent
+TapFlyMissionState
+ActiveTrackOperator
+ActiveTrackMission
+ActiveTrackTrackingState
+SubjectSensingState
+ActiveTrackMissionEvent
+ActiveTrackState
+ActiveTrackMissionOperatorListener
+Misc Classes
+CommonCallbacks
+CompletionCallback<T
+CompletionCallbackWith<T>
+Y>
+WarningStatusItem
+VideoSizeCalculatorUtil
+VideoSizeListener
+LocationUtil
+DJIParamCapability
+DJIParamMinMaxCapability
+DJIError
+DJIGimbalError
+DataProtectionError
+DJIFlightHubError
+DJIRTKNetworkServiceError
+DJIAccessoryAggregationError
+DJIAccessLockerError
+DJIPayloadError
+DJIUTMISSError
+DJILDMError
+DJIUpgradeError
+DJIWaypointV2Error
+PipelineError
+DJISDKError
+DJISDKCacheError
+DJICameraError
+DJIFlightControllerError
+DJIMissionError
+DJIAirLinkError
+DJIBatteryError
+DJIFlySafeError
+DJIRemoteControllerError
+DJIDiagnostics
+DiagnosticsInformationCallback
+DeviceHealthInformation
+DJICodecManager
+YuvDataCallback
+Stick
+class PlaybackManager
+class PlaybackManager
+Package:dji.sdk.camera
+Description:
+The playback manager is used to interact with the playback system of the camera. By using the playback manager, the user can control the playback system.
+Class Members:
+State Updates
+PlaybackmethodsetPlaybackStateCallback
+method setPlaybackStateCallback
+void setPlaybackStateCallback(PlaybackState.CallBack cameraPlayBackStateCB)
+Package:dji.sdk.camera
+Description:
+Sets the camera's playback state callback. Called according to the camera's update timer.   Precondition:   You must first define a Callback object to pass in as a parameter.   Post  Condition:  Every time the playback state changes, the Callback interface that was passed  in as a parameter will call its onResult function.  The onResult function takes in a DJICameraPlayBackState  object, which provides playback information such as the number of photos currently selected, the video playback  progress (if a video is being played), and much more.
+Input Parameters:
+PlaybackState.CallBack cameraPlayBackStateCBThe Callback object to set as the callback interface for when the playback state changes.  <br> The Callback interface implements an onResult function, which takes in a  DJICameraPlayBackState object from the aircraft. <br>
+Single Preview Mode
+Mode ControlmethodenterSinglePreviewModeWithIndex
+method enterSinglePreviewModeWithIndex
+DJIError enterSinglePreviewModeWithIndex(int index)
+Package:dji.sdk.camera
+Description:
+Enters single file preview mode for a file at the specified index. In order for this method to be called,  the camera work mode must be PLAYBACK.   @return  DJICameraError Shows the possible error during the execution. If there is no error, it returns null.
+Input Parameters:
+int indexFile to be previewed at the specified index. The value falls in [1,8].
+Return:
+DJIErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+Page ControlmethodproceedToNextSinglePreviewPage
+method proceedToNextSinglePreviewPage
+DJICameraError proceedToNextSinglePreviewPage()
+Package:dji.sdk.camera
+Description:
+Goes to the next page.   Precondition: The camera must enter Single File Preview Mode.   Special case: If it is the last image, it will go to the first image. @return DJICameraError  Shows the possible error during the execution. If there is no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodproceedToPreviousSinglePreviewPage
+method proceedToPreviousSinglePreviewPage
+DJICameraError proceedToPreviousSinglePreviewPage()
+Package:dji.sdk.camera
+Description:
+Goes back to the previous page.   Precondition: The camera must enter Single File Preview Mode.   Special case: If it is the first image, it will go to the last image. @return DJICameraError  Shows the possible error during the execution. If there is no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+Video PlaybackmethodplayVideo
+method playVideo
+DJICameraError playVideo()
+Package:dji.sdk.camera
+Description:
+Starts video playback. The selected file must be a video file.  Precondition: The camera must enter  Single Preview Mode.  Post condition: If the video finishes playing, it will stop and go back to the  beginning of the file. @return DJICameraError Shows the possible error during the execution. If there is no error,  it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodpauseVideo
+method pauseVideo
+DJICameraError pauseVideo()
+Package:dji.sdk.camera
+Description:
+Pauses a video during playback.   Precondition: The video is being played. @return  DJICameraError Shows the possible error during the execution. If there is no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodstopVideo
+method stopVideo
+DJICameraError stopVideo()
+Package:dji.sdk.camera
+Description:
+Stops a video during playback.   Precondition: The video is being played.  Post condition:  The file will stop and go back to the beginning of the file. @return DJICameraError Shows the possible error during  the execution. If there is no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodplayVideoFromPositionInPercent
+method playVideoFromPositionInPercent
+DJIError playVideoFromPositionInPercent(int location)
+Package:dji.sdk.camera
+Description:
+Plays a video from the specified location. The selected file must be a video file.  Precondition:  The camera must enter Single File Preview Mode.  Post condition: The file will play from a specific location immediately. This command can only be called if the video is currently playing or is paused. If paused, the playback position will be updated and playing will resume.
+@return DJICameraError Shows the possible error during the execution. If there is no error, it returns null.
+Input Parameters:
+int locationLocation from which to play the video must be in the range of [0, 100]. This value  represents at what percent of the entire video it should start playing.
+Return:
+DJIErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+Delete FilemethoddeleteCurrentPreviewFile
+method deleteCurrentPreviewFile
+DJICameraError deleteCurrentPreviewFile()
+Package:dji.sdk.camera
+Description:
+Deletes the current file being previewed.   Precondition: The camera must enter single file preview  mode.  Post condition: The image will be deleted from the SD card. @return DJICameraError Shows the  possible error during the execution. If there is no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+Multi Preview Mode
+Mode ControlmethodenterMultiplePreviewMode
+method enterMultiplePreviewMode
+DJICameraError enterMultiplePreviewMode()
+Package:dji.sdk.camera
+Description:
+Enables the user to preview multiple files when the camera is in Playback mode.   Precondition: The  camera work mode should be set to Playback mode.  Post condition: There will be 8 images on one page.  @return DJICameraError Shows the possible error during the execution. If there is no error, it returns  null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+Page ControlmethodproceedToNextMultiplePreviewPage
+method proceedToNextMultiplePreviewPage
+DJICameraError proceedToNextMultiplePreviewPage()
+Package:dji.sdk.camera
+Description:
+Goes to the next page when there are multiple pages.   Precondition: The camera must enter Multiple  Preview Mode.  Special case: If it is the last page, it will stay at the last page.  @return DJICameraErrorr Shows the possible error during the execution. If there is no error, it  returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodproceedToPreviousMultiplePreviewPage
+method proceedToPreviousMultiplePreviewPage
+DJICameraError proceedToPreviousMultiplePreviewPage()
+Package:dji.sdk.camera
+Description:
+Goes back to the previous page when there are multiple pages.   Precondition:  The camera must enter Multiple Preview Mode.  Special case: If it is the first page, it will  stay at the first page. @return DJICameraError Shows the possible error during the execution. If there is  no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+Multi Edit Mode
+Mode ControlmethodenterMultipleEditMode
+method enterMultipleEditMode
+DJICameraError enterMultipleEditMode()
+Package:dji.sdk.camera
+Description:
+This enables the user to select, download, or delete multiple media files when the camera is in Playback mode.  Precondition: The camera work mode must be set to Camera Play back mode and then Multiple Preview Mode.  Post condition: Multiple photos can be selected to be downloaded or deleted. @return DJICameraError Shows the  possible error during the execution. If there is no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodexitMultipleEditMode
+method exitMultipleEditMode
+DJICameraError exitMultipleEditMode()
+Package:dji.sdk.camera
+Description:
+Exits multiple edit mode. @return DJICameraError Shows the possible error during the execution. If there is no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+SelectionmethodtoggleFileSelectionAtIndex
+method toggleFileSelectionAtIndex
+DJIError toggleFileSelectionAtIndex(int index)
+Package:dji.sdk.camera
+Description:
+Selects or unselects a file at the specified index of the current page. This index is unrelated to the filename,  and is used in multiple edit mode.   Precondition: The camera must enter Multiple Edit Mode.   @return DJICameraError Shows the possible error during the execution. If there is no error, it returns  null.
+Input Parameters:
+int indexIndex at which to select a file. The value falls in [1,8]. However, the exact range should depends on how many photos totally in current page.
+Return:
+DJIErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodselectAllFiles
+method selectAllFiles
+DJICameraError selectAllFiles()
+Package:dji.sdk.camera
+Description:
+Selects all the files on the SD card.   Precondition: The camera must enter Multi Edit Mode.  @return DJICameraError Shows the possible error during the execution. If there is no error, it  returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodunselectAllFiles
+method unselectAllFiles
+DJICameraError unselectAllFiles()
+Package:dji.sdk.camera
+Description:
+Unselects all the files on the SD card.  Precondition: The camera must enter Multiple Edit Mode.  @return DJICameraError Shows the possible error during the execution. If there is no error,  it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodselectAllFilesInPage
+method selectAllFilesInPage
+DJICameraError selectAllFilesInPage()
+Package:dji.sdk.camera
+Description:
+Selects all the file(s) on the current page.   Precondition: The camera must enter Multiple Edit Mode.   @return DJICameraError Shows the possible error during the execution. If there is no error, it returns  null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+methodunselectAllFilesInPage
+method unselectAllFilesInPage
+DJICameraError unselectAllFilesInPage()
+Package:dji.sdk.camera
+Description:
+Unselects all the file(s) on the current page.   Precondition: The camera must enter Multiple Edit  Mode. @return DJICameraError Shows the possible error during the execution. If there is no error, it  returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+Delete FilesmethoddeleteAllSelectedFiles
+method deleteAllSelectedFiles
+DJICameraError deleteAllSelectedFiles()
+Package:dji.sdk.camera
+Description:
+Deletes all selected files from the SD card.   Precondition: The camera must enter Multiple Edit Mode.   Post condition: The images will be deleted from the SD card.  @return DJICameraError Shows  the possible error during the execution. If there is no error, it returns null.
+Return:
+DJICameraErrorDJICameraError shows the possible error during the execution. If there is no error, it returns null.
+Download FilesmethoddownloadSelectedFiles
+method downloadSelectedFiles
+void downloadSelectedFiles(final File destDir, final FileDownloadCallback callback)
+Package:dji.sdk.camera
+Description:
+Downloads the currently selected media files.   Precondition: The camera must enter multiple preview mode.
+Input Parameters:
+final File destDirThe destination file directory, e.g., SDCardPath/folder/final FileDownloadCallback callbackThe execution callback.
+Related:
+CallbackclassFileDownloadCallbackStateclassPlaybackState
+×
+Search Mobile SDK Document
+{{searchCount}} Results
+{{{(item.highlights && item.highlights.title) || item.title}}}
+{{{(item.highlights && item.highlights.content[0]) || item.title}}}
+Load More
+Loading...
+Not Found
+SDKMobile SDKUX SDKOnboard SDKPayload SDKWindows SDK
+InfoProducts
+CommunityStack OverflowYouTubeTwitter
+Contact Us dev@dji.com
+Business Cooperation dev@dji.com
+BILLING billing-dev@dji.com
+Copyright © 2022 DJI All Rights ReservedPrivacy PolicyTerms of Use
+
+🔧 MÉTODOS:
+  • deleteCurrentPreviewFile
+  • DJICameraErrorproceedToNextMultiplePreviewPage
+  • exitMultipleEditMode
+  • DJICameraErrorproceedToPreviousSinglePreviewPage
+  • unselectAllFiles
+  • DJICameraErrorselectAllFilesInPage
+  • selectAllFilesInPage
+  • downloadSelectedFiles
+  • DJICameraErrorenterMultipleEditMode
+  • proceedToNextMultiplePreviewPage
+  • setPlaybackStateCallback
+  • enterMultipleEditMode
+  • voidsetPlaybackStateCallback
+  • progress
+  • DJICameraErrordeleteCurrentPreviewFile
+  • selectAllFiles
+  • DJICameraErrorstopVideo
+  • enterSinglePreviewModeWithIndex
+  • proceedToNextSinglePreviewPage
+  • stopVideo
+  • pauseVideo
+  • DJICameraErrorenterMultiplePreviewMode
+  • DJICameraErrorexitMultipleEditMode
+  • enterMultiplePreviewMode
+  • DJICameraErrorplayVideo
+  • proceedToPreviousMultiplePreviewPage
+  • DJICameraErrorproceedToPreviousMultiplePreviewPage
+  • toggleFileSelectionAtIndex
+  • voiddownloadSelectedFiles
+  • DJIErrortoggleFileSelectionAtIndex
+  • DJICameraErrorproceedToNextSinglePreviewPage
+  • proceedToPreviousSinglePreviewPage
+  • unselectAllFilesInPage
+  • playVideoFromPositionInPercent
+  • DJICameraErrorunselectAllFiles
+  • DJIErrorplayVideoFromPositionInPercent
+  • DJICameraErrordeleteAllSelectedFiles
+  • deleteAllSelectedFiles
+  • DJIErrorenterSinglePreviewModeWithIndex
+  • playVideo
+  • DJICameraErrorpauseVideo
+  • DJICameraErrorselectAllFiles
+  • DJICameraErrorunselectAllFilesInPage
+  • file
+
+============================================================
+

@@ -1,0 +1,22 @@
+# URLs Conocidas de DJI SDK v4 Android API
+# Generado automáticamente
+
+https://developer.dji.com/api-reference/android-api/Components/SDKManager/DJISDKManager.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJICamera.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJIMediaManager.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJIPlaybackManager.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJICameraDisplayNames.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJICameraParameters.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJIMediaFile.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJIFetchMediaTaskScheduler.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJICameraSettingsDefinitions.html
+https://developer.dji.com/api-reference/android-api/Components/FlightController/DJIFlightController.html
+https://developer.dji.com/api-reference/android-api/Components/Gimbal/DJIGimbal.html
+https://developer.dji.com/api-reference/android-api/Components/Battery/DJIBattery.html
+https://developer.dji.com/api-reference/android-api/Components/RemoteController/DJIRemoteController.html
+https://developer.dji.com/api-reference/android-api/Components/Utils/DJICommonCallbacks.html
+https://developer.dji.com/api-reference/android-api/Components/Utils/DJIError.html
+https://developer.dji.com/api-reference/android-api/Components/Missions/DJIMissionManager.html
+https://developer.dji.com/api-reference/android-api/Components/Missions/DJIWaypointMission.html
+https://developer.dji.com/api-reference/android-api/Components/AirLink/DJIAirLink.html
+https://developer.dji.com/api-reference/android-api/Components/KeyManager/DJIKeyManager.html

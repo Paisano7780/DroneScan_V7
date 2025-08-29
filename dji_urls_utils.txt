@@ -1,0 +1,2 @@
+https://developer.dji.com/api-reference/android-api/Components/Utils/DJICommonCallbacks.html
+https://developer.dji.com/api-reference/android-api/Components/Utils/DJIError.html

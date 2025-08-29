@@ -1,0 +1,4 @@
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJICamera.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJICameraDisplayNames.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJICameraParameters.html
+https://developer.dji.com/api-reference/android-api/Components/Camera/DJICameraSettingsDefinitions.html

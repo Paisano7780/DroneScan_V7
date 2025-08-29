@@ -1,0 +1,41 @@
+📋 RESUMEN FINAL - CRAWLING DJI SDK
+==================================================
+
+🕐 Completado: 2025-08-29T01:20:31.851449
+📄 Páginas procesadas: 11
+🔧 Métodos únicos: 1467
+📱 Páginas MediaManager: 1
+🎮 Páginas PlaybackManager: 1
+📷 Páginas Camera: 1
+
+📂 ARCHIVOS GENERADOS:
+  • dji_docs_COMPLETO.txt - Contenido completo
+  • dji_MEDIA_MANAGER_detallado.txt - MediaManager detallado
+  • dji_PLAYBACK_MANAGER_detallado.txt - PlaybackManager detallado
+  • dji_TODOS_LOS_METODOS.txt - Todos los métodos
+  • dji_RESUMEN_FINAL_COMPLETO.txt - Este resumen
+
+📊 ESTADÍSTICAS POR PÁGINA:
+----------------------------------------
+  DJI Mobile SDK Documentation
+            |  59 métodos
+  DJI Mobile SDK Documentation
+            | 643 métodos
+  DJI Mobile SDK Documentation
+            |  38 métodos
+  DJI Mobile SDK Documentation
+            |  44 métodos
+  DJI Mobile SDK Documentation
+            | 244 métodos
+  DJI Mobile SDK Documentation
+            | 130 métodos
+  DJI Mobile SDK Documentation
+            |  61 métodos
+  DJI Mobile SDK Documentation
+            | 252 métodos
+  DJI Mobile SDK Documentation
+            |  36 métodos
+  DJI Mobile SDK Documentation
+            |  43 métodos
+  DJI Mobile SDK Documentation
+            |  16 métodos

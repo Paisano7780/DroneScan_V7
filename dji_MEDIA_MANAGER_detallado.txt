@@ -1,0 +1,793 @@
+📱 MEDIA MANAGER - INFORMACIÓN DETALLADA
+============================================================
+
+🔗 URL: https://developer.dji.com/api-reference/android-api/Components/Camera/DJIMediaManager.html
+📊 Métodos: 38
+----------------------------------------
+DJI Mobile SDK Documentation
+Developer
+Mobile SDK
+UX SDK
+Onboard SDK
+Payload SDK
+Windows SDK
+Login
+Register
+User Center
+Logout
+Mobile SDK
+OverviewDocumentationAPI Reference
+IOS SDK
+Android SDK
+IOS UX SDK
+Android UX SDK
+DownloadsSupport
+Manager Classes
+DJISDKManager
+SDKManagerCallback
+BluetoothProductConnector
+BluetoothDevicesListCallback
+BluetoothDevice
+DJISDKInitEvent
+KeyManager
+DJIKey
+BatteryKey
+CameraKey
+FlightControllerKey
+RadarKey
+PayloadKey
+GimbalKey
+ProductKey
+RemoteControllerKey
+HandheldControllerKey
+AirLinkKey
+AccessoryAggregationKey
+LidarKey
+BaseStationKey
+DiagnosticsKey
+GetCallback
+SetCallback
+ActionCallback
+KeyListener
+FlyZoneManager
+UnlockedZoneGroup
+FlyZoneInformation
+SubFlyZoneInformation
+Callback
+BasicDatabaseUpgradeProgressUpdatedCallback
+CustomUnlockZone
+FlySafeWarningInformation
+FlySafeSeriousWarningInformation
+FlySafeTipInformation
+FlySafeReturnToHomeInformation
+FlySafeNotification
+Callback
+AppActivationManager
+AircraftBindingStateListener
+AppActivationStateListener
+UserAccountManager
+UserAccountStateChangeListener
+UserAccountInformation
+DataProtectionManager
+LDMManager
+LDMModule
+Builder
+LDMCallback
+UTMISSManager
+Callback
+UTMISSParam
+FlightHubManager
+OnlineDevice
+BoundDevice
+User
+Team
+UpStream
+LiveStream
+FlightPathNode
+FlightHistoricalDetail
+Statistics
+HistoricalFlight
+RealTimeFlightData
+UpdatedUploadStateCallback
+Callback
+LiveStreamManager
+OnLiveErrorStatusListener
+LiveVideoResolution
+IUASRemoteIDManager
+UASRemoteIDStatus
+UASRemoteIDStatusListener
+UpgradeManager
+UpgradeComponent
+UpgradeFirmwareListener
+FirmwareUpgradeProgress
+FirmwareInformation
+UpgradeComponentChangeListener
+Base Classes
+BaseProduct
+VideoFeeder
+VideoDataListener
+VideoActiveStatusListener
+VideoFeed
+Callback
+PhysicalSourceListener
+BaseComponent
+ComponentListener
+Product Classes
+Aircraft
+HandHeld
+Component Classes
+FlightController
+OnboardSDKDeviceDataCallback
+FlightControllerState
+Callback
+Attitude
+LocationCoordinate3D
+GoHomeAssessment
+GravityCenterState
+Compass
+RTK
+RTKBaseStationInformation
+RTKBaseStationListCallback
+RTKConnectionStateWithBaseStationReferenceSourceCallback
+RTKState
+Callback
+RTKNetworkServiceProvider
+NetworkServiceState
+Callback
+NetworkServicePlan
+NetworkServicePlansState
+Builder
+NetworkServiceSettings
+Builder
+ReceiverInfo
+LocationStandardDeviation
+LandingGear
+FlightAssistant
+Callback
+Callback
+Callback
+VisionDetectionState
+Callback
+ObstacleDetectionSector
+VisionControlState
+Callback
+SmartCaptureState
+PerceptionInformation
+ObstacleAvoidanceSensorState
+AccessLocker
+FormattingState
+Callback
+UserAccountInfo
+Radar
+Simulator
+InitializationData
+SimulatorState
+Callback
+IMUState
+Callback
+MultipleOrientationCalibrationHint
+FlightControlData
+LocationCoordinate2D
+AirSenseSystemInformation
+Callback
+AirSenseAirplaneState
+Callback
+LEDsSettings
+Builder
+Limits
+Battery
+AggregationState
+Callback
+BatteryOverview
+BatteryState
+Callback
+WarningRecord
+Camera
+SuperResolutionInfo
+Callback
+PinPoint
+PinPointInfo
+CalibrationCallback
+TimeLapsePreviewCallback
+HistogramCallback
+TapZoomStateCallback
+TemperatureDataCallback
+SystemState
+Callback
+FocusState
+Callback
+StorageState
+Callback
+SSDState
+Callback
+MediaManager
+VideoPlaybackStateListener
+DownloadListener<E>
+FileListStateListener
+MediaFile
+Callback
+AudioMediaFile
+MediaFileInfo
+NewFileInfoCallback
+VideoPlaybackState
+FetchMediaTaskScheduler
+FetchMediaTask
+Callback
+PlaybackManager
+FileDownloadCallback
+PlaybackState
+CallBack
+Capabilities
+DJICameraParametersListener
+MultispectralShutterSpeedRangeCallback
+MultispectralExposureCompensationRangeCallback
+SettingsDefinitions
+ExposureSettings
+Callback
+OpticalZoomSpec
+HybridZoomSpec
+PhotoTimeIntervalSettings
+PictureStylePreset
+ThermalProfile
+ThermalAreaTemperatureAggregations
+Callback
+ThermalExternalSceneSettings
+Callback
+WhiteBalance
+SSDClipFileName
+OriginalPhotoSettings
+MultispectralStoragePhotoSettings
+StoragePhotoCamerasParamBuilder
+MultispectralExposureState
+Callback
+WatermarkSettings
+LaserMeasureInformation
+Callback
+FocusAssistantSettings
+PhotoTimeLapseSettings
+ResolutionAndFrameRate
+CameraStreamSettings
+ColorWaveformSettings
+StabilizationState
+CameraPeakThreshold
+Lens
+TapZoomStateCallback
+TemperatureDataCallback
+ThermalGlobalTemperatureCallback
+LensCapabilities
+DJILensParametersListener
+ThermalGainModeTemperatureRangeCallback
+Gimbal
+GimbalState
+MovementSettings
+Attitude
+Callback
+Callback
+BatteryChargeRemainingCallback
+Rotation
+Builder
+MultiGimbalConnectionWorkingStatus
+GimbalBalanceDetectionState
+Callback
+DirectionState
+GimbalControlParametersAutoTuningState
+Callback
+GimbalCoaxialityDetectionState
+Callback
+AirLink
+SignalQualityCallback
+CountryCodeCallback
+BaseStationSignalQualityUpdatedCallback
+LightbridgeLink
+ChannelInterference
+LightbridgeAntennaRSSI
+AntennaRSSICallback
+ChannelInterferenceCallback
+OcuSyncLink
+VideoDataRateCallback
+WarningMessagesCallback
+ChannelInterferenceCallback
+FrequencyInterference
+WiFiLink
+MagneticInterferenceCallback
+ChannelInterferenceCallback
+WifiChannelInterference
+RemoteController
+GimbalMapping
+GimbalStickMapping
+Callback
+MasterSearchingCallback
+RTKChannelEnabledUpdatedCallback
+HardwareState
+HardwareStateCallback
+RightDial
+TransformationSwitch
+Button
+FiveDButton
+GPSData
+Time
+GPSLocation
+BatteryState
+Callback
+FocusControllerState
+FocusControllerStateCallback
+AircraftMapping
+AircraftStickMapping
+CustomButtonTags
+Builder
+Information
+ControlRequestCallback
+MasterSlaveState
+Callback
+GimbalControlSpeedCoefficient
+ResponseForGimbalControl
+AuthorizationInfo
+Credentials
+ProfessionalRC
+Event
+ButtonConfiguration
+ButtonConfigurationBuilder
+Callback
+MultiDeviceAggregationState
+Callback
+HandheldController
+HardwareState
+Callback
+LEDCommand
+LEDColorPattern
+MobileRemoteController
+Payload
+PayloadWidget
+PayloadWidgetListener
+PayloadWidgetDownloadListener
+HintMessageCallback
+CommandDataCallback
+VideoDataReceivedCallback
+StreamDataCallback
+WidgetValueChangedCallback
+ActivateInfo
+Pipeline
+Pipelines
+AccessoryAggregation
+Spotlight
+SpotlightState
+Callback
+Beacon
+Speaker
+SpeakerState
+Callback
+AudioFileInfo
+TransmissionListener
+AccessoryAggregationState
+Callback
+BaseStation
+BaseStationBatteryState
+Callback
+BaseStationState
+Callback
+Lidar
+DJIPointCloudStatusListener
+DJIPointCloudLiveDataListener
+IDJILidarLiveViewDataProcessor
+Capabilities
+DJILidarParametersListener
+PointCloudLiveViewData
+PointCloudView
+Mission Classes
+MissionControl
+Triggerable
+TimelineElement
+Listener
+TimelineElementFeedback
+MissionControlError
+MissionAction
+TakeOffAction
+AircraftYawAction
+AircraftYawActionError
+GoToAction
+GoToActionError
+GoHomeAction
+HotpointAction
+GimbalAttitudeAction
+GimbalAttitudeActionError
+RecordVideoAction
+RecordVideoActionError
+ShootPhotoAction
+ShootPhotoActionError
+LandAction
+TimelineMission
+Trigger
+Action
+Listener
+BatteryPowerLevelTrigger
+WaypointReachedTrigger
+AircraftLandedTrigger
+WaypointMissionOperator
+WaypointMission
+Builder
+Waypoint
+WaypointAction
+WaypointMissionInterruption
+WaypointMissionEvent
+WaypointMissionUploadEvent
+WaypointUploadProgress
+WaypointMissionDownloadEvent
+WaypointDownloadProgress
+WaypointMissionExecutionEvent
+WaypointExecutionProgress
+WaypointMissionState
+WaypointMissionOperatorListener
+WaypointV2MissionOperator
+WaypointV2Mission
+WaypointV2
+Builder
+Builder
+WaypointV2MissionOperatorListener
+WaypointV2ActionListener
+ActionDownloadEvent
+ActionUploadEvent
+ActionExecutionEvent
+ActionUploadProgress
+WaypointV2MissionExecutionEvent
+WaypointV2MissionDownloadEvent
+WaypointV2MissionUploadEvent
+WaypointV2Action
+Builder
+WaypointActuator
+WaypointGimbalActuatorParam
+WaypointGimbalPathShooting
+WaypointGimbalPathPointInfo
+Builder
+WaypointGimbalStartPathShootingParam
+Builder
+WaypointGimbalStopPathShootingParam
+Builder
+Builder
+Builder
+WaypointAircraftControlParam
+Builder
+WaypointAircraftControlStartStopFlyParam
+Builder
+WaypointAircraftControlRotateYawParam
+Builder
+WaypointPointCloudRecordActuatorParam
+WaypointLidarActuatorParam
+Builder
+Builder
+WaypointCameraActuatorParam
+Builder
+WaypointCameraZoomParam
+Builder
+WaypointCameraFocusModeParam
+Builder
+WaypointCameraFocusParam
+WaypointCameraFocusRectangleTargetParam
+Builder
+WaypointCameraFocusPointTargetParam
+Builder
+Builder
+WaypointCameraCustomNameParam
+Builder
+Builder
+WaypointTrigger
+Builder
+WaypointIntervalTriggerParam
+Builder
+WaypointTrajectoryTriggerParam
+Builder
+WaypointV2AssociateTriggerParam
+Builder
+WaypointReachPointTriggerParam
+Builder
+ActionDownloadProgress
+ActionExecutionProgress
+ActionTypes
+WaypointV2UploadProgress
+WaypointV2DownloadProgress
+WaypointV2ExecutionProgress
+FollowMeMissionOperator
+FollowMeMissionOperatorListener
+FollowMeMission
+FollowMeMissionEvent
+FollowMeMissionState
+PanoramaMissionOperator
+PanoramaMissionOperatorListener
+PanoramaMissionEvent
+PanoramaMissionState
+PanoramaMissionExecutionState
+HotpointMissionOperator
+HotpointMission
+HotpointMissionOperatorListener
+HotpointMissionEvent
+HotpointMissionState
+IntelligentHotpointMissionOperator
+IntelligentHotpointMission
+IntelligentHotpointMissionOperatorListener
+IntelligentHotpointMissionState
+IntelligentHotpointMissionEvent
+TapFlyMissionOperator
+TapFlyMissionOperatorListener
+TapFlyMission
+TapFlyExecutionState
+Vector
+TapFlyMissionEvent
+TapFlyMissionState
+ActiveTrackOperator
+ActiveTrackMission
+ActiveTrackTrackingState
+SubjectSensingState
+ActiveTrackMissionEvent
+ActiveTrackState
+ActiveTrackMissionOperatorListener
+Misc Classes
+CommonCallbacks
+CompletionCallback<T
+CompletionCallbackWith<T>
+Y>
+WarningStatusItem
+VideoSizeCalculatorUtil
+VideoSizeListener
+LocationUtil
+DJIParamCapability
+DJIParamMinMaxCapability
+DJIError
+DJIGimbalError
+DataProtectionError
+DJIFlightHubError
+DJIRTKNetworkServiceError
+DJIAccessoryAggregationError
+DJIAccessLockerError
+DJIPayloadError
+DJIUTMISSError
+DJILDMError
+DJIUpgradeError
+DJIWaypointV2Error
+PipelineError
+DJISDKError
+DJISDKCacheError
+DJICameraError
+DJIFlightControllerError
+DJIMissionError
+DJIAirLinkError
+DJIBatteryError
+DJIFlySafeError
+DJIRemoteControllerError
+DJIDiagnostics
+DiagnosticsInformationCallback
+DeviceHealthInformation
+DJICodecManager
+YuvDataCallback
+Stick
+class MediaManager
+class MediaManager implements DJIParamAccessListener
+Package:dji.sdk.media
+Description:
+The media manager is used to interact with the file system on the SD card or the internal storage. By using the media manager, the user can get the metadata for all the multimedia files, and has access to each individual multimedia file.
+Class Members:
+State UpdatesmethodaddMediaUpdatedVideoPlaybackStateListener
+method addMediaUpdatedVideoPlaybackStateListener
+void addMediaUpdatedVideoPlaybackStateListener(VideoPlaybackStateListener callback)
+Package:dji.sdk.media
+Description:
+Sets the callback object for updating the video playback state of the media manager.
+Input Parameters:
+VideoPlaybackStateListener callbackcallback object of updating the vision detection state.
+methodgetScheduler
+method getScheduler
+FetchMediaTaskScheduler getScheduler()
+Package:dji.sdk.media
+Description:
+Fetch media task scheduler. This can be used to queue the download of the previews, thumbnails and XML custom data from multiple media files.
+Return:
+FetchMediaTaskSchedulerAn object of FetchMediaTaskScheduler.
+methodgetSDCardFileListState
+method getSDCardFileListState
+@NonNull FileListState getSDCardFileListState()
+Package:dji.sdk.media
+Description:
+The file list state of the SD card.
+Return:
+FileListStateAn enum value of FileListState.
+methodgetSDCardFileListSnapshot
+method getSDCardFileListSnapshot
+@Nullable List<MediaFile> getSDCardFileListSnapshot()
+Package:dji.sdk.media
+Description:
+Returns a copy of the current file list on the SD card after you call refreshFileListOfStorageLocation. Returns null if getSDCardFileListState is reset.
+Return:
+List<MediaFile>An array of MediaFile objects.
+methodgetInternalStorageFileListState
+method getInternalStorageFileListState
+@NonNull FileListState getInternalStorageFileListState()
+Package:dji.sdk.media
+Description:
+The file list state of the internal storage.
+Return:
+FileListStateAn enum value of FileListState.
+methodgetInternalStorageFileListSnapshot
+method getInternalStorageFileListSnapshot
+@Nullable List<MediaFile> getInternalStorageFileListSnapshot()
+Package:dji.sdk.media
+Description:
+Returns a copy of the current file list on the internal storage after you call refreshFileListOfStorageLocation. Returns nil if getInternalStorageFileListState is reset or unknown.
+Return:
+List<MediaFile>An array of MediaFile objects.
+methodrefreshFileListOfStorageLocation
+method refreshFileListOfStorageLocation
+void refreshFileListOfStorageLocation(SettingsDefinitions.StorageLocation storageLocation,                                                CompletionCallback callback)
+Package:dji.sdk.media
+Description:
+Refreshes the file list of the storage. If the current state is RESET, the media manager will try to fetch the complete file list. If the current state  is INCOMPLETE, the media manager will only fetch the missing list of files. If the file list is refreshed successfully, the corresponding file list state (either getSDCardFileListState or getInternalStorageFileListState) will become UP_TO_DATE.
+Input Parameters:
+SettingsDefinitions.StorageLocation storageLocationThe storage location of the file list to refresh.CompletionCallback callbackCompletion callback to receive the result.
+methoddeleteFiles
+method deleteFiles
+void deleteFiles(@NonNull final List<MediaFile> files,                           final CompletionCallbackWithTwoParam<List<MediaFile>, DJICameraError> callback)
+Package:dji.sdk.media
+Description:
+Delete media files from storages. If the operation is started successfully, FileListState will become  DELETING. If there is error or  "failedFiles" is not empty, FileListState will become RESET.
+Input Parameters:
+@NonNull final List<MediaFile> filesA list of MediaFile objects.final CompletionCallbackWithTwoParam<List<MediaFile>, DJICameraError> callbackA completion callback of CompletionCallbackWithTwoParam<List<MediaFile>.
+DownloadmethodexitMediaDownloading
+method exitMediaDownloading
+void exitMediaDownloading()
+Package:dji.sdk.media
+Description:
+This will entirely stop the downloading process and of course clean the downloading thread pool. The camera will exit the MEDIA_DOWNLOAD mode and enter the SHOOT_PHOTO mode.  Precondition: The camera enters the MediaDownload mode.  Post Condition: After this function invoked, the camera mode will shift to TAKEPHOTO mode.
+Add listenermethodaddUpdateFileListStateListener
+method addUpdateFileListStateListener
+void addUpdateFileListStateListener(@NonNull FileListStateListener listener)
+Package:dji.sdk.media
+Description:
+Start listen to the update of file list state.
+Input Parameters:
+@NonNull FileListStateListener listenerA FileListStateListener interface.
+methodaddUpdateStorageLocationListener
+method addUpdateStorageLocationListener
+void addUpdateStorageLocationListener(@NonNull SettingsDefinitions.StorageLocation storageLocation,                                                @NonNull FileListStateListener listener)
+Package:dji.sdk.media
+Description:
+Start listen to the update of file list state.
+Input Parameters:
+@NonNull SettingsDefinitions.StorageLocation storageLocationThe storage location of the file list.@NonNull FileListStateListener listenerA FileListStateListener interface.
+Remove listenermethodremoveFileListStateCallback
+method removeFileListStateCallback
+void removeFileListStateCallback(@NonNull FileListStateListener listener)
+Package:dji.sdk.media
+Description:
+Stop listen to the update of file list state.
+Input Parameters:
+@NonNull FileListStateListener listenerA FileListStateListener interface.
+Video PlaybackmethodisVideoPlaybackSupported
+method isVideoPlaybackSupported
+boolean isVideoPlaybackSupported()
+Package:dji.sdk.media
+Description:
+Checks if the media manager supports video playback or not. @return true if the media manager supports video playback.
+Return:
+booleantrue if the media manager supports video playback.
+methodplayVideoMediaFile
+method playVideoMediaFile
+void playVideoMediaFile(@NonNull MediaFile videoMediaFile, @Nullable final CompletionCallback callback)
+Package:dji.sdk.media
+Description:
+Start video playback through MediaManager. When the media manager is playing a video,  playback state received from onUpdate. Video playback through MediaManager is fixed at 720p.
+Input Parameters:
+@NonNull MediaFile videoMediaFileThe video to play.@Nullable final CompletionCallback callbackThe execution callback with the returned execution result.
+methodresume
+method resume
+void resume(@Nullable final CompletionCallback callback)
+Package:dji.sdk.media
+Description:
+The media manager resumes the paused video.
+Input Parameters:
+@Nullable final CompletionCallback callbackThe execution callback with the returned execution result.
+methodpause
+method pause
+void pause(@Nullable final CompletionCallback callback)
+Package:dji.sdk.media
+Description:
+The media manager pauses the playing video.
+Input Parameters:
+@Nullable final CompletionCallback callbackThe execution callback with the returned execution result.
+methodstop
+method stop
+void stop(@Nullable final CompletionCallback callback)
+Package:dji.sdk.media
+Description:
+The media manager stops the playing video.
+Input Parameters:
+@Nullable final CompletionCallback callbackThe execution callback with the returned execution result.
+methodmoveToPosition
+method moveToPosition
+void moveToPosition(@FloatRange(from = 0) float position, @Nullable final CompletionCallback callback)
+Package:dji.sdk.media
+Description:
+Video playback is skipped to the new position in seconds from the start of the video.
+Input Parameters:
+@FloatRange(from = 0) float positionNew position to play in seconds from start of video. Input with precision of greater than 3 decimal places, will be rounded to 3.@Nullable final CompletionCallback callbackThe execution callback with the returned execution result.
+Check Customize DCF File SupportmethodisCustomizeDCFFileSupported
+method isCustomizeDCFFileSupported
+protected boolean isCustomizeDCFFileSupported()
+Package:dji.sdk.media
+Description:
+Checks if the media manager supports customize DCF file naming rule or not. It is Only supported by Zenmuse H20 series.
+Return:
+protected booleantrue if the camera supports customize DCF file.
+Download MediamethodfetchThumbnail
+method fetchThumbnail
+void fetchThumbnail(@Nullable final CompletionCallback callback)
+Package:dji.sdk.media
+Description:
+Fetches this media's thumbnail with a resolution (99 x 99) from the SD card. This method can be used to fetch either a photo or a video, where the first frame of the video is the thumbnail that is fetched. It is not available if the media type is Panorama.  Precondition: The camera mode is MediaDownload mode.  Post Condition: This method will start to download the media thumbnail in the SD card. The content can be videos or images.
+Input Parameters:
+@Nullable final CompletionCallback callbackThe completion callback with the returned execution result.
+Related:
+enumFileListState
+enum FileListState
+enum FileListState
+Package:dji.sdk.media
+Description:
+States of the file list in MediaManager.
+Enum Members:
+UP_TO_DATEThe file list is up-to-date: it is synchronized with the SD card in the aircraft.INCOMPLETENew files have been generated since the last call of refreshFileListOfStorageLocation. Calling refreshFileListOfStorageLocation can synchronize the newly generated files and append them to the end of the file list.RESETThe file list is reset. The file list will be reset in one of the following cases:  - Camera is disconnected.  - SD card is formatted.  - SD card is not inserted.  - Error occurs when deleting files from SD card.  In this state, getSDCardFileListSnapshot will return null.DELETINGdeleteFiles has been called and the operation is still in progress.RENAMINGA renaming operation is in progress.SYNCINGThe media manager is synchronizing the file list from the SD card.UNKNOWNUnknown.
+Class Members:
+classFetchMediaTaskSchedulerState UpdatesclassVideoPlaybackStateListenerclassDownloadListenerclassFileListStateListenerMediaclassMediaFileclassMediaFileInfoVideo PlaybackclassVideoPlaybackState
+×
+Search Mobile SDK Document
+{{searchCount}} Results
+{{{(item.highlights && item.highlights.title) || item.title}}}
+{{{(item.highlights && item.highlights.content[0]) || item.title}}}
+Load More
+Loading...
+Not Found
+SDKMobile SDKUX SDKOnboard SDKPayload SDKWindows SDK
+InfoProducts
+CommunityStack OverflowYouTubeTwitter
+Contact Us dev@dji.com
+Business Cooperation dev@dji.com
+BILLING billing-dev@dji.com
+Copyright © 2022 DJI All Rights ReservedPrivacy PolicyTerms of Use
+
+🔧 MÉTODOS:
+  • voidexitMediaDownloading
+  • voidfetchThumbnail
+  • voidremoveFileListStateCallback
+  • getSDCardFileListState
+  • state
+  • isCustomizeDCFFileSupported
+  • deleteFiles
+  • booleanisVideoPlaybackSupported
+  • addUpdateStorageLocationListener
+  • pause
+  • playVideoMediaFile
+  • fetchThumbnail
+  • resume
+  • voidstop
+  • FileListStategetInternalStorageFileListState
+  • refreshFileListOfStorageLocation
+  • voidaddUpdateFileListStateListener
+  • addUpdateFileListStateListener
+  • voidresume
+  • voidplayVideoMediaFile
+  • resolution
+  • voidaddMediaUpdatedVideoPlaybackStateListener
+  • getSDCardFileListSnapshot
+  • FileListStategetSDCardFileListState
+  • FloatRange
+  • getScheduler
+  • protectedbooleanisCustomizeDCFFileSupported
+  • stop
+  • getInternalStorageFileListState
+  • removeFileListStateCallback
+  • addMediaUpdatedVideoPlaybackStateListener
+  • voidpause
+  • moveToPosition
+  • FetchMediaTaskSchedulergetScheduler
+  • isVideoPlaybackSupported
+  • voidmoveToPosition
+  • getInternalStorageFileListSnapshot
+  • exitMediaDownloading
+
+============================================================
+
