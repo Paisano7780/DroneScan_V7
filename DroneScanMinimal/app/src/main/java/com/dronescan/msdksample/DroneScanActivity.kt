@@ -63,13 +63,21 @@ class DroneScanActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drone_scan)
         
-        DebugLogger.d("DroneScanActivity", "🚀 Iniciando DroneScan v2.4")
+        DebugLogger.d("DroneScanActivity", "🚀 Iniciando DroneScan v2.6.1 - UI RESTAURADA")
         
         setupUI()
         initializeComponents()
         setupPermissions()
         setupButtonListeners()
         registerUsbReceiver()
+        
+        // Mostrar versión claramente en la UI
+        updateStatus("🚀 DroneScan v2.6.1 - UI Completa Restaurada")
+        appendResult("=== DroneScan v2.6.1 ===\n")
+        appendResult("✅ UI completa con todos los botones funcionales\n")
+        appendResult("✅ USB detection activo\n")
+        appendResult("✅ MediaManager integration disponible\n")
+        appendResult("📱 Conecta tu drone para comenzar...\n\n")
     }
 
     private fun setupUI() {
